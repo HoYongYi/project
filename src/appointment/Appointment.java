@@ -1,8 +1,5 @@
-package dataAnalysis;
+package appointment;
 
-/**
- * Created by acer on 12/12/2016.
- */
 public class Appointment {
 
     private String apptId = null;
@@ -10,6 +7,7 @@ public class Appointment {
     private String patientNric = null;
     private String date = null;
     private String time = null;
+    private String description=null;
 
     public String getApptId() {
         return apptId;
@@ -49,5 +47,12 @@ public class Appointment {
 
     public void setTime(String time) {
         this.time = time;
+    }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

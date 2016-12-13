@@ -1,13 +1,10 @@
-package dataAnalysis;
+package appointment;
 
+import appointment.Appointment;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by acer on 12/12/2016.
- */
 
 public class AppointmentDAO {
 
@@ -50,6 +47,7 @@ public class AppointmentDAO {
                 appointment.setPatientNric(rs.getString("patientNric"));
                 appointment.setDate(rs.getString("date"));
                 appointment.setTime(rs.getString("time"));
+                appointment.setDescription(rs.getString("description"));
 
             }
 
@@ -71,12 +69,13 @@ public class AppointmentDAO {
             ResultSet rs = pstmt.executeQuery();
             while(rs != null && rs.next()){
 
-                Appointment appointment = new Appointment();
+                Appointment appointment = new Appointment() ;
                 appointment.setApptId(rs.getString("apptId"));
                 appointment.setPatientName(rs.getString("patientName"));
                 appointment.setPatientNric(rs.getString("patientNric"));
                 appointment.setDate(rs.getString("date"));
                 appointment.setTime(rs.getString("time"));
+                appointment.setDescription(rs.getString("description"));
                 list.add(appointment);
 
             }
@@ -89,7 +88,11 @@ public class AppointmentDAO {
     }
 
 
+
 }
+
+
+
 
 
 
