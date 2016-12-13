@@ -1,0 +1,179 @@
+/* 
+	project:  HealthCenter
+	author:   lostwarrior
+*/
+*
+{
+margin: 0;
+padding: 0;
+}
+
+body
+{
+background:#fff;
+color: #fff;
+font: .8em normal small "Trebuchet MS",Tahoma, verdana, arial, helvetica, sans-serif;line-height: 1.6em;
+}
+#wrapper
+{
+margin:10px auto;
+border:1px solid #e4e4e4;
+width:85%;
+}
+p{font-family:arial,verdana;}
+#top 
+{
+padding-top:10px;
+padding-left:10px;
+}
+#top img
+{
+float:left;
+}
+#top h1,#header h1,#header h2
+{
+color:#555;padding-top:10px;padding-left:50px;
+font-family:trajan pro,agency fb,Arial, Helvetica, sans-serif;
+font-weight:normal;
+}
+#header h1
+{
+	color:#fff;
+	padding:50px 0 0 50px;
+}
+#header h2
+{
+	color:#fff;
+	padding:10px 0 0 400px;
+}
+#label b{
+	color: #000000;
+}
+#top p
+{
+color:#aeaeae;padding-left:50px;
+}
+#logo
+{
+	height:50px;
+}
+#header
+{
+background:url(images/bg.gif) repeat;
+height:170px;
+border-bottom:5px solid #eaeaea;
+}
+#menu ul
+{
+list-style:none;
+}
+#menu li
+{
+display:inline;
+}
+#menu li a
+{
+float: left;
+display: inline;
+list-style-type: none;
+text-align: center;
+color: #555555;
+font-size: 1.1em;
+text-decoration:none;
+padding: 0 2.1em;
+height: 32px;
+line-height: 32px;
+margin-left: 3px;
+}
+#menu li a:hover
+{
+	
+	visibility:inherit;
+	color:#e4488e;
+    font-weight:bold;		
+}
+.line
+{
+background:url(images/line.gif) repeat;
+height:2px;
+}
+#left
+{
+font-family:trajan pro;
+color:#000;
+margin:10px 300px 0px 5px;
+padding-bottom:5px;
+border:1px solid #eee;
+}
+#left h1,#right h1
+{
+	font-family:trajan pro,agency fb,Arial, Helvetica, sans-serif;
+	font-weight:normal;color:#555;
+	padding:40px 0 0 30px;
+}
+#left p,#right p
+{
+	padding:10px 10px 0 30px;
+}
+#right
+{
+width:300px;
+color:#000;
+float:right;
+}
+.date
+{
+	color:#c1c1c1;padding:10px 10px 0 30px;float:left;
+}
+#right h2
+{
+	padding:15px 10px 0 30px;
+	font:13px normal trajan pro,agency fb,arial,helvetica,sans-serif;
+	color:#3ba4c4;
+	text-decoration:underline;
+}
+.col h2
+{
+    font:13px normal trajan pro,agency fb,arial,helvetica,sans-serif;
+	color:#3ba4c4;
+	margin-left:120px;
+	
+}
+.fcol p
+{
+	
+	margin-left:90px;
+	
+}
+.fcol
+{
+	padding:15px 10px 0 0px;margin-left:30px;
+	border-bottom:1px dotted #3ba4c4;
+	
+}
+.fcol  img
+{
+	float:left;
+}
+
+.cleaner,#footer,.line
+{
+	clear:both;
+}
+
+#footer {
+	background: #FFF;
+	color: #666;
+	font-size: 1.1em;
+	margin: 0 auto;
+	text-align: center;
+	padding: 6px;
+}
+#footer a {
+	color: #36C;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #06F;
+	text-decoration: underline;
+}
