@@ -85,13 +85,6 @@ height: 32px;
 line-height: 32px;
 margin-left: 3px;
 }
-#menu li a:hover
-{
-	
-	visibility:inherit;
-	color:#e4488e;
-    font-weight:bold;		
-}
 .line
 {
 background:url(images/line.gif) repeat;
