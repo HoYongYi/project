@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="4Friends&amp;Neo" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.40" />
+          <element id="library" level="project" name="PrimeFaces-5.2" />
+        </element>
       </element>
     </root>
   </artifact>
