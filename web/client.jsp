@@ -32,6 +32,7 @@
             <li><a href="#">Products and Services</a></li>
             <li><a href="#">Appointment</a></li>
             <li><a href="#">Online Consultation</a></li>
+            <li><a href="#">Check my bills</a></li>
         </ul>
     </div>
     <div class="line">
