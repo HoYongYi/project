@@ -37,12 +37,11 @@
   </form>
   <div id="menu">
     <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Patient Care and Health Information</a></li>
-      <li><a href="#">News and Events</a></li>
-      <li><a href="#">Department and Centers</a></li>
-      <li><a href="#">Product and Services</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="index.jsp">Home</a></li>
+      <li><a href="about.jsp">About</a></li>
+      <li><a href="patientcare.jsp">Patient Care and Health Information</a></li>
+      <li><a href="newsandevents.jsp">News and Events</a></li>
+      <li><a href="contactus.jsp">Contact Us</a></li>
     </ul>
   </div>
   <div class="line">
@@ -58,12 +57,12 @@
       <p><img src="images/doctor.jpg" alt="Surgeons"/></p>
     </div>
     <div id="left">
-      <h1>Welcome to the Hospital of NeoCademy</h1>
+      <h1>Welcome to the Woodlands Integrated Health Campus</h1>
       <p>
-        The Hospital of NeoCadamy is open to everyone everyday and
-        provides health care and cutting-edge medicine in a central location in Singapore.
-        We use our superior academic knowledge to treat a wide range of health issues,
-        taking a personal touch and utilizing highly specialized and up-to-date research
+        The Woodlands Integrated Health Campus will be an integrated healthcare facility that will include an acute hospital,
+        a community hospital and a nursing home.
+        The hospital will serve the anticipated increase in demand for healthcare services in the northern region of Singapore,
+        as our population grows and ages.
       </p>
       <h1>Stay connected</h1>
       <div class="col">

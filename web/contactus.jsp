@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Hyy
+  Date: 14/12/2016
+  Time: 2:21 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -18,10 +25,22 @@
             <h1>Health Center</h1>
             <p>DELIVERING ONLY PREMIUM SERVICES</p>
         </div>
+    </div>
+    <form action="action_page.php">
+        <div class="imgcontainer">
+        </div>
 
+        <li></li>
 
-        <li><a href="#">Welcome User</a></li>
+        <div class="container">
+            <input type="text" placeholder="Enter Username" name="loginID" required>
 
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit">Login</button>
+
+            <span class="psw"><a href="#">Forgot password?</a></span>
+        </div>
     </form>
     <div id="menu">
         <ul>
@@ -29,44 +48,25 @@
             <li><a href="about.jsp">About</a></li>
             <li><a href="patientcare.jsp">Patient Care and Health Information</a></li>
             <li><a href="newsandevents.jsp">News and Events</a></li>
-            <li><a href="contactus.jsp">Contact Us</a></li>
-            <li><a href="services.jsp">Products and Services</a></li>
-            <li><a href="#">Appointment</a></li>
-            <li><a href="#">Online Consultation</a></li>
-            <li><a href="#">Check my bills</a></li>
+            <li><a href="contactus.jsp"><b>Contact Us</b></a></li>
         </ul>
     </div>
     <div class="line">
         &nbsp;
     </div>
-    <div id="content">
-        <div id="right">
-            <h1>Latest news</h1>
-            <div class="date">04/07/08&nbsp;&#45;</div>
-            <p>Aspiring teacher became a doctor because of bullies</p>
-            <div class="date">02/07/08&nbsp;&#45;</div>
-            <p>HIV no longer a death sentence but a period of hopeful living</p>
-            <p><img src="images/doctor.jpg" alt="Surgeons"/></p>
-        </div>
-        <div id="left">
-            <h1>Welcome to Woodlands Integrated Health Campus</h1>
-            <p>
-                The Woodlands Integrated Health Campus will be an integrated healthcare facility that will include an acute hospital,
-                a community hospital and a nursing home.
-                The hospital will serve the anticipated increase in demand for healthcare services in the northern region of Singapore,
-                as our population grows and ages.
-            </p>
-            <h1>Stay connected</h1>
-            <div class="col">
-                <div class="fcol">
-                    <img src="images/facebook.png" alt="Facebook"/>
-                    <img src="images/twitter.png" alt="Twitter"/>
-                </div>
-
-            </div>
-
-        </div>
+    <div id = "left">
+        <h1>Address: <h3>Woodlands Avenue 12 and Woodlands Drive 17,
+            opposite Christ Church Secondary School,
+            and within walking distance from the future Woodlands South MRT station</h3></h1>
+        <h1>MAIN LINE: <h3>6555-xxxx</h3></h1>
+        <h1>GENERAL FAX: <h3>6602-xxxx</h3></h1>
+        <h1>BILLING INQUIRIES: <h3>6602-xxxx</h3></h1>
     </div>
+    <div id="right">
+        <img src="images/map.png" alt="Map"/>
+    </div>
+
+
     <div class="cleaner">&nbsp;</div>
     <div class="line">
         &nbsp;</div>
