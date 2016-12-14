@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Hyy
+  Date: 14/12/2016
+  Time: 2:21 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -18,42 +25,36 @@
             <h1>Health Center</h1>
             <p>DELIVERING ONLY PREMIUM SERVICES</p>
         </div>
+    </div>
+    <form action="action_page.php">
+        <div class="imgcontainer">
+        </div>
 
-        <li><a href="#">Welcome Doctor...</a></li>
+        <li></li>
 
+        <div class="container">
+            <input type="text" placeholder="Enter Username" name="loginID" required>
+
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit">Login</button>
+
+            <span class="psw"><a href="#">Forgot password?</a></span>
+        </div>
     </form>
     <div id="menu">
         <ul>
             <li><a href="about.jsp">About</a></li>
             <li><a href="patientcare.jsp">Patient Care and Health Information</a></li>
             <li><a href="news.jsp">News and Events</a></li>
-            <li><a href="/index.xhtml">Reports</a></li>
+            <li><a href="department.jsp">Department and Centers</a></li>
+            <li><a href="product.jsp">Product and Services</a></li>
+            <li><a href="contactus.jsp"><b>Contact Us</b></a></li>
         </ul>
     </div>
     <div class="line">
         &nbsp;
     </div>
-    <div id="content">
-        <div id="right">
-            <h1>Latest news</h1>
-            <div class="date">04/07/08&nbsp;&#45;</div>
-            <p>Aspiring teacher became a doc because of bullies</p>
-            <div class="date">02/07/08&nbsp;&#45;</div>
-            <p>HIV no longer a death sentence but a period of hopeful living</p>
-            <p><img src="images/doctor.jpg" alt="Surgeons"/></p>
-        </div>
-        <div id="left">
-            <h1>Welcome to Woodlands Integrated Health Campus</h1>
-            <p>
-                Woodlands Integrated Health Campus is open to everyone everyday and
-                provides health care and cutting-edge medicine in a central location in Singapore.
-                We use our superior academic knowledge to treat a wide range of health issues,
-                taking a personal touch and utilizing highly specialized and up-to-date research
-            </p>
-
-            </div>
-
-        </div>
     </div>
     <div class="cleaner">&nbsp;</div>
     <div class="line">
