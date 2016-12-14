@@ -15,88 +15,70 @@ import org.primefaces.model.chart.*;
 @ManagedBean
 public class ChartView implements Serializable {
 
-    private LineChartModel lineModel1;
-    private LineChartModel lineApptModel;
-    Appointment appt = new Appointment();
+    private BarChartModel barModel;
 
     @PostConstruct
     public void init() {
-
-        createLineModels();
-
+        createBarModels();
     }
 
-    public LineChartModel getLineModel1() {
-        return lineModel1;
+    public BarChartModel getBarModel() {
+        return barModel;
     }
 
-    public LineChartModel getLineApptModel() {
-        return lineApptModel;
+
+    private BarChartModel initBarModel() {
+        BarChartModel model = new BarChartModel();
+        String [] yearArr = {"2001", "2002","2003","2004","2005","2006","2007","2008",
+                "2009","2010","2011","2012","2013","2014","2015","2016","2017"};
+        ChartSeries avgAppt = new ChartSeries();
+        AppointmentDAO dao = null;
+        try {
+            dao = new AppointmentDAO();
+            Appointment a = new Appointment();
+            List<Appointment> apptList = dao.getAllAppointment();
+            int numAppt;
+            String temp = null;
+
+            for(int i = 0 ; i < yearArr.length; i++){
+                numAppt = 0;
+                for(int j = 0 ; j < apptList.size(); j++){
+                    a = apptList.get(j);
+                    temp = a.getApptDate().substring(6);
+                    System.out.print("TEMP:" + temp);
+                    if(temp.equals(yearArr[i])){
+                        numAppt = numAppt + 1;
+                    }
+                }
+
+                avgAppt.set(yearArr[i],numAppt);
+            }
+
+            model.addSeries(avgAppt);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return model;
     }
 
-    private void createLineModels() {
-        lineModel1 = initLinearModel();
-        lineModel1.setTitle("Linear Chart");
-        lineModel1.setLegendPosition("e");
-        Axis yAxis = lineModel1.getAxis(AxisType.Y);
-        yAxis.setLabel("Year");
+    private void createBarModels() {
+        createBarModel();
+    }
+
+    private void createBarModel() {
+        barModel = initBarModel();
+
+        barModel.setTitle("Bar Chart");
+        barModel.setLegendPosition("ne");
+
+        Axis xAxis = barModel.getAxis(AxisType.X);
+        xAxis.setLabel("Year");
+
+        Axis yAxis = barModel.getAxis(AxisType.Y);
+        yAxis.setLabel("No. of Appointment");
         yAxis.setMin(0);
-        yAxis.setMax(10);
-        Axis xAxis = lineModel1.getAxis(AxisType.X);
-        xAxis.setLabel("Number");
-        xAxis.setMin(0);
-        xAxis.setMax(10);
-
-
+        yAxis.setMax(40);
     }
-
-    private LineChartModel initLinearModel() {
-        LineChartModel model = new LineChartModel();
-
-        LineChartSeries series1 = new LineChartSeries();
-        series1.setLabel("Series 1");
-
-        series1.set(1, 2);
-        series1.set(2, 1);
-        series1.set(3, 3);
-        series1.set(4, 6);
-        series1.set(5, 8);
-
-        LineChartSeries series2 = new LineChartSeries();
-        series2.setLabel("Series 2");
-
-        series2.set(1, 6);
-        series2.set(2, 3);
-        series2.set(3, 2);
-        series2.set(4, 7);
-        series2.set(5, 9);
-
-        model.addSeries(series1);
-        model.addSeries(series2);
-
-        return model;
-    }
-
-    //x = year , y = no. of appt
-    private LineChartModel initLineApptModel() throws Exception {
-        LineChartModel model = new LineChartModel();
-        AppointmentDAO apptDAO = new AppointmentDAO();
-        List<Appointment> apptList = apptDAO.getAllAppointment();
-
-        LineChartSeries series1 = new LineChartSeries();
-        series1.setLabel("Average appointment per year");
-
-        series1.set(1, 2);
-        series1.set(2, 1);
-        series1.set(3, 3);
-        series1.set(4, 6);
-        series1.set(5, 8);
-
-        model.addSeries(series1);
-
-        return model;
-    }
-
-
 }
 

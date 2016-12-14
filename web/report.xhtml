@@ -10,6 +10,8 @@
 <h:head>
    <title>Health Center</title>
    <style type="text/css" title="layout" media="screen"> @import url("style.css"); </style>
+   <h:outputScript src="js/chart.js"/>
+
 </h:head>
 <h:body>
    <div id="wrapper">
@@ -29,14 +31,19 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Patient Care and Health Information</a></li>
             <li><a href="#">News and Events</a></li>
-            <li><a href="/index.report.xhtml">Reports</a></li>
+            <li><a href="#">Reports</a></li>
          </ul>
       </div>
       <div class="line">
          &nbsp;
       </div>
       <div id="content">
-         <p:chart type="line" model="#{chartView.lineModel1}" style="height:300px;"/>
+         <p>Select chart to generate : </p>
+         <select id="chartDropDown">
+            <option>No. of Appointments</option>
+         </select>
+
+         <p:chart type="bar" model="#{chartView.barModel}" style="height:300px;" extender="plotAxis"/>
       </div>
 
       <div class="cleaner">&nbsp;</div>

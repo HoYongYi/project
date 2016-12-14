@@ -45,7 +45,7 @@ public class AppointmentDAO {
                 appointment.setApptId(rs.getString("apptId"));
                 appointment.setPatientName(rs.getString("patientName"));
                 appointment.setPatientNric(rs.getString("patientNric"));
-                appointment.setDate(rs.getString("date"));
+                appointment.setApptDate(rs.getString("apptDate"));
                 appointment.setTime(rs.getString("time"));
                 appointment.setDescription(rs.getString("description"));
 
@@ -73,7 +73,7 @@ public class AppointmentDAO {
                 appointment.setApptId(rs.getString("apptId"));
                 appointment.setPatientName(rs.getString("patientName"));
                 appointment.setPatientNric(rs.getString("patientNric"));
-                appointment.setDate(rs.getString("date"));
+                appointment.setApptDate(rs.getString("apptDate"));
                 appointment.setTime(rs.getString("time"));
                 appointment.setDescription(rs.getString("description"));
                 list.add(appointment);
@@ -86,8 +86,6 @@ public class AppointmentDAO {
         return list;
 
     }
-
-
 
 }
 
