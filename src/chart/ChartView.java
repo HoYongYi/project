@@ -44,8 +44,7 @@ public class ChartView implements Serializable {
                 numAppt = 0;
                 for(int j = 0 ; j < apptList.size(); j++){
                     a = apptList.get(j);
-                    temp = a.getApptDate().substring(6);
-                    System.out.print("TEMP:" + temp);
+                    temp = a.getDate().substring(6);
                     if(temp.equals(yearArr[i])){
                         numAppt = numAppt + 1;
                     }

@@ -5,7 +5,7 @@ public class Appointment {
     private String apptId = null;
     private String patientName = null;
     private String patientNric = null;
-    private String apptDate = null;
+    private String date = null;
     private String time = null;
     private String description=null;
 
@@ -33,12 +33,12 @@ public class Appointment {
         this.patientNric = patientNric;
     }
 
-    public String getApptDate() {
-        return apptDate;
+    public String getDate() {
+        return date;
     }
 
-    public void setApptDate(String date) {
-        this.apptDate = date;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTime() {
