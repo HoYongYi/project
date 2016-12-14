@@ -31,7 +31,7 @@
             <li><a href="department.jsp">Department and Centers</a></li>
             <li><a href="product.jsp">Product and Services</a></li>
             <li><a href="contactus.jsp">Contact Us</a></li>
-            <li><a href="#">Appointment</a></li>
+            <li><a href="createAppointment.html">Appointment</a></li>
             <li><a href="#">Online Consultation</a></li>
             <li><a href="#">Check my bills</a></li>
         </ul>
@@ -74,5 +74,6 @@
         &copy; 2008 <a href="index.html">Designs.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://gendesigns.blogspot.com">Gen</a>
     </div>
 </div>
+    </div>
 </body>
 </html>

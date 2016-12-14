@@ -34,7 +34,7 @@
     <div id="menu">
         <ul>
             <li><a href="#">About</a></li>
-            <li><a href="#">Patient Care and Health Information</a></li>
+            <li><a href="createAppointment.html">Patient Care and Health Information</a></li>
             <li><a href="#">News and Events</a></li>
             <li><a href="#">Department and Centers</a></li>
             <li><a href="#">Product and Services</a></li>
