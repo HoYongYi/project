@@ -33,6 +33,7 @@
             <li><a href="#">Contact Us</a></li>
             <li><a href="#">Appointment</a></li>
             <li><a href="#">Online Consultation</a></li>
+            <li><a href="#">Check my bills</a></li>
         </ul>
     </div>
     <div class="line">
