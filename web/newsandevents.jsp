@@ -46,9 +46,7 @@
         <ul>
             <li><a href="about.jsp">About</a></li>
             <li><a href="patientcare.jsp">Patient Care and Health Information</a></li>
-            <li><a href="news.jsp"><b>News and Events</b></a></li>
-            <li><a href="department.jsp">Department and Centers</a></li>
-            <li><a href="product.jsp">Product and Services</a></li>
+            <li><a href="newsandevents.jsp"><b>News and Events</b></a></li>
             <li><a href="contactus.jsp">Contact Us</a></li>
         </ul>
     </div>

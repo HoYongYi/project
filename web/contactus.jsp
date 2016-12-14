@@ -46,16 +46,26 @@
         <ul>
             <li><a href="about.jsp">About</a></li>
             <li><a href="patientcare.jsp">Patient Care and Health Information</a></li>
-            <li><a href="news.jsp">News and Events</a></li>
-            <li><a href="department.jsp">Department and Centers</a></li>
-            <li><a href="product.jsp">Product and Services</a></li>
+            <li><a href="newsandevents.jsp">News and Events</a></li>
             <li><a href="contactus.jsp"><b>Contact Us</b></a></li>
         </ul>
     </div>
     <div class="line">
         &nbsp;
     </div>
+    <div id = "left">
+        <h1>Address: <h3>Woodlands Avenue 12 and Woodlands Drive 17,
+            opposite Christ Church Secondary School,
+            and within walking distance from the future Woodlands South MRT station</h3></h1>
+        <h1>MAIN LINE: <h3>6555-xxxx</h3></h1>
+        <h1>GENERAL FAX: <h3>6602-xxxx</h3></h1>
+        <h1>BILLING INQUIRIES: <h3>6602-xxxx</h3></h1>
     </div>
+    <div id="right">
+        <img src="images/map.png" alt="Map"/>
+    </div>
+
+
     <div class="cleaner">&nbsp;</div>
     <div class="line">
         &nbsp;</div>
