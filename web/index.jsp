@@ -30,6 +30,8 @@
 
       <input type="password" placeholder="Enter Password" name="password" required>
 
+      <button type="submit">Login</button>
+
       <span class="psw"><a href="#">Forgot password?</a></span>
     </div>
   </form>
