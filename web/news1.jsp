@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Hyy
   Date: 14/12/2016
-  Time: 2:20 PM
+  Time: 6:09 PM
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -51,22 +51,14 @@
             <li><a href="contactus.jsp">Contact Us</a></li>
         </ul>
     </div>
+    <div id = "left">
+        <h1>Aspiring teacher became a doc because of bullies</h1>
+
+
+    </div>
+
     <div class="line">
         &nbsp;
-    </div>
-    <div id = "left">
-        <h1>News</h1>
-        <div class="date">04/12/16&nbsp;&#45;</div>
-        <p><a href="news1.jsp">Aspiring teacher became a doc because of bullies</a></p>
-        <div class="date">01/12/16&nbsp;&#45;</div>
-        <p><a href="#">HIV no longer a death sentence but a period of hopeful living</a></p>
-
-        <h1>Events</h1>
-        <div class="date">07/01/17&nbsp;&#45;</div>
-        <p><a href="event1.jsp">Prevention and Correction of Contractures in Clients with Neurological Conditions </a></p>
-        <div class="date">09/01/17&nbsp;&#45;</div>
-        <p><a href="#">Occupational Therapists' Role in Returning to Drive Following Medical Conditions </a></p>
-==
     </div>
 </div>
 <div class="cleaner">&nbsp;</div>

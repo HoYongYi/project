@@ -44,6 +44,7 @@
     </form>
     <div id="menu">
         <ul>
+            <li><a href="index.jsp">Home</a></li>
             <li><a href="about.jsp">About</a></li>
             <li><a href="patientcare.jsp">Patient Care and Health Information</a></li>
             <li><a href="newsandevents.jsp">News and Events</a></li>

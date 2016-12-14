@@ -2,8 +2,10 @@
   Created by IntelliJ IDEA.
   User: Hyy
   Date: 14/12/2016
-  Time: 2:20 PM
+  Time: 6:09 PM
   To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -55,19 +57,32 @@
         &nbsp;
     </div>
     <div id = "left">
-        <h1>News</h1>
-        <div class="date">04/12/16&nbsp;&#45;</div>
-        <p><a href="news1.jsp">Aspiring teacher became a doc because of bullies</a></p>
-        <div class="date">01/12/16&nbsp;&#45;</div>
-        <p><a href="#">HIV no longer a death sentence but a period of hopeful living</a></p>
+    <h1>Prevention and Correction of Contractures in Clients with Neurological Conditions</h1>
+        <h2>SYNOPSIS</h2>
+        <p>Medical advances have allowed high life expectancy amongst those afflicted with neurological condition.
+            However, residual effects continue to prevail.
+            Current focus of neurological rehabilitation strategies is maximising plasticity within
+            the central nervous but what can often be forgotten is that the musculoskeletal system is
+            just as plastic and deterioration in the form of muscle wastage,
+            adaptive changes in length and stiffness (contractures or fixed flexion deformity) and joint deterioration can occur.</p>
+        <p>A 1 day of practical introductory course for Occupational Therapists in using thermoplastic,
+            soft splints and support. The main focus of the course is practical, to learn how to use
+            the thermoplastic material for making splints,
+            choosing suitable soft splints and techniques for providing support for the upper limb.</p>
 
-        <h1>Events</h1>
-        <div class="date">07/01/17&nbsp;&#45;</div>
-        <p><a href="event1.jsp">Prevention and Correction of Contractures in Clients with Neurological Conditions </a></p>
-        <div class="date">09/01/17&nbsp;&#45;</div>
-        <p><a href="#">Occupational Therapists' Role in Returning to Drive Following Medical Conditions </a></p>
-==
+        <h2>DATE</h2>
+        <p>7 January 2017</p>
+        <h2>TIME</h2>
+        <p>9am - 5pm</p>
+        <h2>SPEAKERS</h2>
+        <p>Ms Janis Yeo, Senior Occupational Therapist (OT, CHT, CLT),
+            Ms Lim Yi Hui, Senior Occupational Therapist (Bsc (Hons) OT, Certificate in Driving Assessment)</p>
+        <h2>Target Participants</h2>
+        <p>Occupational Therapists working in nursing homes or community settings</p>
+        <h2>FEES</h2>
+        <p>$300 ($270 for SAOT Members)</p>
     </div>
+
 </div>
 <div class="cleaner">&nbsp;</div>
 <div class="line">
