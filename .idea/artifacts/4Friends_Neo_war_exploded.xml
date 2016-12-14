@@ -10,8 +10,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="mysql:mysql-connector-java:5.1.40" />
           <element id="library" level="project" name="PrimeFaces-5.2" />
-          <element id="library" level="project" name="javax.faces-2.2.1" />
-          <element id="library" level="project" name="jstl-1.1.0" />
+          <element id="library" level="project" name="Mojarra-2.2.1" />
         </element>
       </element>
     </root>

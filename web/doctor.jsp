@@ -27,7 +27,7 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Patient Care and Health Information</a></li>
             <li><a href="#">News and Events</a></li>
-            <li><a href="#">Reports</a></li>
+            <li><a href="/index.xhtml">Reports</a></li>
         </ul>
     </div>
     <div class="line">
