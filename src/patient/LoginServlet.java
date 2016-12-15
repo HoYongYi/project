@@ -18,10 +18,9 @@ public class LoginServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String user = (String)session.getAttribute("loginID");
-        String pass = (String)session.getAttribute("password");
+        String user = request.getParameter("loginID");
+        String pass = request.getParameter("password");
 
-        //doesnt work LuL
         if (user =="123" && pass == "123") {
             getServletContext().getRequestDispatcher("/client.jsp").forward(request, response);
         }
