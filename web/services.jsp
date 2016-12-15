@@ -16,6 +16,7 @@
     <meta name="Language" content="English" />
     <title>Health Center</title>
     <style type="text/css" title="layout" media="screen"> @import url("style.css"); </style>
+    <style type="text/css" title="layout" media="screen"> @import url("table.css"); </style>
 </head>
 <body>
 <div id="wrapper">
@@ -46,14 +47,6 @@
             &nbsp;
         </div>
         <div id="content">
-            <div id="right">
-                <h1>Latest news</h1>
-                <div class="date">04/07/08&nbsp;&#45;</div>
-                <p>Aspiring teacher became a doctor because of bullies</p>
-                <div class="date">02/07/08&nbsp;&#45;</div>
-                <p>HIV no longer a death sentence but a period of hopeful living</p>
-                <p><img src="images/doctor.jpg" alt="Surgeons"/></p>
-            </div>
             <div id="left">
                 <h2 class="size_18 bold color_blue_3" style="margin: 20px 0 10px 0;">Daily Ward Charges for Inpatients</h2>
                 <table class="tend_list" border="0" cellspacing="0">
@@ -64,7 +57,7 @@
                     <tbody style="text-align: left;">
                     <tr class="even" style="text-align: left;">
                         <td style="text-align: left;">a) Acute Ward:</td>
-                        <td colspan="4" style="border-right: 1px solid rgb(236, 236, 236);">From</td>
+                        <td colspan="4" style="border-right: 1px solid rgb(236, 236, 236);"></td>
                     </tr>
                     <tr class="odd" style="text-align: center;">
                         <td style="text-align: left;">&nbsp; &nbsp;&nbsp;Singapore Citizen</td>
@@ -89,7 +82,7 @@
                     </tr>
                     <tr class="even" style="text-align: left;">
                         <td style="text-align: left;">b) High Dependency Ward</td>
-                        <td colspan="4" style="border-right: 1px solid rgb(236, 236, 236);">From</td>
+                        <td colspan="4" style="border-right: 1px solid rgb(236, 236, 236);"></td>
                     </tr>
                     <tr class="odd" style="text-align: center;">
                         <td style="text-align: left;">&nbsp; &nbsp;&nbsp;Singapore Citizen</td>
@@ -114,7 +107,7 @@
                     </tr>
                     <tr class="even" style="text-align: left;">
                         <td style="text-align: left;">c) ICU Ward</td>
-                        <td colspan="4" style="border-right: 1px solid rgb(236, 236, 236);">From</td>
+                        <td colspan="4" style="border-right: 1px solid rgb(236, 236, 236);"></td>
                     </tr>
                     <tr class="odd" style="text-align: center;">
                         <td style="text-align: left;">&nbsp; &nbsp;&nbsp;Singapore Citizen</td>
