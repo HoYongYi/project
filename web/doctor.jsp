@@ -28,7 +28,7 @@
             <li><a href="about.jsp">About</a></li>
             <li><a href="patientcare.jsp">Patient Care and Health Information</a></li>
             <li><a href="newsandevents.jsp">News and Events</a></li>
-            <li><a href="/index.xhtml">Reports</a></li>
+            <li><a href="/report.xhtml">Reports</a></li>
         </ul>
     </div>
     <div class="line">
