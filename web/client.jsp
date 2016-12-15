@@ -32,7 +32,7 @@
             <li><a href="contactus.jsp">Contact Us</a></li>
             <li><a href="services.jsp">Products and Services</a></li>
             <li><a href="createAppointment.html">Appointment</a></li>
-            <li><a href="video.html">Online Consultation</a></li>
+            <li><a href="#">Online Consultation</a></li>
             <li><a href="#">Check my bills</a></li>
         </ul>
     </div>
