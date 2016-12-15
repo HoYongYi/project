@@ -13,7 +13,7 @@ public class AppointmentDAO {
     public static String url = "jdbc:mysql://localhost/jedp";
     public static String dbdriver = "com.mysql.jdbc.Driver";
     public static String username = "root";
-    public static String password = "111111";
+    public static String password = "mysql";
 
     public AppointmentDAO() throws Exception{
 
