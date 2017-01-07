@@ -19,7 +19,7 @@
       <p>DELIVERING ONLY PREMIUM SERVICES</p>
     </div>
   </div>
-  <form action="action_page.php">
+  <form action="/login">
     <div class="imgcontainer">
     </div>
 
