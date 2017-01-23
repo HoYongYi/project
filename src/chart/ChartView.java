@@ -16,19 +16,66 @@ import org.primefaces.model.chart.*;
 public class ChartView implements Serializable {
 
     private BarChartModel barModel;
+    private LineChartModel lineModel;
 
     @PostConstruct
     public void init() {
         createBarModels();
+        createLineModels();
     }
 
     public BarChartModel getBarModel() {
         return barModel;
     }
-
+    public LineChartModel getLineModel() {
+        return lineModel;
+    }
 
     private BarChartModel initBarModel() {
         BarChartModel model = new BarChartModel();
+        model.addSeries(numApptYear());
+        return model;
+    }
+
+    private void createBarModels() {
+        createBarModel();
+    }
+
+    private void createBarModel() {
+        barModel = initBarModel();
+
+        barModel.setTitle("Bar Chart");
+        barModel.setLegendPosition("ne");
+
+        Axis xAxis = barModel.getAxis(AxisType.X);
+        xAxis.setLabel("Year");
+
+        Axis yAxis = barModel.getAxis(AxisType.Y);
+        yAxis.setLabel("No. of Appointment");
+        yAxis.setMin(0);
+        yAxis.setMax(40);
+    }
+
+    private void createLineModels() {
+
+        lineModel = initLineModel();
+        lineModel.setTitle("Line Chart");
+        lineModel.setLegendPosition("e");
+        lineModel.setShowPointLabels(true);
+        Axis yAxis = lineModel.getAxis(AxisType.Y);
+        lineModel.getAxes().put(AxisType.X, new CategoryAxis("No. of Appointment"));
+        yAxis.setLabel("Year");
+        yAxis.setMin(0);
+        yAxis.setMax(200);
+    }
+
+    private LineChartModel initLineModel() {
+        LineChartModel model = new LineChartModel();
+        model.addSeries(numApptYear());
+        return model;
+    }
+
+    private ChartSeries numApptYear(){
         String [] yearArr = {"2001", "2002","2003","2004","2005","2006","2007","2008",
                 "2009","2010","2011","2012","2013","2014","2015","2016","2017"};
         ChartSeries avgAppt = new ChartSeries();
@@ -54,31 +101,12 @@ public class ChartView implements Serializable {
                 avgAppt.set(yearArr[i],numAppt);
             }
 
-            model.addSeries(avgAppt);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return model;
+        return avgAppt;
     }
 
-    private void createBarModels() {
-        createBarModel();
-    }
-
-    private void createBarModel() {
-        barModel = initBarModel();
-
-        barModel.setTitle("Bar Chart");
-        barModel.setLegendPosition("ne");
-
-        Axis xAxis = barModel.getAxis(AxisType.X);
-        xAxis.setLabel("Year");
-
-        Axis yAxis = barModel.getAxis(AxisType.Y);
-        yAxis.setLabel("No. of Appointment");
-        yAxis.setMin(0);
-        yAxis.setMax(40);
-    }
 }
 

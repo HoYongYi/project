@@ -3,7 +3,7 @@
  */
 
 
-function plotAxis(){
+function plotBarAxis(){
 
     this.cfg.axes = {
 
