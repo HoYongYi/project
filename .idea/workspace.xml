@@ -1114,7 +1114,7 @@
       <workItem from="1481776539422" duration="75000" />
       <workItem from="1481797730633" duration="75000" />
       <workItem from="1485174343482" duration="9366000" />
-      <workItem from="1485183848706" duration="48000" />
+      <workItem from="1485183848706" duration="59000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/HoYongYi/project&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/appointment/AppointmentDAO.java&#10;#&#9;web/doctor.jsp&#10;">
       <created>1481725979323</created>
@@ -1137,11 +1137,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481773329391</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="edit">
+      <created>1485183900873</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1485183900873</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19866000" />
+    <option name="totallyTimeSpent" value="19877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
