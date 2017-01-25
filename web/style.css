@@ -10,9 +10,9 @@ padding: 0;
 
 body
 {
-background:#fff;
+	height: 32px;
+	background:#fff;
 color: #fff;
-font: .8em normal small "Trebuchet MS",Tahoma, verdana, arial, helvetica, sans-serif;line-height: 1.6em;
 }
 #wrapper
 {
