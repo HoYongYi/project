@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Dominic
   Date: 14/12/2016
-  Time: 11:19 PM
+  Time: 8:52 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,6 +12,7 @@
 <head>
     <title>Title</title>
 </head>
+<style type="text/css" title="layout" media="screen"> @import url("appointmentstyle.css"); </style>
 <%
     String name=request.getParameter("name");
     String nric=request.getParameter("nric");
@@ -33,12 +34,19 @@
     }
 %>
 <body>
-Hi <br>
-<%= name%><br>
-<%= nric%><br>
-<%= time%><br>
-<%= date%><br>
-<%= description%>
-<br><a href="createAppointment.html">Back to Home</a>
+<form class="form-style-9",>
+    <ul>
+        <li>
+            <h2>Hi</h2> <h1><%=name%>!</h1>
+        </li>
+        <li>
+            <h2>you have made an appointment on </h2><h1> <%=date%></h1> <h2> at</h2><h1><%=time%></h1>
+        </li>
+        <li>
+            <h2>For </h2><h1><%=description%></h1>
+        </li>
+        <a href="client.jsp" class="h3">Okay</a>
+    </ul>
+</form>
 </body>
 </html>

@@ -32,6 +32,6 @@ public class ServletAppointmentDetails extends HttpServlet {
         request.setAttribute("time", time);
         request.setAttribute("date", date);
         request.setAttribute("description", description);
-        getServletContext().getRequestDispatcher("/appointmentSuccessful.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/appointmentSuccess.jsp").forward(request, response);
     }
 }
