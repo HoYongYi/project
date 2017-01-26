@@ -1,8 +1,5 @@
 package appointment;
 
-import appointment.Appointment;
-import appointment.AppointmentDAO;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
