@@ -37,13 +37,13 @@
 <form class="form-style-9",>
     <ul>
         <li>
-            <h2>Hi</h2> <h1><%=name%>!</h1>
+            <h2>Hi</h2> <strong><h1><%=name%>!</h1></strong>
         </li>
         <li>
-            <h2>you have made an appointment on </h2><h1> <%=date%></h1> <h2> at</h2><h1><%=time%></h1>
+            <h2>you have made an appointment on </h2><strong><h1> <%=date%></h1></strong> <h2> at</h2><strong><h1><%=time%></h1></strong>
         </li>
         <li>
-            <h2>For </h2><h1><%=description%></h1>
+            <h2>For </h2><strong><h1><%=description%></h1></strong>
         </li>
         <a href="client.jsp" class="h3">Okay</a>
     </ul>
