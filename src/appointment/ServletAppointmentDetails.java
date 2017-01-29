@@ -1,8 +1,5 @@
 package appointment;
 
-import appointment.Appointment;
-import appointment.AppointmentDAO;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +29,6 @@ public class ServletAppointmentDetails extends HttpServlet {
         request.setAttribute("time", time);
         request.setAttribute("date", date);
         request.setAttribute("description", description);
-        getServletContext().getRequestDispatcher("/appointmentSuccessful.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/appointmentSuccess.jsp").forward(request, response);
     }
 }
