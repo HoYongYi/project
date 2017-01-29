@@ -86,7 +86,7 @@ public class AppointmentDAO {
         return list;
 
     }
-    public boolean createAppointment(String apptId,String patientName, String patientNric, String date, String time, String description) throws Exception {
+    public boolean createAppointment(String patientName, String patientNric, String date, String time, String description) throws Exception {
         boolean status = false;
         System.out.println(status);
         String sqlQuery = null;
