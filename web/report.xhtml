@@ -43,7 +43,21 @@
             <option>No. of Appointments</option>
          </select>
          <p:chart type="bar" model="#{chartView.barModel}" style="height:300px;" extender="plotBarAxis"/>
+
+         <p:dataTable var="data" value="#{tableBean.dataValues}">
+            <p:columns value = "#{tableBean.columns}" var = "column" columnIndexVar="colIndex">
+               <f:facet name="header">
+                  #{column.header}
+               </f:facet>
+
+               #{data[column.property]}
+
+            </p:columns>
+
+         </p:dataTable>
+         <!--
          <p:chart type="line" model="#{chartView.lineModel}" style="height:300px;"/>
+         -->
 
       </div>
 
