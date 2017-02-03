@@ -26,15 +26,15 @@ public class AppointmentDAO {
 
     }
 
-    public Appointment getAppointment(String appId) {
-        String sql = "select * from appointment WHERE  appId=?";
+    public Appointment getAppointment(String apptId) {
+        String sql = "select * from appointment WHERE  apptId=?";
         Appointment appointment = null;
 
         try {
 
             getConnection();
             PreparedStatement pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, appId);
+            pstmt.setString(1, apptId);
             ResultSet rs = pstmt.executeQuery();
             if (rs != null) {
                 rs.next();
@@ -96,7 +96,7 @@ public class AppointmentDAO {
         db.getConnection();
 
         //get the last client ID and increase by 1
-        sqlQuery = "SELECT MAX(appId) FROM appointment;";
+        sqlQuery = "SELECT MAX(apptId) FROM appointment;";
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
             rs = pstmt.executeQuery();
@@ -108,7 +108,7 @@ public class AppointmentDAO {
         }
 
         //create an SQL statement
-        sqlQuery = "INSERT INTO appointment(appId, patientName, patientNric, date, time, description)" + "VALUES(?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO appointment(apptId, patientName, patientNric, date, time, description)" + "VALUES(?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
