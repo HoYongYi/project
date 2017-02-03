@@ -1,19 +1,23 @@
-package appointment;
+package volunteer;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import volunteer.Volunteer;
 
-public class AppointmentDAO {
+/**
+ * Created by Hyy on 3/2/2017.
+ */
+public class VolunteerDAO {
 
     Connection con;
 
-    public static String url = "jdbc:mysql://localhost/jedp?verifyServerCertificate=false&useSSL=true";
+    public static String url = "jdbc:mysql://localhost/jedp";
     public static String dbdriver = "com.mysql.jdbc.Driver";
     public static String username = "root";
     public static String password = "mysql";
 
-    public AppointmentDAO() throws Exception{
+    public VolunteerDAO() throws Exception{
 
         Class.forName(dbdriver);
         con = DriverManager.getConnection(url, username, password);
@@ -26,25 +30,26 @@ public class AppointmentDAO {
 
     }
 
-    public Appointment getAppointment(String apptId) {
-        String sql = "select * from appointment WHERE  apptId=?";
-        Appointment appointment = null;
+    public Volunteer getVolunteer(String volunteerID) {
+
+        String sql = "select * from volunteer where volunteerID = ?";
+        Volunteer volunteer = null;
 
         try {
 
             getConnection();
             PreparedStatement pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, apptId);
+            pstmt.setString(1, volunteerID);
             ResultSet rs = pstmt.executeQuery();
             if (rs != null) {
                 rs.next();
-                appointment = new Appointment();
-                appointment.setApptId(rs.getString("apptId"));
-                appointment.setPatientName(rs.getString("patientName"));
-                appointment.setPatientNric(rs.getString("patientNric"));
-                appointment.setDate(rs.getString("date"));
-                appointment.setTime(rs.getString("time"));
-                appointment.setDescription(rs.getString("description"));
+                volunteer = new Volunteer();
+                volunteer.setVolunteerID(rs.getString("volunteerID"));
+                volunteer.setVolunteerName(rs.getString("volunteerName"));
+                volunteer.setVolunteerNRIC(rs.getString("volunteerNRIC"));
+                volunteer.setVolunteerHPNum(rs.getString("volunteerHPNum"));
+                volunteer.setVolunteerReason(rs.getString("volunteerReason"));
+                volunteer.setVolunteerEmail(rs.getString("volunteerEmail"));
 
             }
 
@@ -53,27 +58,27 @@ public class AppointmentDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return appointment;
+        return volunteer;
 
     }
 
-    public List<Appointment> getAllAppointment(){
-        String sql = "select * from appointment";
-        ArrayList<Appointment> list = new ArrayList<Appointment>();
+    public List<Volunteer> getAllAppointment(){
+        String sql = "select * from volunteer";
+        ArrayList<Volunteer> list = new ArrayList<Volunteer>();
         try{
             getConnection();
             PreparedStatement pstmt = con.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             while(rs != null && rs.next()){
 
-                Appointment appointment = new Appointment() ;
-                appointment.setApptId(rs.getString("apptId"));
-                appointment.setPatientName(rs.getString("patientName"));
-                appointment.setPatientNric(rs.getString("patientNric"));
-                appointment.setDate(rs.getString("date"));
-                appointment.setTime(rs.getString("time"));
-                appointment.setDescription(rs.getString("description"));
-                list.add(appointment);
+                Volunteer volunteer = new Volunteer() ;
+                volunteer.setVolunteerID(rs.getString("volunteerID"));
+                volunteer.setVolunteerName(rs.getString("volunteerName"));
+                volunteer.setVolunteerNRIC(rs.getString("volunteerNRIC"));
+                volunteer.setVolunteerHPNum(rs.getString("volunteerHPNum"));
+                volunteer.setVolunteerReason(rs.getString("volunteerReason"));
+                volunteer.setVolunteerEmail(rs.getString("volunteerEmail"));
+                list.add(volunteer);
 
             }
             pstmt.close();
@@ -83,20 +88,22 @@ public class AppointmentDAO {
         return list;
 
     }
-    public boolean createAppointment(String patientName, String patientNric, String date, String time, String description) throws Exception {
+    public boolean createVolunteer(String Name,
+                                   String NRIC, String HPNum,
+                                   String Reason , String Email) throws Exception {
         boolean status = false;
         System.out.println(status);
         String sqlQuery = null;
         ResultSet rs = null;
-        int id =1;
+        int id = 0;
         boolean success = false;
         PreparedStatement pstmt;
 
-        AppointmentDAO db = new AppointmentDAO();
+        VolunteerDAO db = new VolunteerDAO();
         db.getConnection();
 
         //get the last client ID and increase by 1
-        sqlQuery = "SELECT MAX(apptId) FROM appointment;";
+        sqlQuery = "SELECT MAX(id) FROM volunteer";
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
             rs = pstmt.executeQuery();
@@ -108,16 +115,17 @@ public class AppointmentDAO {
         }
 
         //create an SQL statement
-        sqlQuery = "INSERT INTO appointment(apptId, patientName, patientNric, date, time, description)" + "VALUES(?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO volunteer(id, Name, NRIC," +
+                " HPNum, Reason, Email)" + "VALUES(?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
             pstmt.setInt(1, id);
-            pstmt.setString(2,patientName);
-            pstmt.setString(3, patientNric);
-            pstmt.setString(4, date);
-            pstmt.setString(5, time);
-            pstmt.setString(6, description);
+            pstmt.setString(2,Name);
+            pstmt.setString(3, NRIC);
+            pstmt.setString(4, HPNum);
+            pstmt.setString(5, Reason);
+            pstmt.setString(6, Email);
 
             if (pstmt.executeUpdate() == 1)
                 success = true;
@@ -151,14 +159,4 @@ public class AppointmentDAO {
             e.printStackTrace();
         }
     }
-
 }
-
-
-
-
-
-
-
-
-

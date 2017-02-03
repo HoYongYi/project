@@ -30,7 +30,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
+                        <li><a href="/video/video.jsp">Online Consultation</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
@@ -41,8 +41,15 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="../navbar/">Name</a></li>
-                <li><a href="../navbar-static-top/">Log off</a></li>
+                <li><a>Welcome,
+                    <%if(null!=request.getAttribute("name"))
+                {
+                    out.println(request.getAttribute("name"));
+                }else{
+                    out.println("Guest");
+                }
+                %></a></li>
+                <li><a href="/login/login.html">Log off</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -95,7 +102,7 @@
                     <div id="pubnub-relative">
                         <div id="video-thumbnail"></div>
                         <div id="pubnub-logo">
-                            <div id="pubnub-logo-img"></div>
+                            <!--<div id="pubnub-logo-img"></div>-->
                         </div>
                     </div>
                 </div>

@@ -31,7 +31,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="about.jsp">About</a></li>
-                    <li><a href="event1.jsp">Event</a></li>
+                    <li><a href="newsandevents.jsp">News and Events</a></li>
+                    <li><a href="contactus.jsp">Contact us</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -46,12 +47,15 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <form action="/login", method = "post" >
-                        <input type = "text" name = "username" placeholder="Username"/>
-                        <input type = "password" name = "password" placeholder="Password"/>
-                        <input type = "submit" value = "Login"/>
-                    </form>
-                </ul>
+                    <li><a>Welcome,
+                        <%if(null!=request.getAttribute("name"))
+                        {
+                            out.println(request.getAttribute("name"));
+                        }else{
+                            out.println("Guest");
+                        }
+                        %></a></li>
+                    <li><a href="/login/login.html">Log off</a></li>
             </div><!--/.nav-collapse -->
         </div>
     </nav>
@@ -85,7 +89,7 @@
             <div class="col">
                 <div class="fcol">
                     <a href = "https://www.facebook.com/" ><img src="images/FacebookButton.jpg" alt="Facebook" /> </a>
-                    <a href = "volunteer.jsp>"<img src="images/twitter.jpg" alt="Twitter"/></a>
+                    <a href = "https://www.twitter.com/"><img src="images/twitter.jpg" alt="Twitter"/></a>
                 </div>
 
             </div>
