@@ -115,8 +115,7 @@ public class VolunteerDAO {
         }
 
         //create an SQL statement
-        sqlQuery = "INSERT INTO volunteer(id, Name, NRIC," +
-                " HPNum, Reason, Email)" + "VALUES(?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO volunteer(id, Name, NRIC, HPNum, Reason, Email)" + "VALUES(?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
