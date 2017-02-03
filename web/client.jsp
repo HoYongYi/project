@@ -43,12 +43,15 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form action="/login", method = "post" >
-                    <input type = "text" name = "username" placeholder="Username"/>
-                    <input type = "password" name = "password" placeholder="Password"/>
-                    <input type = "submit" value = "Login"/>
-                </form>
-            </ul>
+                <li><a>Welcome,
+                    <%if(null!=request.getAttribute("name"))
+                    {
+                        out.println(request.getAttribute("name"));
+                    }else{
+                        out.println("Guest");
+                    }
+                    %></a></li>
+                <li><a href="/login/login.html">Log off</a></li>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
@@ -75,8 +78,8 @@
             <h1>Stay connected</h1>
             <div class="col">
                 <div class="fcol">
-                    <img src="images/facebook.png" alt="Facebook"/>
-                    <img src="images/twitter.png" alt="Twitter"/>
+                    <img src="images/FacebookButton.jpg" alt="Facebook"/>
+                    <img src="images/twitter.jpg" alt="Twitter"/>
                 </div>
 
             </div>
@@ -90,5 +93,10 @@
         &copy; 2008 <a href="index.html">Designs.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://gendesigns.blogspot.com">Gen</a>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
+<script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
