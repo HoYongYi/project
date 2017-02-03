@@ -32,13 +32,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="index.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="event1.jsp">Event</a></li>
+                <li><a href="newsandevents.jsp">News and Event</a></li>
+                <li class ="active"><a href="#">Contact us</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
+                        <li><a href="services.jsp">Services</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
