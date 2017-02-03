@@ -9,7 +9,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Appointment s = (Appointment) request.getAttribute("Appointment");
-    Appointment h= (Appointment)
 %>
 <html>
 <head>
