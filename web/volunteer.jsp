@@ -1,21 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: Hyy
-  Date: 14/12/2016
-  Time: 2:18 PM
+  Date: 2/2/2017
+  Time: 9:21 PM
   To change this template use File | Settings | File Templates.
 --%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-    <meta name="Description" content="A free open source web design by Gen.  Free for anyone to use as long as credits are intact. " />
-    <meta name="Keywords" content="open source web design,http://gendesigns.blogspot.com" />
-    <meta name="Copyright" content="Gen" />
-    <meta name="Designed By" content="http://gendesigns.blogspot.com" />
-    <meta name="Language" content="English" />
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <style type="text/css" title="layout" media="screen"> @import url("style.css"); </style>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -49,7 +42,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form action="/login", method = "post" >
+                <form action="/login" , method = "post" >
                     <input type = "text" name = "username" placeholder="Username"/>
                     <input type = "password" name = "password" placeholder="Password"/>
                     <input type = "submit" value = "Login"/>
@@ -58,16 +51,11 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-    <div class="line">
-        &nbsp;
-    </div>
-</div>
-<div class="cleaner">&nbsp;</div>
-<div class="line">
-    &nbsp;</div>
-<div id="footer">
-    &copy; 2008 <a href="index.html">Designs.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://gendesigns.blogspot.com">Gen</a>
-</div>
-</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
+<script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+<!-- ==================================================================== -->
 </body>
 </html>

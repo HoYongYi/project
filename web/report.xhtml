@@ -44,20 +44,22 @@
          </select>
          <p:chart type="bar" model="#{chartView.barModel}" style="height:300px;" extender="plotBarAxis"/>
 
-         <p:dataTable var="data" value="#{tableBean.dataValues}">
-            <p:columns value = "#{tableBean.columns}" var = "column" columnIndexVar="colIndex">
-               <f:facet name="header">
-                  #{column.header}
+         <h:form>
+            <p:dataTable id="dataTable" var="data" value="#{tableBean.dataValues}" selectionMode="single" selection="#{tableBean.selectedRow}" rowKey="#{data.period}">
+
+               <p:columns value = "#{tableBean.columns}" var = "column" columnIndexVar="colIndex">
+                  <f:facet name="header">
+                     #{column.header}
+                  </f:facet>
+                  #{data[column.property]}
+               </p:columns>
+
+               <f:facet name="footer">
+                  <p:commandButton value="View" actionListener="#{tableBean.changeData()}" update="dataTable"/>
                </f:facet>
 
-               #{data[column.property]}
-
-            </p:columns>
-
-         </p:dataTable>
-         <!--
-         <p:chart type="line" model="#{chartView.lineModel}" style="height:300px;"/>
-         -->
+            </p:dataTable>
+         </h:form>
 
       </div>
 

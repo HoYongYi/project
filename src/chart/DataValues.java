@@ -4,22 +4,22 @@ package chart;
  * Created by acer on 30/1/2017.
  */
 public class DataValues {
-    private String year;
+    private String period;
     private int amount;
     private String percentage;
 
-    public DataValues(String year, int amount, String percentage){
-        this.year = year;
+    public DataValues(String period, int amount, String percentage){
+        this.period = period;
         this.amount = amount;
         this.percentage = percentage;
     }
 
-    public String getYear() {
-        return year;
+    public String getPeriod() {
+        return period;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setPeriod(String period) {
+        this.period = period;
     }
 
     public int getAmount() {
