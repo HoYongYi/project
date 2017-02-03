@@ -31,7 +31,7 @@
             <li><a href="newsandevents.jsp">News and Events</a></li>
             <li><a href="contactus.jsp">Contact Us</a></li>
             <li><a href="services.jsp">Products and Services</a></li>
-            <li><a href="createAppointment.jsp">Appointment</a></li>
+            <li><a href="appointments.jsp">Appointment</a></li>
             <li><a href="cwy/video.html">Online Consultation</a></li>
             <li><a href="#">Check my bills</a></li>
         </ul>
