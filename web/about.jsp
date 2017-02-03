@@ -34,7 +34,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.jsp">Home</a></li>
                 <li class ="active"><a href="#">About</a></li>
-                <li><a href="newsandevents.jsp">Event</a></li>
+                <li><a href="newsandevents.jsp">News and Event</a></li>
                 <li><a href="contactus.jsp">Contact us</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>

@@ -34,7 +34,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li class = "active"><a href="#">Event</a></li>
+                <li class = "active"><a href="#">News and Event</a></li>
                 <li><a href="contactus.jsp">Contact us</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
@@ -84,5 +84,10 @@
     &copy; 2008 <a href="index.html">Designs.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://gendesigns.blogspot.com">Gen</a>
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
+<script src="../bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

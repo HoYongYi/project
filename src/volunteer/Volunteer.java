@@ -5,13 +5,26 @@ package volunteer;
  */
 public class Volunteer {
 
-    private String volunteerID = null;
-    private String volunteerName = null;
-    private String volunteerNRIC = null;
-    private String volunteerHPNum = null;
-    private String volunteerReason = null;
-    private String volunteerEmail = null;
+    private String volunteerID;
+    private String volunteerName;
+    private String volunteerNRIC;
+    private String volunteerHPNum;
+    private String volunteerReason;
+    private String volunteerEmail;
 
+    public Volunteer(){}
+
+    public Volunteer (String volunteerID , String volunteerName , String volunteerNRIC ,
+                      String volunteerHPNum , String volunteerReason , String volunteerEmail)
+    {
+        super();
+        this.volunteerID = volunteerID;
+        this.volunteerName = volunteerName;
+        this.volunteerNRIC = volunteerNRIC;
+        this.volunteerHPNum = volunteerHPNum;
+        this.volunteerReason = volunteerReason;
+        this.volunteerEmail = volunteerEmail;
+    }
     public String getVolunteerID() {return volunteerID;}
 
     public void setVolunteerID(String volunteerID) {this.volunteerID = volunteerID;}

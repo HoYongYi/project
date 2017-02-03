@@ -88,9 +88,9 @@ public class VolunteerDAO {
         return list;
 
     }
-    public boolean createVolunteer(String volunteerName,
-                                   String volunteerNRIC, String volunteerHPNum,
-                                   String VolunteerReason , String VolunteerEmail) throws Exception {
+    public boolean createVolunteer(String Name,
+                                   String NRIC, String HPNum,
+                                   String Reason , String Email) throws Exception {
         boolean status = false;
         System.out.println(status);
         String sqlQuery = null;
@@ -115,17 +115,17 @@ public class VolunteerDAO {
         }
 
         //create an SQL statement
-        sqlQuery = "INSERT INTO volunteer(id, volunteerName, volunteerNRIC," +
-                " volunteerHPNum, VolunteerReason, VolunteerEmail)" + "VALUES(?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO volunteer(id, Name, NRIC," +
+                " HPNum, Reason, Email)" + "VALUES(?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
             pstmt.setInt(1, id);
-            pstmt.setString(2,volunteerName);
-            pstmt.setString(3, volunteerNRIC);
-            pstmt.setString(4, volunteerHPNum);
-            pstmt.setString(5, VolunteerReason);
-            pstmt.setString(6, VolunteerEmail);
+            pstmt.setString(2,Name);
+            pstmt.setString(3, NRIC);
+            pstmt.setString(4, HPNum);
+            pstmt.setString(5, Reason);
+            pstmt.setString(6, Email);
 
             if (pstmt.executeUpdate() == 1)
                 success = true;
