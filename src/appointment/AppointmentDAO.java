@@ -10,7 +10,7 @@ public class AppointmentDAO {
 
     Connection con;
 
-    public static String url = "jdbc:mysql://localhost/jedp";
+    public static String url = "jdbc:mysql://localhost/jedp?verifyServerCertificate=false&useSSL=true";
     public static String dbdriver = "com.mysql.jdbc.Driver";
     public static String username = "root";
     public static String password = "mysql";
