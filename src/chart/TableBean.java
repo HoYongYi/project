@@ -23,9 +23,11 @@ public class TableBean implements Serializable {
     private List<ColumnModel> columns;
     private List<DataValues> dataValues;
     List<Appointment> apptList;
-    List<Appointment> selectYearAppt;
+    List<Appointment> selectYearAppt = new ArrayList<Appointment>();
     private String colName;
     private DataValues selectedRow;
+    private String buttonValue;
+    private int navValue;
 
     public TableBean() {
         createDynamicColumns();
@@ -58,6 +60,8 @@ public class TableBean implements Serializable {
                 DataValues dv = new DataValues(yearArr[i], numAppt, calPercent(numAppt, apptList.size()));
                 dataValues.add(dv);
             }
+            navValue = 0;
+            buttonValue = "View";
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,44 +79,50 @@ public class TableBean implements Serializable {
 
 
     private String calPercent(int value , int total){
-        DecimalFormat df = new DecimalFormat("#0.00");
+        DecimalFormat df = new DecimalFormat("#0.0#");
         double percent = (double)value / total;
-        return df.format(percent);
+        return df.format(percent*100);
     }
 
 
     public void changeData(){
-        String year = selectedRow.getPeriod();
-        dataValues.clear();
-        String apptYear;
-        int numAppt;
-        selectYearAppt.clear();
-        String[] monthArr = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
-        Appointment appt;
+        if(navValue == 0){
+            String year = selectedRow.getPeriod();
+            dataValues.clear();
+            String apptYear;
+            int numAppt;
+            String[] monthArr = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"};
+            String[] month={"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"};
+            Appointment appt;
 
-        //get all appt of that year
-        for(int i = 0 ; i < apptList.size(); i++){
-            appt = apptList.get(i);
-            apptYear= appt.getDate().substring(6);
-            if(apptYear.equals(year)){
-                selectYearAppt.add(appt);
-            }
-        }
-        //count appt in diff months
-        for(int x = 0 ; x < monthArr.length; x++){
-            numAppt = 0;
-            for(int i = 0 ; i < selectYearAppt.size(); i++){
-                appt = selectYearAppt.get(i);
-                if(appt.getDate().substring(3,2).equals(monthArr[x])){
-                    numAppt = numAppt+1;
+            //get all appt of that year
+            for(int i = 0 ; i < apptList.size(); i++){
+                appt = apptList.get(i);
+                apptYear= appt.getDate().substring(6);
+                if(apptYear.equals(year)){
+                    selectYearAppt.add(appt);
                 }
-
             }
-            DataValues dv = new DataValues(monthArr[x],numAppt,calPercent(numAppt, apptList.size()));
-            dataValues.add(dv);
+            //count appt in diff months
+            for(int x = 0 ; x < monthArr.length; x++){
+                numAppt = 0;
+                for(int i = 0 ; i < selectYearAppt.size(); i++){
+                    appt = selectYearAppt.get(i);
+                    if(appt.getDate().substring(3,5).equals(monthArr[x])){
+                        numAppt = numAppt+1;
+                    }
+
+                }
+                DataValues dv = new DataValues(month[x],numAppt,calPercent(numAppt, apptList.size()));
+                dataValues.add(dv);
+            }
+            navValue = 1;
+            buttonValue = "Back";
         }
 
-        System.out.println("===================changed======================");
+        else{
+            addTableView();
+        }
     }
 
 
@@ -143,6 +153,14 @@ public class TableBean implements Serializable {
 
     public void setSelectedRow(DataValues selectedRow) {
         this.selectedRow = selectedRow;
+    }
+
+    public String getButtonValue() {
+        return buttonValue;
+    }
+
+    public void setButtonValue(String buttonValue) {
+        this.buttonValue = buttonValue;
     }
 
     public static class ColumnModel implements Serializable{
