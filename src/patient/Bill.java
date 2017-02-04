@@ -4,33 +4,42 @@ package patient;
  * Created by Mok on 12/13/2016.
  */
 public class Bill {
-    private String billNo;
+    private int billNo;
     private String pNric;
     private String pName;
     private String services;
     private String amount;
 
-    public String getBillNo() {
+    public Bill(){
+    }
+    public Bill(int billNo,String pNric, String pName, String services,String amount){
+        this.billNo=billNo;
+        this.pNric=pNric;
+        this.pName=pName;
+        this.services=services;
+        this.amount=amount;
+    }
+    public int getBillNo() {
         return billNo;
     }
 
-    public void setBillNo(String billNo) {
+    public void setBillNo(int billNo) {
         this.billNo = billNo;
     }
 
-    public String getpNric() {
+    public String getPNric() {
         return pNric;
     }
 
-    public void setpNric(String pNric) {
+    public void setPNric(String pNric) {
         this.pNric = pNric;
     }
 
-    public String getpName() {
+    public String getPName() {
         return pName;
     }
 
-    public void setpName(String pName) {
+    public void setPName(String pName) {
         this.pName = pName;
     }
 
