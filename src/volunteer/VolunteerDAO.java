@@ -62,7 +62,7 @@ public class VolunteerDAO {
 
     }
 
-    public List<Volunteer> getAllAppointment(){
+    public List<Volunteer> getAllVolunteer(){
         String sql = "select * from volunteer";
         ArrayList<Volunteer> list = new ArrayList<Volunteer>();
         try{
@@ -72,12 +72,12 @@ public class VolunteerDAO {
             while(rs != null && rs.next()){
 
                 Volunteer volunteer = new Volunteer() ;
-                volunteer.setVolunteerID(rs.getString("volunteerID"));
-                volunteer.setVolunteerName(rs.getString("volunteerName"));
-                volunteer.setVolunteerNRIC(rs.getString("volunteerNRIC"));
-                volunteer.setVolunteerHPNum(rs.getString("volunteerHPNum"));
-                volunteer.setVolunteerReason(rs.getString("volunteerReason"));
-                volunteer.setVolunteerEmail(rs.getString("volunteerEmail"));
+                volunteer.setVolunteerID(rs.getString("id"));
+                volunteer.setVolunteerName(rs.getString("Name"));
+                volunteer.setVolunteerNRIC(rs.getString("NRIC"));
+                volunteer.setVolunteerHPNum(rs.getString("HPNum"));
+                volunteer.setVolunteerReason(rs.getString("Reason"));
+                volunteer.setVolunteerEmail(rs.getString("Email"));
                 list.add(volunteer);
 
             }
@@ -115,8 +115,7 @@ public class VolunteerDAO {
         }
 
         //create an SQL statement
-        sqlQuery = "INSERT INTO volunteer(id, Name, NRIC," +
-                " HPNum, Reason, Email)" + "VALUES(?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO volunteer(id, Name, NRIC, HPNum, Reason, Email)" + "VALUES(?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
