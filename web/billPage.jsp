@@ -1,4 +1,6 @@
-<%--
+<%@ page import="patient.BillDAO" %>
+<%@ page import="patient.Bill" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Mok
   Date: 12/14/2016
@@ -7,6 +9,10 @@
 --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<%
+    BillDAO dao=new BillDAO();
+    List<Bill> list=dao.getAllBill();
+%>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
     <meta name="Description" content="A free open source web design by Gen.  Free for anyone to use as long as credits are intact. " />
@@ -64,7 +70,19 @@
 </div>
 <div id="content">
     <div id="left">
-        <h2 class="size_18 bold color_blue_3" style="margin: 20px 0 10px 0;">Daily Ward Charges for Inpatients</h2>
+        <h2 class="size_18 bold color_blue_3" style="margin: 20px 0 10px 0;">Bills</h2>
+        <%for(int i =0; i<list.size();i++) {
+            int billNo = list.get(i).getBillNo();
+            String pNric = list.get(i).getPNric();
+            String pName = list.get(i).getPName();
+            String services = list.get(i).getServices();
+            String amount = list.get(i).getAmount();%>
+            billNo
+        <%  out.println(billNo);
+            out.println(pNric);
+            out.println(pName);
+            out.println(services);
+            out.println(amount);}%><br>
 
         <h1>Stay connected</h1>
         <div class="col">

@@ -44,9 +44,9 @@ public class PatientDAO {
                 rs.next();
                 Patient = new Patient();
                 Patient.setPID(rs.getString("pID"));
-                Patient.setPassword(rs.getString("pName"));
+                Patient.setPassword(rs.getString("password"));
                 Patient.setPNric(rs.getString("pNric"));
-                Patient.setPName(rs.getString("password"));
+                Patient.setPName(rs.getString("pName"));
                 Patient.setGender(rs.getString("gender"));
                 Patient.setAge(rs.getInt("age"));
 
@@ -88,7 +88,7 @@ public class PatientDAO {
         db.getConnection();
 
         // step 2 - declare the SQL statement
-        dbQuery = "SELECT * FROM Patient WHERE nric =  ? AND password = ?";
+        dbQuery = "SELECT * FROM Patient WHERE pNric =  ? AND password = ?";
         pstmt = db.getPreparedStatement(dbQuery);
 
         // step 3 - execute query
