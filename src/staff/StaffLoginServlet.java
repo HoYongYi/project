@@ -22,8 +22,6 @@ public class StaffLoginServlet extends HttpServlet {
         System.out.println("password "+password);
 
 
-        System.out.print( "OUTPUT==========================================================================================");
-
         try {
             StaffDAO s = new StaffDAO();
 
@@ -33,7 +31,7 @@ public class StaffLoginServlet extends HttpServlet {
                 Staff staff = s.getStaff(username);
                 String name = staff.getName();
 
-                request.setAttribute("username", name);
+                request.setAttribute("name", name);
                 getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
             }
             else{

@@ -48,9 +48,9 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a>Welcome,
-                        <%if(null!=request.getAttribute("name"))
+                        <%if(null!=session.getAttribute("name"))
                         {
-                            out.println(request.getAttribute("name"));
+                            out.println(session.getAttribute("name"));
                         }else{
                             out.println("Guest");
                         }
