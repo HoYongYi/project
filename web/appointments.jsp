@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="appointment.AppointmentDAO" %>
+<%@ page import="appointment.SMS" %>
 <html>
 <head>
     <title>Title</title>

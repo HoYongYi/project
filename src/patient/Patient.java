@@ -4,38 +4,53 @@ package patient;
  * Created by Mok on 12/13/2016.
  */
 public class Patient {
+    private String pID;
+    private String password;
     private String pNric;
     private String pName;
     private String gender;
-    private String dateOfBirth;
-    private String address;
-    private String contactNo;
-    private String nextOfKinNo;
     private int age;
 
-    public String getApptId() {
-        return apptId;
+    public Patient(){}
+
+    public Patient(String pID, String password, String pNric, String pName, String gender, int age) {
+        this.pID = pID;
+        this.password = password;
+        this.pNric = pNric;
+        this.pName = pName;
+        this.gender = gender;
+        this.age = age;
     }
 
-    public void setApptId(String apptId) {
-        this.apptId = apptId;
+    public String getPID() {
+        return pID;
     }
 
-    private String apptId;
+    public void setPID(String pID) {
+        this.pID = pID;
+    }
 
-    public String getpNric() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPNric() {
         return pNric;
     }
 
-    public void setpNric(String pNric) {
+    public void setPNric(String pNric) {
         this.pNric = pNric;
     }
 
-    public String getpName() {
+    public String getPName() {
         return pName;
     }
 
-    public void setpName(String pName) {
+    public void setPName(String pName) {
         this.pName = pName;
     }
 
@@ -45,38 +60,6 @@ public class Patient {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getContactNo() {
-        return contactNo;
-    }
-
-    public void setContactNo(String contactNo) {
-        this.contactNo = contactNo;
-    }
-
-    public String getNextOfKinNo() {
-        return nextOfKinNo;
-    }
-
-    public void setNextOfKinNo(String nextOfKinNo) {
-        this.nextOfKinNo = nextOfKinNo;
     }
 
     public int getAge() {

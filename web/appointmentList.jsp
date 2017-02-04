@@ -62,9 +62,13 @@ AppointmentDAO dao=new AppointmentDAO();
     </div>
 </nav>
 <%for(int i =0; i<list.size();i++) {
-    String var=list.get(i).getPatientName(); %>
+    String name=list.get(i).getPatientName();
+    String nric=list.get(i).getPatientNric();
+    String date=list.get(i).getDate();
+    String time=list.get(i).getTime();
+    String des=list.get(i).getDescription();%>
 
-  <%out.println(var);%><br>
+  <%out.print(name+" "+nric+" "+date+" "+" "+time+" "+des);%><br>
 <%}%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
