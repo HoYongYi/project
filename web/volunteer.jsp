@@ -9,6 +9,7 @@
 <html>
 <head>
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <title>Volunteer Application Form</title>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -42,15 +43,47 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form action="/login" , method = "post" >
-                    <input type = "text" name = "username" placeholder="Username"/>
-                    <input type = "password" name = "password" placeholder="Password"/>
-                    <input type = "submit" value = "Login"/>
-                </form>
-            </ul>
+                <li><a>Welcome,
+                    <%if(null!=request.getAttribute("name"))
+                    {
+                        out.println(request.getAttribute("name"));
+                    }else{
+                        out.println("Guest");
+                    }
+                    %></a></li>
+                <li><a href="/login/login.html">Log off</a></li>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+<h1>Please enter your details</h1>
+
+<form action = "/volunteer" class="form-style-9" method ="get">
+    <table cellspacing="5" cellpadding="5" border="1">
+        <tr>
+            <td align="right">Name:</td>
+            <td><input type="text" name="Name"></td>
+        </tr>
+        <tr>
+            <td align="right">NRIC:</td>
+            <td><input type="text" name="NRIC"></td>
+        </tr>
+        <tr>
+            <td align="right">HPNum:</td>
+            <td><input type="text" name="HPNum"></td>
+        </tr>
+        <tr>
+            <td align="right">Reason:</td>
+            <td><input type="text" name="Reason"></td>
+        </tr>
+        <tr>
+            <td align="right">Email:</td>
+            <td><input type="text" name="Email"></td>
+        </tr>
+
+    </table>
+    <input type="submit" value="Submit">
+    <input type="button" value="Back" onClick="history.go(-1);return true;">
+</form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
 <script src="../bootstrap/dist/js/bootstrap.min.js"></script>

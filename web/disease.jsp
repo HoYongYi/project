@@ -1,11 +1,9 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Hyy
-  Date: 14/12/2016
-  Time: 6:09 PM
+  User: Mok
+  Date: 2/3/2017
+  Time: 1:58 PM
   To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -18,6 +16,7 @@
     <meta name="Language" content="English" />
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style type="text/css" title="layout" media="screen"> @import url("style.css"); </style>
+    <style type="text/css" title="layout" media="screen"> @import url("table.css"); </style>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -36,12 +35,11 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="newsandevents.jsp">News and Event</a></li>
-                <li><a href="contactus.jsp">Contact us</a></li>
+                <li><a href="event1.jsp">Event</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="services.jsp">Services</a></li>
+                        <li><a href="#">Services</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
@@ -52,49 +50,62 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>Welcome,
-                    <%if(null!=request.getAttribute("name"))
-                    {
-                        out.println(request.getAttribute("name"));
-                    }else{
-                        out.println("Guest");
-                    }
-                    %></a></li>
-                <li><a href="/login/login.html">Log off</a></li>
+                <form action="/login", method = "post" >
+                    <input type = "text" name = "username" placeholder="Username"/>
+                    <input type = "password" name = "password" placeholder="Password"/>
+                    <input type = "submit" value = "Login"/>
+                </form>
+            </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-    <div class="line">
-        &nbsp;
-    </div>
-    <div id = "left">
-    <h1>Prevention and Correction of Contractures in Clients with Neurological Conditions</h1>
-        <h2>SYNOPSIS</h2>
-        <p>Medical advances have allowed high life expectancy amongst those afflicted with neurological condition.
-            However, residual effects continue to prevail.
-            Current focus of neurological rehabilitation strategies is maximising plasticity within
-            the central nervous but what can often be forgotten is that the musculoskeletal system is
-            just as plastic and deterioration in the form of muscle wastage,
-            adaptive changes in length and stiffness (contractures or fixed flexion deformity) and joint deterioration can occur.</p>
-        <p>A 1 day of practical introductory course for Occupational Therapists in using thermoplastic,
-            soft splints and support. The main focus of the course is practical, to learn how to use
-            the thermoplastic material for making splints,
-            choosing suitable soft splints and techniques for providing support for the upper limb.</p>
-
-        <h2>DATE</h2>
-        <p>7 January 2017</p>
-        <h2>TIME</h2>
-        <p>9am - 5pm</p>
-        <h2>SPEAKERS</h2>
-        <p>Ms Janis Yeo, Senior Occupational Therapist (OT, CHT, CLT),
-            Ms Lim Yi Hui, Senior Occupational Therapist (Bsc (Hons) OT, Certificate in Driving Assessment)</p>
-        <h2>Target Participants</h2>
-        <p>Occupational Therapists working in nursing homes or community settings</p>
-        <h2>FEES</h2>
-        <p>$300 ($270 for SAOT Members)</p>
-    </div>
-
+<div class="line">
+    &nbsp;
 </div>
+<div id="pgcontent">
+
+
+    <div style="margin-top: 0px; position:relative; padding-bottom:20px;"><script type="text/javascript">
+        //<![CDATA[
+        Sys.WebForms.PageRequestManager._initialize('ctl00$cphMain$ctlFCDCListing$ctlFCSearch$smFCSearchScriptManager', document.getElementById('aspnetForm'));
+        Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+        //]]>
+    </script>
+
+
+
+        <div id="ctl00_cphMain_ctlFCDCListing_ctlFCSearch_fcbox">
+            <div id="ctl00_cphMain_ctlFCDCListing_ctlFCSearch_pnlDC" class="fcbox" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_cphMain_ctlFCDCListing_ctlFCSearch_btnDC')">
+                <p class="searchbox">
+                    <br>
+                    <input name="ctl00$cphMain$ctlFCDCListing$ctlFCSearch$txtDC" type="text" id="ctl00_cphMain_ctlFCDCListing_ctlFCSearch_txtDC" autocomplete="off">
+                    <input type="submit" name="ctl00$cphMain$ctlFCDCListing$ctlFCSearch$btnDC" value="Search" onclick="javascript:try{fFCSearch(Trim(document.getElementById('ctl00_cphMain_ctlFCDCListing_ctlFCSearch_txtDC').value),'/patient-guide/find-care/diseases-conditions/default.aspx'); return false;}catch(errC){return false;};" id="ctl00_cphMain_ctlFCDCListing_ctlFCSearch_btnDC" autocomplete="off">
+                    </p>
+                <script type="text/javascript">try { document.getElementById("ctl00_cphMain_ctlFCDCListing_ctlFCSearch_txtDC").setAttribute("autocomplete", "off"); } catch (errC) { }</script>
+            </div>
+        </div></div>
+    <div>
+        <p>
+            <a href="#">Abdominal Pain</a><br>
+            <a href="#">Abnormal Electrocardiogram (ECG)</a><br>
+            <a href="#">Above Knee Amputations (Prosthetics)</a><br>
+            <a href="#">Abscess of Pharynx or Nasopharynx</a><br>
+            <a href="#">Achalasia</a><br>
+            <a href="#">Achilles Tendonitis</a><br>
+            <a href="#">Acute Laryngitis</a><br>
+            <a href="#">Acute Pancreatitis</a><br>
+            <a href="#">Acute Sinusitis</a><br>
+            <a href="#">Adrenal Disorders</a><br>
+            <a href="#">Aesthetic Eyelid Surgery</a><br>
+            <a href="#">Age-Related Macular Degeneration (AMD)</a><br>
+            <a href="#">Allergic Rhinitis (AR)</a><br>
+            <a href="#">Allergic rhinoconjunctivitis</a><br>
+            <a href="#">Altitude Illness</a><br>
+            <a href="#">Amputation</a><br>
+            <a href="#">Anaemia</a><br>
+            <a href="#">Anaphylaxis</a><br>
+        </p>
+        </div>
 <div class="cleaner">&nbsp;</div>
 <div class="line">
     &nbsp;</div>

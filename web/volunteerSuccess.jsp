@@ -1,21 +1,27 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Dominic
-  Date: 1/2/2017
-  Time: 3:02 AM
+  User: Hyy
+  Date: 3/2/2017
+  Time: 3:43 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="appointment.AppointmentDAO" %>
-<html>
+<%@ page import="volunteer.VolunteerDAO" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <title></title>
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
 </head>
-<style type="text/css" title="layout" media="screen"> @import url("appointmentstyle.css"); </style>
-
 <body>
+
+<!-- ==================================================================== -->
+<!-- Required for template -->
+<!-- ==================================================================== -->
+<!-- ==================================================================== -->
+<!-- Nav Bar Copy this before your content  -->
+<!-- ==================================================================== -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -59,27 +65,69 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<br><br><br><br><br>
+<!-- ==================================================================== -->
+<!-- nav bar ends here -->
+<!-- ==================================================================== -->
+<style type="text/css" title="layout" media="screen"> @import url("appointmentstyle.css"); </style>
+<%
+    String Name=request.getParameter("Name");
+    String NRIC=request.getParameter("NRIC");
+    String HPNum=request.getParameter("HPNum");
+    String Reason=request.getParameter("Reason");
+    String Email=request.getParameter("Email");
+    if (NRIC != null) {
+        session.setAttribute("Name", Name);
+        session.setAttribute("NRIC", NRIC);
+        session.setAttribute("HPNum", HPNum);
+        session.setAttribute("Reason", Reason);
+        session.setAttribute("Email", Email);
+    } else {
+        Name = (String)session.getAttribute("Name");
+        NRIC = (String)session.getAttribute("NRIC");
+        HPNum = (String)session.getAttribute("HPNum");
+        Reason = (String)session.getAttribute("Reason");
+        Email = (String)session.getAttribute("Email");
+    }
+%>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
 <form class="form-style-9",>
-    <div style="text-align:center">
     <ul>
         <li>
-            <a href="createAppointment.jsp" class="h3"><h2>Make Appointment</h2></a>
+            <h2>Hi</h2> <strong><h2><%=Name%>!</h2></strong>
         </li>
-
-        <li><br></li>
-
         <li>
-            <a href="appointmentList.jsp" class="h3"><h2>View Appointments</h2></a>
+            <h2>you have successfully applied to be a volunteer </h2>
         </li>
+        <a href="index.jsp" class="h3">Ok</a>
     </ul>
-    </div>
 </form>
+
+
+
+
+
+
+
+
+
+
+<!-- ==================================================================== -->
+<!-- PLACE BEOFRE CLOSING BODY-->
+<!-- ==================================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
 <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
-
+<!-- ==================================================================== -->
 </body>
 </html>

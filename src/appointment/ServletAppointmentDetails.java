@@ -28,11 +28,11 @@ public class ServletAppointmentDetails extends HttpServlet {
             String date=request.getParameter("date");
             String description=request.getParameter("description");
             //pointment apt;Ap
-            request.setAttribute("name", name);
-            request.setAttribute("nric", nric);
-            request.setAttribute("time", time);
-            request.setAttribute("date", date);
-            request.setAttribute("description", description);
+            session.setAttribute("name", name);
+            session.setAttribute("nric", nric);
+            session.setAttribute("time", time);
+            session.setAttribute("date", date);
+            session.setAttribute("description", description);
             db.createAppointment(name,nric,time,date,description);
             getServletContext().getRequestDispatcher("/appointmentSuccess.jsp").forward(request, response);
         } catch (Exception e) {
