@@ -14,7 +14,7 @@ public class PatientDAO {
     public static String url = "jdbc:mysql://localhost/jedp";
     public static String dbdriver = "com.mysql.jdbc.Driver";
     public static String username = "root";
-    public static String password = "mysql";
+    public static String password = "0712";
 
     public PatientDAO() throws Exception{
 

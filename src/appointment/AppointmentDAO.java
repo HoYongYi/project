@@ -100,7 +100,7 @@ public class AppointmentDAO {
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
             rs = pstmt.executeQuery();
-            if (rs.next()) { // first record found
+            if (rs.next()) { // first Record found
                 id = rs.getInt(1) + 1;
             }
         } catch (Exception e) {

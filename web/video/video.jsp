@@ -42,19 +42,19 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Welcome,
-                    <%if(null!=request.getAttribute("name"))
+                    <%if(null!=session.getAttribute("name"))
                 {
-                    out.println(request.getAttribute("name"));
+                    out.println(session.getAttribute("name"));
                 }else{
                     out.println("Guest");
                 }
                 %></a></li>
+                <li><a><%=session.getAttribute("pid")%></a></li>
                 <li><a href="/login/login.html">Log off</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-
 <!-- ===================================================================== -->
 <!-- ===================================================================== -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->

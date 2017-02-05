@@ -47,6 +47,7 @@ public class StaffDAO {
                 staff.setPassword(rs.getString("Password"));
                 staff.setPerPhone(rs.getString("PerPhone"));
                 staff.setHomeAdd(rs.getString("HomeAdd"));
+                staff.setHomeAdd(rs.getString("Designation"));
             }
 
             pstmt.close();
@@ -58,7 +59,7 @@ public class StaffDAO {
 
     }
 
-    public boolean createStaff(String name, String gender, String nric, String password, String perphone, String homeadd) throws Exception {
+    public boolean createStaff(String name, String gender, String nric, String password, String perphone, String homeadd, String designation) throws Exception {
         boolean status = false;
         System.out.println(status);
         String sqlQuery = null;
@@ -75,7 +76,7 @@ public class StaffDAO {
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
             rs = pstmt.executeQuery();
-            if (rs.next()) { // first record found
+            if (rs.next()) { // first Record found
                 id = rs.getInt(1) + 1;
             }
         } catch (Exception e) {
@@ -83,7 +84,7 @@ public class StaffDAO {
         }
 
         //create an SQL statement
-        sqlQuery = "INSERT INTO staff(id, name, name, nric, password, perphone, homeadd)" + "VALUES(?, ?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO staff(id, name, name, nric, password, perphone, homeadd, designation)" + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
@@ -94,6 +95,7 @@ public class StaffDAO {
             pstmt.setString(5, password);
             pstmt.setString(6, perphone);
             pstmt.setString(7, homeadd);
+            pstmt.setString(8, designation);
 
             if (pstmt.executeUpdate() == 1)
                 success = true;
@@ -118,7 +120,7 @@ public class StaffDAO {
         String homeAdd = rs.getString("homeAdd");
         String joinedDate = rs.getString("joinedDate");
         String designation = rs.getString("designation");
-        staff = new Staff (staff_ID,name,gender,nric,password,perPhone,homeAdd,joinedDate);
+        staff = new Staff (staff_ID,name,gender,nric,password,perPhone,homeAdd,joinedDate,designation);
 
         return staff;
     }
