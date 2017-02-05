@@ -14,7 +14,7 @@ public class ServletAppointmentList extends HttpServlet {
         try {
            AppointmentDAO db = new AppointmentDAO();
             Appointment a = new Appointment();
-            List<Appointment> apptList = db.getAllAppointment();
+            List<Appointment> apptList = db.getAllAppointmentNric("s9818831b");
 
 //            HttpSession session=request.getSession();
 

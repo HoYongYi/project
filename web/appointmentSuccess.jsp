@@ -7,6 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="appointment.AppointmentDAO" %>
+<%@page import="appointment.SMS" %>
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;%>
+
 
 <html>
 <head>
@@ -35,6 +40,7 @@
         description = (String)session.getAttribute("description");
     }
 %>
+<% SMS.method("+6593265717","wassup");%>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">

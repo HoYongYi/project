@@ -26,7 +26,7 @@ public class AppointmentDAO {
 
     }
 
-    public Appointment getAppointment(String patientName) {
+    public Appointment getAppointment(String name) {
         String sql = "select * from appointment WHERE  patientName=?";
         Appointment appointment = null;
 
@@ -34,7 +34,7 @@ public class AppointmentDAO {
 
             getConnection();
             PreparedStatement pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, patientName);
+            pstmt.setString(1, name);
             ResultSet rs = pstmt.executeQuery();
             if (rs != null) {
                 rs.next();
@@ -54,6 +54,33 @@ public class AppointmentDAO {
             e.printStackTrace();
         }
         return appointment;
+
+    }
+    public List<Appointment> getAllAppointmentNric(String ic){
+        String sql = "select * from appointment where patientNric=?";
+        ArrayList<Appointment> list = new ArrayList<Appointment>();
+        try{
+            getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, ic);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs != null && rs.next()){
+
+                Appointment appointment = new Appointment() ;
+                appointment.setApptId(rs.getString("apptId"));
+                appointment.setPatientName(rs.getString("patientName"));
+                appointment.setPatientNric(rs.getString("patientNric"));
+                appointment.setDate(rs.getString("date"));
+                appointment.setTime(rs.getString("time"));
+                appointment.setDescription(rs.getString("description"));
+                list.add(appointment);
+
+            }
+            pstmt.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return list;
 
     }
 

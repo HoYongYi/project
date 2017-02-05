@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 AppointmentDAO dao=new AppointmentDAO();
-    List<Appointment>list=dao.getAllAppointment();
+    List<Appointment>list=dao.getAllAppointmentNric("s9818831b");
 %>
 <html>
 <head>
@@ -67,7 +67,7 @@ AppointmentDAO dao=new AppointmentDAO();
     String date=list.get(i).getDate();
     String time=list.get(i).getTime();
     String des=list.get(i).getDescription();%>
-
+<br><br><br>
   <%out.print(name+" "+nric+" "+date+" "+" "+time+" "+des);%><br>
 <%}%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

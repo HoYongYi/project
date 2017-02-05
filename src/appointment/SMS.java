@@ -20,14 +20,16 @@ public class SMS {
 //                "sms").create();
 //
 //        System.out.println(message.getSid());
-        method();
+        SMS.method("+6593265717","wassup");
     }
-    public static void method(){
+    public static void method(String num, String msg){
+     String ACCOUNT_SID = "ACad1ef199b7093d0e7fdd3d19b2ca0fcf";
+     String AUTH_TOKEN = "095c809121f697f08c76afefb5a6a1f2";
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
-        Message message = Message.creator(new PhoneNumber("+6593804599"),
+        Message message = Message.creator(new PhoneNumber(num),
                 new PhoneNumber("(630) 313-2580"),
-                "hello hello").create();
+                msg).create();
 
         System.out.println(message.getSid());
     }
