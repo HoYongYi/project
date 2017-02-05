@@ -50,6 +50,8 @@ public class VolunteerDAO {
                 volunteer.setVolunteerHPNum(rs.getString("volunteerHPNum"));
                 volunteer.setVolunteerReason(rs.getString("volunteerReason"));
                 volunteer.setVolunteerEmail(rs.getString("volunteerEmail"));
+                volunteer.setVolunteerAge(rs.getString("volunteerAge"));
+                volunteer.setVolunteerGender(rs.getString("volunteerGender"));
 
             }
 
@@ -78,6 +80,8 @@ public class VolunteerDAO {
                 volunteer.setVolunteerHPNum(rs.getString("HPNum"));
                 volunteer.setVolunteerReason(rs.getString("Reason"));
                 volunteer.setVolunteerEmail(rs.getString("Email"));
+                volunteer.setVolunteerAge(rs.getString("Age"));
+                volunteer.setVolunteerGender(rs.getString("Gender"));
                 list.add(volunteer);
 
             }
@@ -90,7 +94,8 @@ public class VolunteerDAO {
     }
     public boolean createVolunteer(String Name,
                                    String NRIC, String HPNum,
-                                   String Reason , String Email) throws Exception {
+                                   String Reason , String Email , String Age
+                                    , String Gender) throws Exception {
         boolean status = false;
         System.out.println(status);
         String sqlQuery = null;
@@ -115,7 +120,7 @@ public class VolunteerDAO {
         }
 
         //create an SQL statement
-        sqlQuery = "INSERT INTO volunteer(id, Name, NRIC, HPNum, Reason, Email)" + "VALUES(?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO volunteer(id, Name, NRIC, HPNum, Reason, Email , Age , Gender)" + "VALUES(? , ? , ?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
@@ -125,6 +130,8 @@ public class VolunteerDAO {
             pstmt.setString(4, HPNum);
             pstmt.setString(5, Reason);
             pstmt.setString(6, Email);
+            pstmt.setString(7, Age);
+            pstmt.setString(8, Gender);
 
             if (pstmt.executeUpdate() == 1)
                 success = true;

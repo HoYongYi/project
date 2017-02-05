@@ -33,14 +33,18 @@ import java.util.List;
                 String HPNum=request.getParameter("HPNum");
                 String Reason=request.getParameter("Reason");
                 String Email=request.getParameter("Email");
+                String Age=request.getParameter("Age");
+                String Gender=request.getParameter("Gender");
                 //pointment apt;Ap
                 request.setAttribute("Name", Name);
                 request.setAttribute("NRIC", NRIC);
                 request.setAttribute("HPNum", HPNum);
                 request.setAttribute("Reason", Reason);
                 request.setAttribute("Email", Email);
-                db.createVolunteer(Name,NRIC,HPNum,Reason,Email);
-                getServletContext().getRequestDispatcher("/volunteerSuccess.jsp").forward(request, response);
+                request.setAttribute("Age", Age);
+                request.setAttribute("Gender", Gender);
+                db.createVolunteer(Name,NRIC,HPNum,Reason,Email, Age , Gender);
+                getServletContext().getRequestDispatcher("/Guest/volunteerSuccess.jsp").forward(request, response);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -1,15 +1,21 @@
 <%--
   Created by IntelliJ IDEA.
   User: Hyy
-  Date: 2/2/2017
-  Time: 9:21 PM
+  Date: 14/12/2016
+  Time: 2:20 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <title>Volunteer Application Form</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+    <meta name="Description" content="A free open source web design by Gen.  Free for anyone to use as long as credits are intact. " />
+    <meta name="Keywords" content="open source web design,http://gendesigns.blogspot.com" />
+    <meta name="Copyright" content="Gen" />
+    <meta name="Designed By" content="http://gendesigns.blogspot.com" />
+    <meta name="Language" content="English" />
+    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style type="text/css" title="layout" media="screen"> @import url("../style.css"); </style>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -21,18 +27,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="images/plus.gif" alt="Logo"/>
+            <img src="../images/plus.gif" alt="Logo"/>
             <a class="navbar-brand" href="#">Health Centre</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="index.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="event1.jsp">Event</a></li>
+                <li class = "active"><a href="#">News and Event</a></li>
+                <li><a href="contactus.jsp">Contact us</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="services.jsp">Services</a></li>
+                        <li><a href="../services.jsp">Services</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
@@ -55,40 +62,35 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<h1>Please enter your details</h1>
+    <div class="line">
+        &nbsp;
+    </div>
+    <div id = "left">
+        <h1>News</h1>
+        <div class="date">04/12/16&nbsp;&#45;</div>
+        <p><a href="news1.jsp">Aspiring teacher became a doc because of bullies</a></p>
+        <div class="date">01/12/16&nbsp;&#45;</div>
+        <p><a href="#">HIV no longer a death sentence but a period of hopeful living</a></p>
 
-<form action = "/volunteer" class="form-style-9" method ="get">
-    <table cellspacing="5" cellpadding="5" border="1">
-        <tr>
-            <td align="right">Name:</td>
-            <td><input type="text" name="Name"></td>
-        </tr>
-        <tr>
-            <td align="right">NRIC:</td>
-            <td><input type="text" name="NRIC"></td>
-        </tr>
-        <tr>
-            <td align="right">HPNum:</td>
-            <td><input type="text" name="HPNum"></td>
-        </tr>
-        <tr>
-            <td align="right">Reason:</td>
-            <td><input type="text" name="Reason"></td>
-        </tr>
-        <tr>
-            <td align="right">Email:</td>
-            <td><input type="text" name="Email"></td>
-        </tr>
-
-    </table>
-    <input type="submit" value="Submit">
-    <input type="button" value="Back" onClick="history.go(-1);return true;">
-</form>
+        <h1>Events</h1>
+        <div class="date">07/01/17&nbsp;&#45;</div>
+        <p><a href="event1.jsp">Prevention and Correction of Contractures in Clients with Neurological Conditions </a></p>
+        <div class="date">09/01/17&nbsp;&#45;</div>
+        <p><a href="#">Occupational Therapists' Role in Returning to Drive Following Medical Conditions </a></p>
+==
+    </div>
+</div>
+<div class="cleaner">&nbsp;</div>
+<div class="line">
+    &nbsp;</div>
+<div id="footer">
+    &copy; 2008 <a href="index.html">Designs.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://gendesigns.blogspot.com">Gen</a>
+</div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
 <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
-<!-- ==================================================================== -->
 </body>
 </html>

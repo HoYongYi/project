@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Hyy
+  Date: 14/12/2016
+  Time: 2:21 PM
+  To change this template use File | Settings | File Templates.
+--%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -7,8 +14,8 @@
     <meta name="Copyright" content="Gen" />
     <meta name="Designed By" content="http://gendesigns.blogspot.com" />
     <meta name="Language" content="English" />
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <style type="text/css" title="layout" media="screen"> @import url("style.css"); </style>
+    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style type="text/css" title="layout" media="screen"> @import url("../style.css"); </style>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -20,18 +27,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="images/plus.gif" alt="Logo"/>
+            <img src="../images/plus.gif" alt="Logo"/>
             <a class="navbar-brand" href="#">Health Centre</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="index.jsp">Home</a></li>
                 <li><a href="about.jsp">About</a></li>
-                <li><a href="event1.jsp">Event</a></li>
+                <li><a href="newsandevents.jsp">News and Event</a></li>
+                <li class ="active"><a href="#">Contact us</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
+                        <li><a href="../services.jsp">Services</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
@@ -41,44 +49,35 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a>Welcome,
-                    <%if(null!=request.getAttribute("name"))
-                    {
-                        out.println(request.getAttribute("name"));
-                    }else{
-                        out.println("Guest");
-                    }
-                    %></a></li>
-                <li><a href="/login/login.html">Log off</a></li>
+            <<ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome,
+                <%if(null!=request.getAttribute("name"))
+                {
+                    out.println(request.getAttribute("name"));
+                }else{
+                    out.println("Guest");
+                }
+                %></a></li>
+            <li><a href="/login/login.html">Log off</a></li>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
     <div class="line">
         &nbsp;
     </div>
-    <div id="content">
-        <div id="right">
-            <h1>Latest news</h1>
-            <div class="date">04/07/08&nbsp;&#45;</div>
-            <p>Aspiring teacher became a doc because of bullies</p>
-            <div class="date">02/07/08&nbsp;&#45;</div>
-            <p>HIV no longer a death sentence but a period of hopeful living</p>
-            <p><img src="images/doctor.jpg" alt="Surgeons"/></p>
-        </div>
-        <div id="left">
-            <h1>Welcome to Woodlands Integrated Health Campus</h1>
-            <p>
-                The Woodlands Integrated Health Campus will be an integrated healthcare facility that will include an acute hospital,
-                a community hospital and a nursing home.
-                The hospital will serve the anticipated increase in demand for healthcare services in the northern region of Singapore,
-                as our population grows and ages.
-            </p>
-
-            </div>
-
-        </div>
+    <div id = "left">
+        <h1>Address: <h3>Woodlands Avenue 12 and Woodlands Drive 17,
+            opposite Christ Church Secondary School,
+            and within walking distance from the future Woodlands South MRT station</h3></h1>
+        <h1>MAIN LINE: <h3>6555-xxxx</h3></h1>
+        <h1>GENERAL FAX: <h3>6602-xxxx</h3></h1>
+        <h1>BILLING INQUIRIES: <h3>6602-xxxx</h3></h1>
     </div>
+    <div id="right">
+        <img src="../images/map.png" alt="Map"/>
+    </div>
+
+
     <div class="cleaner">&nbsp;</div>
     <div class="line">
         &nbsp;</div>
