@@ -25,5 +25,8 @@
     <orderEntry type="library" name="PrimeFaces-5.2" level="project" />
     <orderEntry type="library" name="pubnub-dev" level="application" />
     <orderEntry type="library" name="org.omnifaces:omnifaces:2.6" level="project" />
+    <orderEntry type="library" name="twilio-7.4.0-jar-with-dependencies" level="project" />
+    <orderEntry type="library" name="twilio-7.4.0" level="project" />
+    <orderEntry type="library" name="jquery-1.9.1" level="application" />
   </component>
 </module>

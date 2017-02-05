@@ -26,15 +26,15 @@ public class AppointmentDAO {
 
     }
 
-    public Appointment getAppointment(String apptId) {
-        String sql = "select * from appointment WHERE  apptId=?";
+    public Appointment getAppointment(String patientName) {
+        String sql = "select * from appointment WHERE  patientName=?";
         Appointment appointment = null;
 
         try {
 
             getConnection();
             PreparedStatement pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, apptId);
+            pstmt.setString(1, patientName);
             ResultSet rs = pstmt.executeQuery();
             if (rs != null) {
                 rs.next();
@@ -100,7 +100,7 @@ public class AppointmentDAO {
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
             rs = pstmt.executeQuery();
-            if (rs.next()) { // first record found
+            if (rs.next()) { // first Record found
                 id = rs.getInt(1) + 1;
             }
         } catch (Exception e) {
