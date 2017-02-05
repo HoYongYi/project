@@ -45,29 +45,65 @@
          &nbsp;
       </div>
       <div id="content">
-         <p>Select chart to generate : </p>
-         <select id="chartDropDown">
-            <option>No. of Appointments</option>
-         </select>
-         <p:chart type="bar" model="#{chartView.barModel}" style="height:300px;" extender="plotBarAxis"/>
 
+         <p style="color:black;">Select chart to generate:</p>
          <h:form>
-            <p:dataTable id="dataTable" var="data" value="#{tableBean.dataValues}" selectionMode="single" selection="#{tableBean.selectedRow}" rowKey="#{data.period}">
-               <p:ajax event="rowSelect" />
-               <p:columns value = "#{tableBean.columns}" var = "column" columnIndexVar="colIndex">
-                  <f:facet name="header">
-                     #{column.header}
-                  </f:facet>
-                  #{data[column.property]}
-               </p:columns>
 
-               <f:facet name="footer">
-                  <p:commandButton value="#{tableBean.buttonValue}" actionListener="#{tableBean.changeData()}" update="dataTable"/>
-               </f:facet>
+           <p:selectOneMenu id="selectMenu" value="#{tableBean.selectedMenu}" style="width:150px">
+              <f:selectItem itemLabel="Select..." itemValue=""/>
+              <f:selectItem itemLabel="Appointment" itemValue="Appointment"/>
+              <f:selectItem itemLabel="Patient" itemValue="Patient"/>
+              <f:selectItem itemLabel="Volunteer" itemValue="Volunteer"/>
+              <f:ajax render="contentDisplay" />
+           </p:selectOneMenu>
+        <h:panelGroup id="contentDisplay">
 
-            </p:dataTable>
+           <h:panelGroup rendered="#{tableBean.selectedMenu eq 'Appointment'}">
+               <p:chart type="bar" model="#{chartView.barModel}" style="height:300px;" extender="plotBarAxis"/>
+
+                  <p:dataTable id="dataTable" var="data" value="#{tableBean.dataValues}" selectionMode="single" selection="#{tableBean.selectedRow}" rowKey="#{data.period}">
+                     <p:ajax event="rowSelect" />
+                     <p:columns value = "#{tableBean.columns}" var = "column" columnIndexVar="colIndex">
+                        <f:facet name="header">
+                           #{column.header}
+                        </f:facet>
+                        #{data[column.property]}
+                     </p:columns>
+                     <f:facet name="footer">
+                        <p:commandButton value="#{tableBean.buttonValue}" actionListener="#{tableBean.changeData()}" update="dataTable"/>
+                     </f:facet>
+                  </p:dataTable>
+            </h:panelGroup>
+
+
+            <h:panelGroup rendered="#{tableBean.selectedMenu eq 'Patient'}">
+               <p:chart id="patientPie" type="pie" model="#{chartView.pieModel}" style="height:300px;" extender="pieExtender">
+                  <p:ajax event="itemSelect" listener="#{tableBean.itemSelect}" update="pieTable"/>
+               </p:chart>
+
+               <p:dataTable id="pieTable" var="pieData" value="#{tableBean.pieDataValues}">
+                  <p:column headerText="Age Group">
+                     <h:outputText value="#{pieData.name}" />
+                  </p:column>
+
+                  <p:column headerText="Amount">
+                     <h:outputText value="#{pieData.num}" />
+                  </p:column>
+
+                  <p:column headerText="Percentage">
+                     <h:outputText value="#{pieData.percent}" />
+                  </p:column>
+
+               </p:dataTable>
+
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{tableBean.selectedMenu eq 'Volunteer'}">
+
+            </h:panelGroup>
+
+        </h:panelGroup>
          </h:form>
-
       </div>
 
       <div class="cleaner">&nbsp;</div>

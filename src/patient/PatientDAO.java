@@ -4,6 +4,8 @@ import patient.Patient;
 import patient.PatientDAO;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Mok on 2/3/2017.
@@ -59,6 +61,66 @@ public class PatientDAO {
             e.printStackTrace();
         }
         return Patient;
+
+    }
+
+    public List<Patient> getPatientByGender(String patientGender) {
+
+        String sql = "select * from patient where gender = ?";
+        List<Patient> pList = new ArrayList<Patient>();
+        Patient p = null;
+
+        try {
+
+            getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, patientGender);
+            ResultSet rs = pstmt.executeQuery();
+           while (rs != null && rs.next()) {
+                p = new Patient();
+               p.setPID(rs.getString("pId"));
+               p.setPName(rs.getString("pName"));
+               p.setPNric(rs.getString("pNric"));
+               p.setPassword(rs.getString("password"));
+               p.setGender(rs.getString("gender"));
+               p.setAge(rs.getInt("age"));
+               if(p.getGender().equals(patientGender)){
+                   pList.add(p);
+               }
+            }
+
+            pstmt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pList;
+
+    }
+
+    public List<Patient> getAllPatient(){
+        String sql = "select * from patient";
+        ArrayList<Patient> list = new ArrayList<Patient>();
+        try{
+            getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs != null && rs.next()){
+
+                Patient p = new Patient() ;
+                p.setPID(rs.getString("pId"));
+                p.setPName(rs.getString("pName"));
+                p.setPNric(rs.getString("pNric"));
+                p.setPassword(rs.getString("password"));
+                p.setGender(rs.getString("gender"));
+                p.setAge(rs.getInt("age"));
+                list.add(p);
+            }
+            pstmt.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return list;
 
     }
 

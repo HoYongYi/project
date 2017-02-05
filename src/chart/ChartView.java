@@ -5,30 +5,30 @@ package chart;
  */
 import javax.annotation.PostConstruct;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 
 import appointment.Appointment;
 import appointment.AppointmentDAO;
 import org.primefaces.model.chart.*;
+import patient.Patient;
+import patient.PatientDAO;
 
 @ManagedBean
 public class ChartView implements Serializable {
 
     private BarChartModel barModel;
-    private LineChartModel lineModel;
+    private PieChartModel pieModel;
 
     @PostConstruct
     public void init() {
         createBarModels();
-        createLineModels();
+        createPieModel();
     }
 
     public BarChartModel getBarModel() {
         return barModel;
-    }
-    public LineChartModel getLineModel() {
-        return lineModel;
     }
 
     private BarChartModel initBarModel() {
@@ -38,13 +38,9 @@ public class ChartView implements Serializable {
     }
 
     private void createBarModels() {
-        createBarModel();
-    }
-
-    private void createBarModel() {
         barModel = initBarModel();
 
-        barModel.setTitle("Bar Chart");
+        barModel.setTitle("Appointment Chart");
         barModel.setLegendPosition("ne");
 
         Axis xAxis = barModel.getAxis(AxisType.X);
@@ -54,25 +50,42 @@ public class ChartView implements Serializable {
         yAxis.setLabel("No. of Appointment");
         yAxis.setMin(0);
         yAxis.setMax(40);
+
     }
 
-    private void createLineModels() {
-
-        lineModel = initLineModel();
-        lineModel.setTitle("Line Chart");
-        lineModel.setLegendPosition("e");
-        lineModel.setShowPointLabels(true);
-        Axis yAxis = lineModel.getAxis(AxisType.Y);
-        lineModel.getAxes().put(AxisType.X, new CategoryAxis("No. of Appointment"));
-        yAxis.setLabel("Year");
-        yAxis.setMin(0);
-        yAxis.setMax(200);
+    public PieChartModel getPieModel() {
+        return pieModel;
     }
 
-    private LineChartModel initLineModel() {
-        LineChartModel model = new LineChartModel();
-        model.addSeries(numApptYear());
-        return model;
+    private void createPieModel(){
+        pieModel = new PieChartModel();
+
+        //add in piechart data
+        PatientDAO pDAO = null;
+        try {
+            pDAO = new PatientDAO();
+            Patient p = new Patient();
+            List<Patient> pList = pDAO.getAllPatient();
+            int numMPatient = 0;
+            int numFPatient = 0;
+            for(int i = 0; i < pList.size() ; i ++){
+                p = pList.get(i);
+                if(p.getGender().equals("Male")){
+                    numMPatient = numMPatient + 1;
+                }
+            }
+            numFPatient = pList.size() - numMPatient;
+
+            pieModel.set("Male", numMPatient);
+            pieModel.set("Female", numFPatient);
+
+            pieModel.setTitle("Patient Pie");
+            pieModel.setLegendPosition("ne");
+            pieModel.setShowDataLabels(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private ChartSeries numApptYear(){
