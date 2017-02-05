@@ -150,7 +150,7 @@
         <label for="notes">Comments</label>
         <textarea name="comments" class="form-control" id="notes" rows="6" placeholder=<%=request.getAttribute("comments")%>></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">update</button>
 </form>
 </div>
 <script>
