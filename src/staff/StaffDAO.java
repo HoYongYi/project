@@ -83,12 +83,14 @@ public class StaffDAO {
             e.printStackTrace();
         }
 
+        String staffid = Integer.toString(id);
+
         //create an SQL statement
-        sqlQuery = "INSERT INTO staff(id, name, name, nric, password, perphone, homeadd, designation)" + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO staff(staff_id, name, gender, nric, password, perphone, homeadd, designation)" + "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {
-            pstmt.setInt(1, id);
+            pstmt.setString(1, staffid);
             pstmt.setString(2,name);
             pstmt.setString(3, gender);
             pstmt.setString(4, nric);
@@ -118,9 +120,8 @@ public class StaffDAO {
         String password = rs.getString("password");
         String perPhone = rs.getString("perPhone");
         String homeAdd = rs.getString("homeAdd");
-        String joinedDate = rs.getString("joinedDate");
         String designation = rs.getString("designation");
-        staff = new Staff (staff_ID,name,gender,nric,password,perPhone,homeAdd,joinedDate,designation);
+        staff = new Staff (staff_ID,name,gender,nric,password,perPhone,homeAdd,designation);
 
         return staff;
     }

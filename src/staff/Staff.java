@@ -16,7 +16,7 @@ public class Staff {
 
     public Staff(){}
 
-    public Staff(String staff_ID,String name,String gender, String nric, String password, String perPhone, String homeAdd, String joinedDate, String designation)
+    public Staff(String staff_ID,String name,String gender, String nric, String password, String perPhone, String homeAdd, String designation)
     {
         super();
         this.staff_ID = staff_ID;
@@ -24,10 +24,8 @@ public class Staff {
         this.gender= gender;
         this.password = password;
         this.nric = nric;
-        this.password = password;
         this.perPhone = perPhone;
         this.homeAdd = homeAdd;
-        this.joinedDate = joinedDate;
         this.designation = designation;
     }
 

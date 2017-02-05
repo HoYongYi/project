@@ -43,7 +43,7 @@ public class loginServlet extends HttpServlet {
                 session.setAttribute("name", name);
                 session.setAttribute("pid", id);
 
-                getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/doctor.jsp").forward(request, response);
             }
             else if(p.validateLogin(username, password)){
 
