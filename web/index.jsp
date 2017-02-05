@@ -37,7 +37,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="services.jsp">Services</a></li>
-                            <li><a href="#">Another action</a></li>
+                            <li><a href="/video/doctorVideo.jsp">Online Consultation</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
@@ -55,7 +55,8 @@
                             out.println("Guest");
                         }
                         %></a></li>
-                    <li><a href="/login/login.html">Log off</a></li>
+                    <li><a><Form action="/logout" method="post"><button>Sign out</button></Form></a></li>
+                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </nav>

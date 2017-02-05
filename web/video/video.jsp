@@ -42,13 +42,14 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Welcome,
-                    <%if(null!=request.getAttribute("name"))
+                    <%if(null!=session.getAttribute("name"))
                 {
-                    out.println(request.getAttribute("name"));
+                    out.println(session.getAttribute("name"));
                 }else{
                     out.println("Guest");
                 }
                 %></a></li>
+                <li><a><%=session.getAttribute("pid")%></a></li>
                 <li><a href="/login/login.html">Log off</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -153,7 +154,9 @@
     var urlargs         = urlparams();
     var my_number       = PUBNUB.$('my-number');
     var my_link         = PUBNUB.$('my-number-link');
-    var number          = urlargs.number || Math.floor(Math.random()*999+1);
+    var pid       = <%=session.getAttribute("pid")%>;
+    var number          = urlargs.number || pid;
+    <%--var number = urlargs.number || pid;--%>
 
     my_number.number    = number;
     my_number.innerHTML = ''+my_number.number;
