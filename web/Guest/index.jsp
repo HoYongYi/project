@@ -7,11 +7,11 @@
     <meta name="Copyright" content="Gen" />
     <meta name="Designed By" content="http://gendesigns.blogspot.com" />
     <meta name="Language" content="English" />
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <style type="text/css" title="layout" media="screen"> @import url("style.css"); </style>
+    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style type="text/css" title="layout" media="screen"> @import url("../style.css"); </style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="images/plus.gif" alt="Logo"/>
+                <img src="../images/plus.gif" alt="Logo"/>
                 <a class="navbar-brand" href="#">Health Centre</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
@@ -36,8 +36,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="services.jsp">Services</a></li>
-                            <li><a href="/video/doctorVideo.jsp">Online Consultation</a></li>
+                            <li><a href="../services.jsp">Services</a></li>
+                            <li><a href="#">Another action</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
@@ -48,15 +48,14 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a>Welcome,
-                        <%if(null!=session.getAttribute("name"))
+                        <%if(null!=request.getAttribute("name"))
                         {
-                            out.println(session.getAttribute("name"));
+                            out.println(request.getAttribute("name"));
                         }else{
                             out.println("Guest");
                         }
                         %></a></li>
-                    <li><a><Form action="/logout" method="post"><button>Sign out</button></Form></a></li>
-                 </ul>
+                    <li><a href="/login/login.html">Log off</a></li>
             </div><!--/.nav-collapse -->
         </div>
     </nav>
@@ -70,7 +69,7 @@
             <p>Aspiring teacher became a doc because of bullies</p>
             <div class="date">02/07/08&nbsp;&#45;</div>
             <p>HIV no longer a death sentence but a period of hopeful living</p>
-            <p><img src="images/doctor.jpg" alt="Surgeons"/></p>
+            <p><img src="../images/doctor.jpg" alt="Surgeons"/></p>
         </div>
         <div id="left">
             <h1>Welcome to the Woodlands Integrated Health Campus</h1>
@@ -83,14 +82,14 @@
             <div class ="col">
                 <h1>Join us today!</h1>
                 <div id = "bottom">
-                    <img src ="images/volunteer.jpg" alt ="Volunteer"/>
+                    <li><a href = "volunteer.jsp"><img src ="../images/volunteer.jpg" alt ="Volunteer"/></a></li>
                 </div>
             </div>
             <h1>Stay connected</h1>
             <div class="col">
                 <div class="fcol">
-                    <a href = "https://www.facebook.com/" ><img src="images/FacebookButton.jpg" alt="Facebook" /> </a>
-                    <a href = "https://www.twitter.com/"><img src="images/twitter.jpg" alt="Twitter"/></a>
+                    <a href = "https://www.facebook.com/" ><img src="../images/FacebookButton.jpg" alt="Facebook" /> </a>
+                    <a href = "https://www.twitter.com/"><img src="../images/twitter.jpg" alt="Twitter"/></a>
                 </div>
 
             </div>
@@ -108,9 +107,9 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
-<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
 <!-- ==================================================================== -->
 </body>
 </html>
