@@ -11,11 +11,14 @@ public class Volunteer {
     private String volunteerHPNum;
     private String volunteerReason;
     private String volunteerEmail;
+    private String volunteerAge;
+    private String volunteerGender;
 
     public Volunteer(){}
 
     public Volunteer (String volunteerID , String volunteerName , String volunteerNRIC ,
-                      String volunteerHPNum , String volunteerReason , String volunteerEmail)
+                      String volunteerHPNum , String volunteerReason , String volunteerEmail ,
+                      String volunteerAge , String volunteerGender)
     {
         super();
         this.volunteerID = volunteerID;
@@ -24,6 +27,8 @@ public class Volunteer {
         this.volunteerHPNum = volunteerHPNum;
         this.volunteerReason = volunteerReason;
         this.volunteerEmail = volunteerEmail;
+        this.volunteerAge = volunteerAge;
+        this.volunteerGender = volunteerGender;
     }
     public String getVolunteerID() {return volunteerID;}
 
@@ -57,8 +62,7 @@ public class Volunteer {
         return volunteerReason;
     }
 
-    public void setVolunteerReason(String volunteerReason) {
-        this.volunteerReason = volunteerReason;
+    public void setVolunteerReason(String volunteerReason) {this.volunteerReason = volunteerReason;
     }
 
     public String getVolunteerEmail() {
@@ -68,4 +72,12 @@ public class Volunteer {
     public void setVolunteerEmail(String volunteerEmail) {
         this.volunteerEmail = volunteerEmail;
     }
+
+    public String getVolunteerAge() {return volunteerAge;}
+
+    public void setVolunteerAge(String volunteerAge) {this.volunteerAge = volunteerAge;}
+
+    public String getVolunteerGender() {return volunteerGender;}
+
+    public void setVolunteerGender(String volunteerGender) {this.volunteerGender = volunteerGender;}
 }

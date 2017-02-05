@@ -15,7 +15,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="jedp@localhost" uuid="361186a0-d82b-4eea-9be0-0114ee7ca4e9">
+    <data-source source="LOCAL" name="MySQL - jedp@localhost" uuid="c1d79137-25b7-44d3-98bf-ca58b2c27509">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
@@ -29,7 +29,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="MySQL - jedp@localhost" uuid="c1d79137-25b7-44d3-98bf-ca58b2c27509">
+    <data-source source="LOCAL" name="jedp@localhost" uuid="16dc2255-776f-4267-8901-714b60416e74">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

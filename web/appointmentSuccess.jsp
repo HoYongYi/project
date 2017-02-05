@@ -98,7 +98,7 @@ import com.twilio.type.PhoneNumber;%>
         <li>
             <h2>For </h2><strong><h1><%=description%></h1></strong>
         </li>
-        <a href="client.jsp" class="h3">Okay</a>
+        <a href="Patient/client.jsp" class="h3">Okay</a>
     </ul>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -23,10 +23,6 @@ public class VolunteerServletList extends HttpServlet{
             VolunteerDAO db = new VolunteerDAO();
             Volunteer v = new Volunteer();
             List<Volunteer> volunteerList = db.getAllVolunteer();
-
-//            HttpSession session=request.getSession();
-
-            //  Appointment show = db.getAppointment("1");
             request.setAttribute("Volunteer", volunteerList);
             getServletContext().getRequestDispatcher("/volunteerlist.jsp").forward(request,response);
 
