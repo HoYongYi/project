@@ -43,7 +43,7 @@ public class loginServlet extends HttpServlet {
                 session.setAttribute("name", name);
                 session.setAttribute("pid", id);
 
-                getServletContext().getRequestDispatcher("/doctor.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/Staff/doctor.jsp").forward(request, response);
             }
             else if(p.validateLogin(username, password)){
 
@@ -55,7 +55,7 @@ public class loginServlet extends HttpServlet {
                 session.setAttribute("pid", id);
 
 
-                getServletContext().getRequestDispatcher("/client.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/Patient/client.jsp").forward(request, response);
             }else{
                 getServletContext().getRequestDispatcher("/login/loginServlet.html").forward(request, response);
             }

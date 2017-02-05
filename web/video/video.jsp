@@ -153,7 +153,8 @@
     var urlargs         = urlparams();
     var my_number       = PUBNUB.$('my-number');
     var my_link         = PUBNUB.$('my-number-link');
-    var number          = urlargs.number || Math.floor(Math.random()*999+1);
+    var pid             = <%=session.getAttribute("pid")%>;
+    var number          = urlargs.number || pid || Math.floor(Math.random()*999+1);
 
     my_number.number    = number;
     my_number.innerHTML = ''+my_number.number;
