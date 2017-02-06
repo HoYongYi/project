@@ -14,6 +14,8 @@ import appointment.AppointmentDAO;
 import org.primefaces.model.chart.*;
 import patient.Patient;
 import patient.PatientDAO;
+import volunteer.Volunteer;
+import volunteer.VolunteerDAO;
 
 @ManagedBean
 public class ChartView implements Serializable {
@@ -21,12 +23,14 @@ public class ChartView implements Serializable {
     private BarChartModel barModel;
     private PieChartModel pieModel;
     private LineChartModel lineModel;
+    private PieChartModel volunteerPie;
 
     @PostConstruct
     public void init() {
         createBarModels();
         createPieModel();
         createLineModel();
+        createVolunteerPie();
     }
 
     public BarChartModel getBarModel() {
@@ -161,6 +165,57 @@ public class ChartView implements Serializable {
 
     }
 
+    public PieChartModel getVolunteerPie() {
+        return volunteerPie;
+    }
 
+    public void setVolunteerPie(PieChartModel volunteerPie) {
+        this.volunteerPie = volunteerPie;
+    }
+
+    private void createVolunteerPie(){
+        volunteerPie = new PieChartModel();
+
+        VolunteerDAO vDAO = null;
+        try {
+            vDAO = new VolunteerDAO();
+            Volunteer v = new Volunteer();
+            String[] ageGrp = {"20 and below", "Between 20 and 40", "Between 40 and 60", "60 and above"};
+            List<Volunteer> vList = vDAO.getAllVolunteer();
+            int below20 =0;
+            int between20n40 =0;
+            int between40n60 =0;
+            int above60 = 0;
+
+            for(int i = 0; i < vList.size() ; i ++){
+                v = vList.get(i);
+                int age = Integer.parseInt(v.getVolunteerAge());
+                if(age <= 20){
+                    below20 = below20+1;
+                }
+                else if(age <= 40){
+                    between20n40 = between20n40 + 1;
+                }
+                else if(age <= 60){
+                    between40n60 = between40n60 + 1;
+                }
+                else{
+                    above60 = above60 + 1;
+                }
+            }
+            int[] ageGrpValues = {below20, between20n40, between40n60, above60};
+
+            for(int i = 0 ; i < ageGrp.length; i++){
+                volunteerPie.set(ageGrp[i],ageGrpValues[i]);
+            }
+
+            volunteerPie.setTitle("Volunteer Pie");
+            volunteerPie.setLegendPosition("ne");
+            volunteerPie.setShowDataLabels(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }
 

@@ -14,7 +14,6 @@
 <head>
     <title>Title</title>
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
 </head>
 <style type="text/css" title="layout" media="screen"> @import url("appointmentstyle.css"); </style>
 <%
@@ -38,7 +37,6 @@
     }
     String text="Hi "+name+ ", you have made an appointment for "+date+" at "+time;
     SMS.method("+65" + session.getAttribute("phone"),text);
-
 %>
 
 <body>
