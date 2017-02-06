@@ -194,4 +194,53 @@ public class PatientDAO {
         }
     }
 
+    public boolean createPatient(String name, String gender, String nric, String password, int age) throws Exception {
+        boolean status = false;
+        System.out.println(status);
+        String sqlQuery = null;
+        ResultSet rs = null;
+        int id = 0;
+        boolean success = false;
+        PreparedStatement pstmt;
+
+        PatientDAO db = new PatientDAO();
+        db.getConnection();
+
+        //get the last client ID and increase by 1
+        sqlQuery = "SELECT MAX(id) FROM patient";
+        pstmt = db.getPreparedStatement(sqlQuery);
+        try {
+            rs = pstmt.executeQuery();
+            if (rs.next()) { // first Record found
+                id = rs.getInt(1) + 1;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        String pID = Integer.toString(id);
+
+        //create an SQL statement
+        sqlQuery = "INSERT INTO patient(pID, pName,pNric,password,gender, age)" + "VALUES(?, ?, ?, ?, ?, ?)";
+
+        pstmt = db.getPreparedStatement(sqlQuery);
+        try {
+            pstmt.setString(1, pID);
+            pstmt.setString(2,name);
+            pstmt.setString(3, nric);
+            pstmt.setString(4, password);
+            pstmt.setString(5, gender);
+            pstmt.setInt(6, age);
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        db.terminate();
+        return status;
+    }
+
 }

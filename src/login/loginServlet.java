@@ -57,13 +57,13 @@ public class loginServlet extends HttpServlet {
 
                 getServletContext().getRequestDispatcher("/Patient/client.jsp").forward(request, response);
             }else{
-                getServletContext().getRequestDispatcher("/login/loginServlet.html").forward(request, response);
+                getServletContext().getRequestDispatcher("/login/login.html").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("username", username);
             request.setAttribute("password", password);
-            getServletContext().getRequestDispatcher("/login/loginServlet.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/login/login.html").forward(request, response);
         }
 
     }
