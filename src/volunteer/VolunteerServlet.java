@@ -35,7 +35,7 @@ import java.util.List;
                 String Email=request.getParameter("Email");
                 String Age=request.getParameter("Age");
                 String Gender=request.getParameter("Gender");
-                //pointment apt;Ap
+
                 request.setAttribute("Name", Name);
                 request.setAttribute("NRIC", NRIC);
                 request.setAttribute("HPNum", HPNum);

@@ -135,8 +135,8 @@
 <div class = "container">
     <form method="get" action="/event">
         <div class="form-group">
-            <label for="event">Event title</label>
-            <input name="event" type="text" class="form-control" id="event" aria-describedby="event" placeholder="Enter Event title">
+            <label for="title">Event title</label>
+            <input name="title" type="text" class="form-control" id="title" aria-describedby="title" placeholder="Enter Event title">
         </div>
         <div class="form-group">
             <label for="venue">Venue</label>

@@ -69,23 +69,9 @@
 <br>
 
 
-<form method="post">
+<h3>id  name   nric   hpnum   reason  email  age  gender</h3>
 
-    <table border="2" width ="800">
-        <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>NRIC</td>
-            <td>HPNum</td>
-            <td>Reason</td>
-            <td>Email</td>
-            <td>Age</td>
-            <td>Gender</td>
-        </tr>
-
-
-    </table>
-</form>
+<br>
 <%for(int i =0; i<volunteerList.size();i++) {
     String id =volunteerList.get(i).getVolunteerID();
     String name =volunteerList.get(i).getVolunteerName();
@@ -95,7 +81,7 @@
     String email =volunteerList.get(i).getVolunteerEmail();
     String age =volunteerList.get(i).getVolunteerAge();
     String gender =volunteerList.get(i).getVolunteerGender(); %>
-<%out.println(id + "" + name + "" + nric + "" + hpnum + "" + reason + "" + email + "" + age + "" +  gender);%><br>
+<%out.println(id + " " + name + " " + nric + " " + hpnum + " " + reason + " " + email + " " + age + " " +  gender);%><br>
 <%}%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

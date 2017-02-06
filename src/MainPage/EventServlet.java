@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-import static org.omnifaces.util.Faces.getServletContext;
-
 /**
  * Created by Hyy on 6/2/2017.
  */
@@ -71,7 +69,7 @@ public class EventServlet extends HttpServlet {
             request.setAttribute("content", content);
 
             db.createEvent(title,venue,staffId,date,content);
-            getServletContext().getRequestDispatcher("/Staff/createEvents.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Staff/createEventSuccess.jsp").forward(request, response);
 
         }catch(Exception e) {
             e.printStackTrace();
