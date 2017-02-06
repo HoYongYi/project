@@ -20,13 +20,13 @@ public class ChartView implements Serializable {
 
     private BarChartModel barModel;
     private PieChartModel pieModel;
-    //private LineChartModel lineModel;
+    private LineChartModel lineModel;
 
     @PostConstruct
     public void init() {
         createBarModels();
         createPieModel();
-        //createLineModel();
+        createLineModel();
     }
 
     public BarChartModel getBarModel() {
@@ -123,8 +123,6 @@ public class ChartView implements Serializable {
         return avgAppt;
     }
 
-    /*
-
     public LineChartModel getLineModel() {
         return lineModel;
     }
@@ -133,36 +131,36 @@ public class ChartView implements Serializable {
         this.lineModel = lineModel;
     }
 
-    private LineChartModel initLinearModel(){
+    private LineChartModel initLineModel() {
         LineChartModel model = new LineChartModel();
-        model.addSeries(numParticipation());
+
+        ChartSeries participation = new ChartSeries();
+        participation.setLabel("Participant");
+        participation.set("Event A", 174);
+        participation.set("Event B", 300);
+        participation.set("Event C", 574);
+        participation.set("Event D", 738);
+        participation.set("Event E", 900);
+
+        model.addSeries(participation);
+
         return model;
     }
 
     private void createLineModel(){
-        lineModel = initLinearModel();
-        lineModel.setTitle("Event Participation");
-        lineModel.setLegendPosition("ne");
+        lineModel = initLineModel();
+        lineModel.setTitle("Participants Chart");
+        lineModel.setLegendPosition("e");
+        lineModel.setShowPointLabels(true);
+        lineModel.getAxes().put(AxisType.X, new CategoryAxis("Events"));
         Axis yAxis = lineModel.getAxis(AxisType.Y);
-        yAxis.setLabel("No. of Appointment");
+        yAxis.setLabel("No. of Participants");
+        yAxis.setMin(100);
+        yAxis.setMax(1000);
 
-        Axis xAxis = lineModel.getAxis(AxisType.X);
-        xAxis.setLabel("Events");
+
     }
 
-    private LineChartSeries numParticipation(){
-        LineChartSeries participation = new LineChartSeries();
-        participation.setLabel("Participation");
-        //add in data
-        participation.set("Event A", 300);
-        participation.set("Event B", 347);
-        participation.set("Event C", 452);
-        participation.set("Event D", 561);
-        participation.set("Event E", 621);
-        return participation;
-    }
-
-    */
 
 }
 
