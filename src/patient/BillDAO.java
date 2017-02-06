@@ -42,6 +42,31 @@ public class BillDAO {
         return Bill;
     }
 
+    public List<Bill> getBills(String name){
+        String sql = "select * from bill where pName = ?";
+        ArrayList<Bill> list = new ArrayList<Bill>();
+
+        try{
+            getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, name);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs != null && rs.next()){
+                Bill bill = new Bill() ;
+                bill.setBillNo(rs.getInt("billNo"));
+                bill.setPNric(rs.getString("pNric"));
+                bill.setPName(rs.getString("pName"));
+                bill.setServices(rs.getString("services"));
+                bill.setAmount(rs.getString("amount"));
+                list.add(bill);
+            }
+            pstmt.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return list;
+    }
+
     public List<Bill> getAllBill(){
         String sql = "select * from bill";
         ArrayList<Bill> list = new ArrayList<Bill>();
@@ -50,7 +75,6 @@ public class BillDAO {
             PreparedStatement pstmt = con.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
             while(rs != null && rs.next()){
-
                 Bill bill = new Bill() ;
                 bill.setBillNo(rs.getInt("billNo"));
                 bill.setPNric(rs.getString("pNric"));
@@ -58,15 +82,11 @@ public class BillDAO {
                 bill.setServices(rs.getString("services"));
                 bill.setAmount(rs.getString("amount"));
                 list.add(bill);
-
             }
             pstmt.close();
         }catch(SQLException e){
             e.printStackTrace();
         }
         return list;
-
     }
-
-
 }

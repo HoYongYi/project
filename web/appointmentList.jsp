@@ -1,5 +1,5 @@
 <%@ page import="appointment.AppointmentDAO" %>
-<%@ page import="appointment.Appointment" %>
+<%@ page import="appointment.*" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Dominic
@@ -10,11 +10,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 AppointmentDAO dao=new AppointmentDAO();
-    List<Appointment>list=dao.getAllAppointment();
+    List<Appointment>list=dao.getAllAppointmentNric("s9818831b");
 %>
 <html>
 <head>
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="TableStyle.css" rel="stylesheet" type="text/css">
+
     <title>Title</title>
 </head>
 <body>
@@ -61,15 +63,42 @@ AppointmentDAO dao=new AppointmentDAO();
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<%for(int i =0; i<list.size();i++) {
-    String name=list.get(i).getPatientName();
-    String nric=list.get(i).getPatientNric();
-    String date=list.get(i).getDate();
-    String time=list.get(i).getTime();
-    String des=list.get(i).getDescription();%>
 
-  <%out.print(name+" "+nric+" "+date+" "+" "+time+" "+des);%><br>
-<%}%>
+<br><br><br>
+<table id="table" class="flat-table">
+    <tbody>
+
+    <tr>
+        <th></th>
+        <th >Name</th>
+        <th>Nric</th>
+        <th > Date</th>
+        <th >Time</th>
+        <th>Description</th>
+    </tr>
+
+    <%
+        for (Appointment appointment: list) {
+    %>
+
+
+    <tr></tr>
+    <tr>
+        <td></td>
+        <td><%= appointment.getPatientName()   %>      </td>
+        <td><%= appointment.getPatientNric()  %>      </td>
+        <td><%= appointment.getDate() %>      </td>
+        <td><%= appointment.getTime()%>     </td>
+        <td><%= appointment.getDescription()%>     </td>
+
+    </tr>
+    <%
+        }
+    %>
+    </tbody>
+</table>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
 <script src="../bootstrap/dist/js/bootstrap.min.js"></script>

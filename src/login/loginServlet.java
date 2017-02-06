@@ -47,12 +47,18 @@ public class loginServlet extends HttpServlet {
             }
             else if(p.validateLogin(username, password)){
 
-                    Patient patient = p.getPatient(username);
-                    String name = patient.getPName();
-                    String id = patient.getPID();
+                Patient patient = p.getPatient(username);
+                String name = patient.getPName();
+                String id = patient.getPID();
+                String nric = patient.getPNric();
+                String phone = patient.getPhoneNo();
+
+                System.out.println(name);
 
                 session.setAttribute("name", name);
                 session.setAttribute("pid", id);
+                session.setAttribute("nric", nric);
+                session.setAttribute("phone", phone);
 
 
                 getServletContext().getRequestDispatcher("/Patient/client.jsp").forward(request, response);
@@ -61,8 +67,6 @@ public class loginServlet extends HttpServlet {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute("username", username);
-            request.setAttribute("password", password);
             getServletContext().getRequestDispatcher("/login/login.html").forward(request, response);
         }
 

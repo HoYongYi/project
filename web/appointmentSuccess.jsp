@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="appointment.AppointmentDAO" %>
+<%@ page import="appointment.SMS" %>
+
 
 <html>
 <head>
@@ -22,19 +24,23 @@
     String date=request.getParameter("date");
     String description=request.getParameter("description");
     if (name != null) {
-        session.setAttribute("name", name);
-        session.setAttribute("nric", nric);
-        session.setAttribute("time", time);
-        session.setAttribute("date", date);
-        session.setAttribute("description", description);
+        request.setAttribute("name", name);
+        request.setAttribute("nric", nric);
+        request.setAttribute("time", time);
+        request.setAttribute("date", date);
+        request.setAttribute("description", description);
     } else {
-        name = (String)session.getAttribute("name");
-        nric = (String)session.getAttribute("nric");
-        time = (String)session.getAttribute("time");
-        date = (String)session.getAttribute("date");
-        description = (String)session.getAttribute("description");
+        name = (String)request.getAttribute("name");
+        nric = (String)request.getAttribute("nric");
+        time = (String)request.getAttribute("time");
+        date = (String)request.getAttribute("date");
+        description = (String)request.getAttribute("description");
     }
+    String text="Hi "+name+ ", you have made an appointment for "+date+" at "+time;
+    SMS.method("+65" + session.getAttribute("phone"),text);
+
 %>
+
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -67,9 +73,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Welcome,
-                    <%if(null!=request.getAttribute("name"))
+                    <%if(null!=session.getAttribute("name"))
                     {
-                        out.println(request.getAttribute("name"));
+                        out.println(session.getAttribute("name"));
                     }else{
                         out.println("Guest");
                     }
@@ -84,7 +90,7 @@
 <form class="form-style-9",>
     <ul>
         <li>
-            <h2>Hi</h2> <strong><h1><%=name%>!</h1></strong>
+            <h2>Hi</h2> <strong><h1><%=session.getAttribute("name")%>!</h1></strong>
         </li>
         <li>
             <h2>you have made an appointment on </h2><strong><h1> <%=date%></h1></strong> <h2> at</h2><strong><h1><%=time%></h1></strong>
@@ -94,6 +100,7 @@
         </li>
         <a href="Patient/client.jsp" class="h3">Okay</a>
     </ul>
+
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>

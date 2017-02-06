@@ -34,7 +34,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="services.jsp">Services</a></li>
                         <li><a href="/video/video.jsp">Online Consultation</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="/createAppointment.jsp">Appointment</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Nav header</li>
                         <li><a href="#">Separated link</a></li>

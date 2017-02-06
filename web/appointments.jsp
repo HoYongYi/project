@@ -67,7 +67,6 @@
         <li>
             <a href="createAppointment.jsp" class="h3"><h2>Make Appointment</h2></a>
         </li>
-
         <li><br></li>
 
         <li>

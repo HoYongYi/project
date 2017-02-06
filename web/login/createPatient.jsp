@@ -88,6 +88,10 @@
             <label for="age">Age</label>
             <input name="age" type="number" class="form-control" id="age" placeholder="age">
         </div>
+        <div class="form-group">
+            <label for="phoneNo">Phone Number</label>
+            <input name = "phoneNo" type="number" class="form-control" id="phoneNo" placeholder="Phone Number">
+        </div>
         <br>
         <br><br>
         <button type="submit" class="btn btn-primary">Submit</button>
