@@ -11,7 +11,7 @@ public class StaffDAO {
     public static String url = "jdbc:mysql://localhost/jedp";
     public static String dbdriver = "com.mysql.jdbc.Driver";
     public static String username = "root";
-    public static String password = "mysql";
+    public static String password = "0712";
 
     public StaffDAO() throws Exception{
 
@@ -47,7 +47,7 @@ public class StaffDAO {
                 staff.setPassword(rs.getString("Password"));
                 staff.setPerPhone(rs.getString("PerPhone"));
                 staff.setHomeAdd(rs.getString("HomeAdd"));
-                staff.setHomeAdd(rs.getString("Designation"));
+                staff.setDesignation(rs.getString("Designation"));
             }
 
             pstmt.close();
@@ -65,6 +65,7 @@ public class StaffDAO {
         String sqlQuery = null;
         ResultSet rs = null;
         int id = 0;
+        String x;
         boolean success = false;
         PreparedStatement pstmt;
 
@@ -77,7 +78,8 @@ public class StaffDAO {
         try {
             rs = pstmt.executeQuery();
             if (rs.next()) { // first Record found
-                id = rs.getInt(1) + 1;
+                x = rs.getString(1);
+                id = Integer.parseInt(x) + 1;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -159,6 +161,41 @@ public class StaffDAO {
         db.terminate();
 
         return login;
+    }
+
+    public boolean updateStaff(String staff_ID,String password,String perPhone,String homeAdd) throws Exception {
+        //declare local variables
+        boolean success = false;
+        StaffDAO db = new StaffDAO();
+        String dbQuery;
+        PreparedStatement pstmt;
+
+        //step 1 - establish connection to database
+        db.getConnection();
+
+        //step 2 - declare the SQL statement
+        dbQuery = "UPDATE staff SET password=?,perPhone=?,homeAdd=? WHERE staff_ID = ?";
+        pstmt = db.getPreparedStatement(dbQuery);
+
+        // step 3 - to insert record using executeUpdate method
+        try {
+
+            pstmt.setString(1, password);
+            pstmt.setString(2, perPhone);
+            pstmt.setString(3, homeAdd);
+            pstmt.setString(4, staff_ID);
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(success);
+        //step 4 - close connection
+        db.terminate();
+
+        return success;
     }
 
     public PreparedStatement getPreparedStatement(String dbQuery) {

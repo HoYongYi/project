@@ -1,13 +1,8 @@
-
-<%@ page import="video.RecordDAO" %>
-<%@ page import="video.Record" %>
-<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <script src="../bootstrap/datepicker/js/bootstrap-datepicker.min.js"></script>
     <link id="bsdp-css" href="../bootstrap/datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
@@ -74,11 +69,7 @@
     <script src="../bootstrap/datepicker/locales/bootstrap-datepicker.zh-TW.min.js" charset="UTF-8"></script>
 </head>
 <body>
-<%
-    RecordDAO db=new RecordDAO();
-    String patientId = (String)request.getAttribute("patientId");
-    List<Record> list= db.getRecordByPatientId(patientId);
-%>
+
 <!-- ==================================================================== -->
 <!-- Required for template -->
 <!-- ==================================================================== -->
@@ -94,20 +85,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="../images/plus.gif" alt="Logo"/>
+            <img src="images/plus.gif" alt="Logo"/>
             <a class="navbar-brand" href="#">Health Centre</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="../about.jsp">About</a></li>
-                <li><a href="../newsandevents.jsp">News and Events</a></li>
-                <li><a href="../contactus.jsp">Contact us</a></li>
+                <li><a href="about.jsp">About</a></li>
+                <li><a href="newsandevents.jsp">News and Events</a></li>
+                <li><a href="contactus.jsp">Contact us</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="../services.jsp">Services</a></li>
-                        <li><a href="video.jsp">Online Consultation</a></li>
+                        <li><a href="services.jsp">Services</a></li>
+                        <li><a href="/video/video.jsp">Online Consultation</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Nav header</li>
@@ -134,41 +125,51 @@
 <!-- nav bar ends here -->
 <!-- ==================================================================== -->
 <div class = "container">
-<form method="post" action="/record">
-    <div class="form-group">
-        <label for="search">Patient Id</label>
-        <input name="search" type="text" class="form-control" id="search" aria-describedby="patientId" placeholder="Enter Patient Id">
-    </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-</form>
-
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>Patient Id</th>
-            <th>Staff Id</th>
-            <th>Date Created</th>
-            <th>Comments</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        <%
-            for(Record record : list) {
-        %>
-        <tr>
-            <td><%= record.getPatientId()%></td>
-            <td><%= record.getStaffId()%></td>
-            <td><%= record.getDate()%></td>
-            <td><%= record.getNotes()%></td>
-        </tr>
-        <%
-            }
-        %>
-        </tbody>
-    </table>
+    <br>
+    <form method="get" action="/staffUpdate">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input name="name" type="text" class="form-control" id="name" aria-describedby="name" value=<%if(null!=session.getAttribute("name") )
+                    {
+                        out.println(session.getAttribute("name"));
+                    }else{
+                        out.println("");
+                    }
+                    %>disabled>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input name="password" type="text" class="form-control" id="password" value=<%if(null!=session.getAttribute("password"))
+                    {
+                        out.println(session.getAttribute("password"));
+                    }else{
+                        out.println("");
+                    }
+                    %>>
+        </div>
+        <div class="form-group">
+            <label for="perPhone">Phone Number</label>
+            <input name="perPhone" type="tel" class="form-control" id="perPhone" value=<%if(null!=session.getAttribute("perPhone"))
+                    {
+                        out.println(session.getAttribute("perPhone"));
+                    }else{
+                        out.println("");
+                    }
+                    %>>
+        </div>
+        <div class="form-group">
+            <label for="homeAdd">Home Address</label>
+            <input name="homeAdd" type="text" class="form-control" id="homeAdd" value=<%if(null!=session.getAttribute("homeAdd"))
+                    {
+                        out.println(session.getAttribute("homeAdd"));
+                    }else{
+                        out.println("");
+                    }
+                    %>>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
 </div>
-
 <script>
     $('#datepicker').datepicker({
         format: 'dd/mm/yyyy',
