@@ -20,11 +20,13 @@ public class ChartView implements Serializable {
 
     private BarChartModel barModel;
     private PieChartModel pieModel;
+    //private LineChartModel lineModel;
 
     @PostConstruct
     public void init() {
         createBarModels();
         createPieModel();
+        //createLineModel();
     }
 
     public BarChartModel getBarModel() {
@@ -120,6 +122,47 @@ public class ChartView implements Serializable {
         }
         return avgAppt;
     }
+
+    /*
+
+    public LineChartModel getLineModel() {
+        return lineModel;
+    }
+
+    public void setLineModel(LineChartModel lineModel) {
+        this.lineModel = lineModel;
+    }
+
+    private LineChartModel initLinearModel(){
+        LineChartModel model = new LineChartModel();
+        model.addSeries(numParticipation());
+        return model;
+    }
+
+    private void createLineModel(){
+        lineModel = initLinearModel();
+        lineModel.setTitle("Event Participation");
+        lineModel.setLegendPosition("ne");
+        Axis yAxis = lineModel.getAxis(AxisType.Y);
+        yAxis.setLabel("No. of Appointment");
+
+        Axis xAxis = lineModel.getAxis(AxisType.X);
+        xAxis.setLabel("Events");
+    }
+
+    private LineChartSeries numParticipation(){
+        LineChartSeries participation = new LineChartSeries();
+        participation.setLabel("Participation");
+        //add in data
+        participation.set("Event A", 300);
+        participation.set("Event B", 347);
+        participation.set("Event C", 452);
+        participation.set("Event D", 561);
+        participation.set("Event E", 621);
+        return participation;
+    }
+
+    */
 
 }
 
