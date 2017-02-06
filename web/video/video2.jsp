@@ -25,8 +25,8 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="../about.jsp">About</a></li>
-                <li><a href="../event1.jsp">Event</a></li>
+                <li><a href="../Guest/about.jsp">About</a></li>
+                <li><a href="../Guest/event1.jsp">Event</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -42,19 +42,19 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Welcome,
-                    <%if(null!=request.getAttribute("name"))
+                    <%if(null!=session.getAttribute("name"))
                 {
-                    out.println(request.getAttribute("name"));
+                    out.println(session.getAttribute("name"));
                 }else{
                     out.println("Guest");
                 }
                 %></a></li>
+                <li><a><%=session.getAttribute("pid")%></a></li>
                 <li><a href="/login/login.html">Log off</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-
 <!-- ===================================================================== -->
 <!-- ===================================================================== -->
 <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
@@ -153,7 +153,8 @@
     var urlargs         = urlparams();
     var my_number       = PUBNUB.$('my-number');
     var my_link         = PUBNUB.$('my-number-link');
-    var number          = urlargs.number || Math.floor(Math.random()*999+1);
+    var pid             = <%=session.getAttribute("pid")%>;
+    var number          = urlargs.number || pid || Math.floor(Math.random()*999+1);
 
     my_number.number    = number;
     my_number.innerHTML = ''+my_number.number;
@@ -201,7 +202,7 @@
     var img_self  = PUBNUB.$('video-self');
 
     var phone     = window.phone = PHONE({
-        number        : <%=session.getAttribute("id")%>, // listen on this line
+        number        : my_number.number, // listen on this line
         publish_key   : 'pub-c-561a7378-fa06-4c50-a331-5c0056d0163c',
         subscribe_key : 'sub-c-17b7db8a-3915-11e4-9868-02ee2ddab7fe',
         ssl           : true
