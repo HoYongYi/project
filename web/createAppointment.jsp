@@ -66,7 +66,7 @@
     <ul>
         <li>
             <input type="text" name="name" class="field-style field-split align-left" value="<%=session.getAttribute("name")%>" disabled/>
-            <input type="text" name="nric" class="field-style field-split align-right" placeholder="Nric" />
+            <input type="text" name="nric" class="field-style field-split align-right" value="<%=session.getAttribute("nric")%>" disabled/>
         </li>
         <li>
             <select id="select" class="field-style field-full align-none" name="time">
