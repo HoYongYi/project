@@ -93,6 +93,7 @@
                     }
                     %></a></li>
                 <li><a href="/login/login.html">Log off</a></li>
+            </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
