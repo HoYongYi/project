@@ -2,14 +2,16 @@
     display: block;
     font-family: sans-serif;
     -webkit-font-smoothing: antialiased;
-    font-size: 115%;
+    font-size: 125%;
     overflow: auto;
     width: auto;
     position: relative;
-    left: 200px;;
+    left: 350px;;
+    top: 50px;
 }
+
 th {
-    background-color: rgb(112, 196, 105);
+    background-color: rgb(33,98,136);
     color: white;
     font-weight: normal;
     padding: 20px 30px;
@@ -20,4 +22,3 @@ td {
     color: rgb(111, 111, 111);
     padding: 20px 30px;
 }
-

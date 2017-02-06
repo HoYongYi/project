@@ -11,7 +11,7 @@ public class StaffDAO {
     public static String url = "jdbc:mysql://localhost/jedp";
     public static String dbdriver = "com.mysql.jdbc.Driver";
     public static String username = "root";
-    public static String password = "0712";
+    public static String password = "mysql";
 
     public StaffDAO() throws Exception{
 

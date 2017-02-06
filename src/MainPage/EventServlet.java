@@ -1,8 +1,5 @@
 package MainPage;
 
-import MainPage.Event;
-import MainPage.EventDAO;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-import static org.omnifaces.util.Faces.getServletContext;
+//import static org.omnifaces.util.Faces.getServletContext;
 
 /**
  * Created by Hyy on 6/2/2017.

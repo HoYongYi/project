@@ -8,10 +8,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-AppointmentDAO dao=new AppointmentDAO();
-    List<Appointment>list=dao.getAllAppointmentNric("s9818831b");
-%>
 <html>
 <head>
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +36,7 @@ AppointmentDAO dao=new AppointmentDAO();
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/video/video.jsp">Online Consultation</a></li>
-                        <li><a href="#">Another action</a></li>
+                        <li><a href="/appointments.jsp">Appointment</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Nav header</li>
@@ -51,9 +47,9 @@ AppointmentDAO dao=new AppointmentDAO();
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Welcome,
-                    <%if(null!=request.getAttribute("name"))
+                    <%if(null!=session.getAttribute("name"))
                     {
-                        out.println(request.getAttribute("name"));
+                        out.println(session.getAttribute("name"));
                     }else{
                         out.println("Guest");
                     }
@@ -75,14 +71,17 @@ AppointmentDAO dao=new AppointmentDAO();
         <th > Date</th>
         <th >Time</th>
         <th>Description</th>
+        <th></th>
     </tr>
 
     <%
+        AppointmentDAO dao=new AppointmentDAO();
+        String nric= (String) session.getAttribute("nric");
+        List<Appointment>list=dao.getAllAppointmentNric(nric);
+
         for (Appointment appointment: list) {
     %>
 
-
-    <tr></tr>
     <tr>
         <td></td>
         <td><%= appointment.getPatientName()   %>      </td>
@@ -90,6 +89,8 @@ AppointmentDAO dao=new AppointmentDAO();
         <td><%= appointment.getDate() %>      </td>
         <td><%= appointment.getTime()%>     </td>
         <td><%= appointment.getDescription()%>     </td>
+        <td></td>
+
 
     </tr>
     <%
