@@ -65,8 +65,8 @@
 <form action="/appointment" class="form-style-9",>
     <ul>
         <li>
-            <input type="text" name="name" class="field-style field-split align-left" value="<%=session.getAttribute("name")%>" disabled/>
-            <input type="text" name="nric" class="field-style field-split align-right" value="<%=session.getAttribute("nric")%>" disabled/>
+            <input type="text" name="name" class="field-style field-split align-left" value="<%=session.getAttribute("name")%>" />
+            <input type="text" name="nric" class="field-style field-split align-right" value="<%=session.getAttribute("nric")%>"/>
         </li>
         <li>
             <select id="select" class="field-style field-full align-none" name="time">

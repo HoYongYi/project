@@ -24,20 +24,20 @@
     String date=request.getParameter("date");
     String description=request.getParameter("description");
     if (name != null) {
-        session.setAttribute("name", name);
-        session.setAttribute("nric", nric);
-        session.setAttribute("time", time);
-        session.setAttribute("date", date);
-        session.setAttribute("description", description);
+        request.setAttribute("name", name);
+        request.setAttribute("nric", nric);
+        request.setAttribute("time", time);
+        request.setAttribute("date", date);
+        request.setAttribute("description", description);
     } else {
-        name = (String)session.getAttribute("name");
-        nric = (String)session.getAttribute("nric");
-        time = (String)session.getAttribute("time");
-        date = (String)session.getAttribute("date");
-        description = (String)session.getAttribute("description");
+        name = (String)request.getAttribute("name");
+        nric = (String)request.getAttribute("nric");
+        time = (String)request.getAttribute("time");
+        date = (String)request.getAttribute("date");
+        description = (String)request.getAttribute("description");
     }
     String text="Hi "+name+ ", you have made an appointment for "+date+" at "+time;
-    SMS.method("+6593265717",text);
+    SMS.method("+65" + session.getAttribute("phone"),text);
 
 %>
 
