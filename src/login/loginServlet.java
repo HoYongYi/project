@@ -50,9 +50,13 @@ public class loginServlet extends HttpServlet {
                     Patient patient = p.getPatient(username);
                     String name = patient.getPName();
                     String id = patient.getPID();
+                    String nric = patient.getPNric();
+                    String phone = patient.getPhoneNo();
 
                 session.setAttribute("name", name);
                 session.setAttribute("pid", id);
+                session.setAttribute("nric", nric);
+                session.setAttribute("phone", phone);
 
 
                 getServletContext().getRequestDispatcher("/Patient/client.jsp").forward(request, response);

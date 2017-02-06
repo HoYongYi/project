@@ -72,8 +72,9 @@ public class Patient {
         this.age = age;
     }
 
-    public String getPhoneNo(String phoneNo){return phoneNo;}
-
     public void setPhoneNo(String phoneNo){this.phoneNo = phoneNo;}
 
+    public String getPhoneNo() {
+        return phoneNo;
+    }
 }
