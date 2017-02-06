@@ -43,13 +43,19 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Welcome,
                     <%if(null!=session.getAttribute("name"))
+                    {
+                        out.println(session.getAttribute("name"));
+                    }else{
+                        out.println("Guest");
+                    }
+                    %></a></li>
+                <li><a><%if(null!=session.getAttribute("id"))
                 {
-                    out.println(session.getAttribute("name"));
+                    out.println(session.getAttribute("id"));
                 }else{
-                    out.println("Guest");
+                    out.println("");
                 }
                 %></a></li>
-                <li><a><%=session.getAttribute("pid")%></a></li>
                 <li><a href="/login/login.html">Log off</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -153,8 +159,8 @@
     var urlargs         = urlparams();
     var my_number       = PUBNUB.$('my-number');
     var my_link         = PUBNUB.$('my-number-link');
-    var pid             = <%=session.getAttribute("pid")%>;
-    var number          = urlargs.number || pid || Math.floor(Math.random()*999+1);
+    var id             = <%=session.getAttribute("id")%>;
+    var number          = urlargs.number || id || Math.floor(Math.random()*999+1);
 
     my_number.number    = number;
     my_number.innerHTML = ''+my_number.number;

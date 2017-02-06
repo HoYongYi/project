@@ -41,29 +41,33 @@ public class loginServlet extends HttpServlet {
                 String id = staff.getStaff_ID();
 
                 session.setAttribute("name", name);
-                session.setAttribute("pid", id);
+                session.setAttribute("id", id);
 
                 getServletContext().getRequestDispatcher("/Staff/doctor.jsp").forward(request, response);
             }
             else if(p.validateLogin(username, password)){
 
-                    Patient patient = p.getPatient(username);
-                    String name = patient.getPName();
-                    String id = patient.getPID();
+                Patient patient = p.getPatient(username);
+                String name = patient.getPName();
+                String id = patient.getPID();
+                String nric = patient.getPNric();
+                String phone = patient.getPhoneNo();
+
+                System.out.println(name);
 
                 session.setAttribute("name", name);
                 session.setAttribute("pid", id);
+                session.setAttribute("nric", nric);
+                session.setAttribute("phone", phone);
 
 
                 getServletContext().getRequestDispatcher("/Patient/client.jsp").forward(request, response);
             }else{
-                getServletContext().getRequestDispatcher("/login/loginServlet.html").forward(request, response);
+                getServletContext().getRequestDispatcher("/login/login.html").forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute("username", username);
-            request.setAttribute("password", password);
-            getServletContext().getRequestDispatcher("/login/loginServlet.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/login/login.html").forward(request, response);
         }
 
     }

@@ -46,13 +46,12 @@ public class PatientDAO {
                 rs.next();
                 Patient = new Patient();
                 Patient.setPID(rs.getString("pID"));
-                Patient.setPassword(rs.getString("password"));
-                Patient.setPNric(rs.getString("pNric"));
                 Patient.setPName(rs.getString("pName"));
+                Patient.setPNric(rs.getString("pNric"));
+                Patient.setPassword(rs.getString("password"));
                 Patient.setGender(rs.getString("gender"));
                 Patient.setAge(rs.getInt("age"));
-
-
+                Patient.setPhoneNo(rs.getString("phoneNo"));
             }
 
             pstmt.close();
@@ -84,6 +83,7 @@ public class PatientDAO {
                p.setPassword(rs.getString("password"));
                p.setGender(rs.getString("gender"));
                p.setAge(rs.getInt("age"));
+               p.setPhoneNo(rs.getString("phoneNo"));
                if(p.getGender().equals(patientGender)){
                    pList.add(p);
                }
@@ -114,6 +114,7 @@ public class PatientDAO {
                 p.setPassword(rs.getString("password"));
                 p.setGender(rs.getString("gender"));
                 p.setAge(rs.getInt("age"));
+                p.setPhoneNo(rs.getString("phoneNo"));
                 list.add(p);
             }
             pstmt.close();
@@ -132,7 +133,8 @@ public class PatientDAO {
         String password = rs.getString("password");
         String gender = rs.getString("gender");
         int age = rs.getInt("age");
-        Patient = new Patient (pID, pName, pNric, password, gender, age);
+        String phoneNo = rs.getString("phoneNo");
+        Patient = new Patient (pID, pName, pNric, password, gender, age, phoneNo);
 
         return Patient;
     }
@@ -192,6 +194,58 @@ public class PatientDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean createPatient(String name, String nric, String password, String gender,int age,String phoneNo) throws Exception {
+        boolean status = false;
+        System.out.println(status);
+        String sqlQuery = null;
+        ResultSet rs = null;
+        String x;
+        int id = 0;
+        boolean success = false;
+        PreparedStatement pstmt;
+
+        PatientDAO db = new PatientDAO();
+        db.getConnection();
+
+        //get the last client ID and increase by 1
+        sqlQuery = "SELECT MAX(pid) FROM patient";
+        pstmt = db.getPreparedStatement(sqlQuery);
+        try {
+            rs = pstmt.executeQuery();
+            if (rs.next()) { // first Record found
+                x = rs.getString(1);
+                id = Integer.parseInt(x) +1;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        String pID = Integer.toString(id);
+
+        //create an SQL statement
+        sqlQuery = "INSERT INTO patient(pID, pName,pNric,password,gender, age,phoneNo)" + "VALUES(?, ?, ?, ?, ?, ?,?)";
+
+        pstmt = db.getPreparedStatement(sqlQuery);
+        try {
+            pstmt.setString(1, pID);
+            pstmt.setString(2, name);
+            pstmt.setString(3, nric);
+            pstmt.setString(4, password);
+            pstmt.setString(5, gender);
+            pstmt.setInt(6, age);
+            pstmt.setString(7,phoneNo);
+
+            if (pstmt.executeUpdate() == 1)
+                success = true;
+            pstmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        db.terminate();
+        return status;
     }
 
 }
