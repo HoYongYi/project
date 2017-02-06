@@ -34,16 +34,16 @@
                     <ul class="dropdown-menu">
                         <li><a href="services.jsp">Services</a></li>
                         <li><a href="/video/video.jsp">Online Consultation</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="">Blank</a></li>
                         <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li class="dropdown-header">Consultation Records</li>
+                        <li><a href="/video/viewRecord.jsp">View Record</a></li>
+                        <li><a href="/video/createRecord.jsp">Create Record</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>Welcome,
+                <li><a href="Staff/viewStaff.jsp">Welcome,
                     <%if(null!=session.getAttribute("name"))
                     {
                         out.println(session.getAttribute("name"));

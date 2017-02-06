@@ -39,9 +39,15 @@ public class loginServlet extends HttpServlet {
                 Staff staff = s.getStaff(username);
                 String name = staff.getName();
                 String id = staff.getStaff_ID();
+                String homeAdd = staff.getHomeAdd();
+                String perPhone = staff.getPerPhone();
 
                 session.setAttribute("name", name);
                 session.setAttribute("id", id);
+                session.setAttribute("password", password);
+                session.setAttribute("homeAdd", homeAdd);
+                session.setAttribute("perPhone", perPhone);
+
 
                 getServletContext().getRequestDispatcher("/Staff/doctor.jsp").forward(request, response);
             }

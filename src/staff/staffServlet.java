@@ -20,9 +20,46 @@ import java.io.IOException;
 public class staffServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        try {
+            String nric = request.getParameter("search");
+
+            StaffDAO db = new StaffDAO();
+            Staff staff = db.getStaff(nric);
+
+            String staffId = staff.getStaff_ID();
+            String name = staff.getName();
+            //nric
+            String gender = staff.getGender();
+            String password = staff.getPassword();
+            String perPhone = staff.getPerPhone();
+            String homeAdd = staff.getHomeAdd();
+            String designation = staff.getDesignation();
 
 
+            System.out.println("staffid "+staffId);
+            System.out.println("name "+name);
+            System.out.println("nric "+nric);
+            System.out.println("gender "+gender);
+            System.out.println("password "+password);
+            System.out.println("perPhone "+perPhone);
+            System.out.println("homeAdd "+homeAdd);
+            System.out.println("designation "+designation);
 
+            request.setAttribute("staffId", staffId);
+            request.setAttribute("name", name);
+            request.setAttribute("nric", nric);
+            request.setAttribute("gender", gender);
+            request.setAttribute("password", password);
+            request.setAttribute("perPhone", perPhone);
+            request.setAttribute("homeAdd", homeAdd);
+            request.setAttribute("designation", designation);
+
+            getServletContext().getRequestDispatcher("/Staff/viewStaff.jsp").forward(request,response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ServletException(e);
+        }
     }
 
 
