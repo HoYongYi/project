@@ -105,7 +105,7 @@ public class TableBean implements Serializable {
     }
 
     private String calPercent(int value , int total){
-        DecimalFormat df = new DecimalFormat("#0.0#");
+        DecimalFormat df = new DecimalFormat("#0.00");
         double percent = (double)value / total;
         return df.format(percent*100);
     }
@@ -189,7 +189,6 @@ public class TableBean implements Serializable {
             //male
             if (selected == 0) {
                 List<Patient> maleList = pDao.getPatientByGender("Male");
-                System.out.println("maleList = " + maleList.size());
                 int[] grpValues = calAgeGrp(maleList);
 
                 for (int x = 0; x < ageGrp.length; x++) {
