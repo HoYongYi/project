@@ -10,16 +10,18 @@ public class Patient {
     private String pName;
     private String gender;
     private int age;
+    private String phoneNo;
 
     public Patient(){}
 
-    public Patient(String pID, String password, String pNric, String pName, String gender, int age) {
+    public Patient(String pID, String password, String pNric, String pName, String gender, int age,String phoneNo) {
         this.pID = pID;
         this.password = password;
         this.pNric = pNric;
         this.pName = pName;
         this.gender = gender;
         this.age = age;
+        this.phoneNo = phoneNo;
     }
 
     public String getPID() {
@@ -69,4 +71,9 @@ public class Patient {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public String getPhoneNo(String phoneNo){return phoneNo;}
+
+    public void setPhoneNo(String phoneNo){this.phoneNo = phoneNo;}
+
 }

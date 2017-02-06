@@ -1,6 +1,6 @@
 package patient;
 
-import patient.PatientDAO;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,11 +14,7 @@ import java.io.IOException;
 public class patientServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-
-
-    }
-
+}
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try{
@@ -31,6 +27,9 @@ public class patientServlet extends HttpServlet {
             String x =  request.getParameter("age");
 
             int age = Integer.parseInt(x);
+            String phoneNo = request.getParameter("phoneNo");
+
+
 
             request.setAttribute("name", name);
             request.setAttribute("gender", gender);
@@ -38,7 +37,8 @@ public class patientServlet extends HttpServlet {
             request.setAttribute("password", password);
             request.setAttribute("age", age);
 
-            db.createPatient(name,nric,password,gender,age);
+            db.createPatient(name,nric,password,gender,age,phoneNo);
+
             getServletContext().getRequestDispatcher("/login/login.html").forward(request, response);
 
 

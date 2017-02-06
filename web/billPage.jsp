@@ -11,7 +11,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <%
     BillDAO dao=new BillDAO();
-    List<Bill> list=dao.getAllBill();
+    String name = (String)session.getAttribute("name");
+    List<Bill> list=dao.getBills(name);
 %>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
@@ -39,14 +40,15 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="Guest/index.jsp">Home</a></li>
-                <li><a href="Guest/about.jsp">About</a></li>
-                <li><a href="Guest/event1.jsp">Event</a></li>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="about.jsp">About</a></li>
+                <li><a href="newsandevents.jsp">News and Events</a></li>
+                <li><a href="contactus.jsp">Contact us</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Another action</a></li>
+                        <li><a href="services.jsp">Services</a></li>
+                        <li><a href="/video/doctorVideo.jsp">Online Consultation</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Nav header</li>
@@ -56,11 +58,15 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form action="/login", method = "post" >
-                    <input type = "text" name = "username" placeholder="Username"/>
-                    <input type = "password" name = "password" placeholder="Password"/>
-                    <input type = "submit" value = "Login"/>
-                </form>
+                <li><a>Welcome,
+                    <%if(null!=session.getAttribute("name"))
+                    {
+                        out.println(session.getAttribute("name"));
+                    }else{
+                        out.println("Guest");
+                    }
+                    %></a></li>
+                <li><a><Form action="/logout" method="post"><button>Sign out</button></Form></a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -70,20 +76,38 @@
 </div>
 <div id="content">
     <div id="left">
-        <h2 class="size_18 bold color_blue_3" style="margin: 20px 0 10px 0;">Bills</h2>
-        <%for(int i =0; i<list.size();i++) {
-            int billNo = list.get(i).getBillNo();
-            String pNric = list.get(i).getPNric();
-            String pName = list.get(i).getPName();
-            String services = list.get(i).getServices();
-            String amount = list.get(i).getAmount();%>
-            billNo
-        <%  out.println(billNo);
-            out.println(pNric);
-            out.println(pName);
-            out.println(services);
-            out.println(amount);}%><br>
+        <h2 class="size_18 bold color_blue_3" style="margin: 20px 0 10px 0;">Expense</h2>
 
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Bill No</th>
+                    <th>Nric</th>
+                    <th>Name</th>
+                    <th>Services</th>
+                    <th>Amount</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <%
+                    for(Bill b : list) {
+                %>
+                <tr>
+                    <td><%= b.getBillNo()%></td>
+                    <td><%= b.getPNric()%></td>
+                    <td><%= b.getPName()%></td>
+                    <td><%= b.getServices()%></td>
+                    <td><%= b.getAmount()%></td>
+                </tr>
+                <%
+                    }
+                %>
+                </tbody>
+            </table>
+        </div>
+    </div>
         <h1>Stay connected</h1>
         <div class="col">
             <div class="fcol">
