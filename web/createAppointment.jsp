@@ -48,9 +48,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a>Welcome,
-                    <%if(null!=request.getAttribute("name"))
+                    <%if(null!=session.getAttribute("name"))
                     {
-                        out.println(request.getAttribute("name"));
+                        out.println(session.getAttribute("name"));
                     }else{
                         out.println("Guest");
                     }
@@ -65,7 +65,7 @@
 <form action="/appointment" class="form-style-9",>
     <ul>
         <li>
-            <input type="text" name="name" class="field-style field-split align-left" placeholder="Name" />
+            <input type="text" name="name" class="field-style field-split align-left" value="<%=session.getAttribute("name")%>" disabled/>
             <input type="text" name="nric" class="field-style field-split align-right" placeholder="Nric" />
         </li>
         <li>

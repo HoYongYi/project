@@ -20,7 +20,7 @@ public class SMS {
 //                "sms").create();
 //
 //        System.out.println(message.getSid());
-        SMS.method("+6593265717","wassup");
+        SMS.method("+6593265717","testing");
     }
     public static void method(String num, String msg){
      String ACCOUNT_SID = "ACad1ef199b7093d0e7fdd3d19b2ca0fcf";
