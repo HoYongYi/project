@@ -63,7 +63,7 @@ public class recordServlet extends HttpServlet {
             request.setAttribute("comments", comments);
 
             db.createRecord(patientId,staffId,date,comments);
-            getServletContext().getRequestDispatcher("/appointmentSuccess.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Staff/doctor.jsp").forward(request, response);
 
         }catch(Exception e) {
             e.printStackTrace();

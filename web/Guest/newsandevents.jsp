@@ -66,17 +66,9 @@
         &nbsp;
     </div>
     <div id = "left">
-        <h1>News</h1>
-        <div class="date">04/12/16&nbsp;&#45;</div>
-        <p><a href="news1.jsp">Aspiring teacher became a doc because of bullies</a></p>
-        <div class="date">01/12/16&nbsp;&#45;</div>
-        <p><a href="#">HIV no longer a death sentence but a period of hopeful living</a></p>
+        <a href="news1.jsp"><h1>View News</h1></a>
 
-        <h1>Events</h1>
-        <div class="date">07/01/17&nbsp;&#45;</div>
-        <p><a href="event1.jsp">Prevention and Correction of Contractures in Clients with Neurological Conditions </a></p>
-        <div class="date">09/01/17&nbsp;&#45;</div>
-        <p><a href="#">Occupational Therapists' Role in Returning to Drive Following Medical Conditions </a></p>
+        <a href="event1.jsp"><h1>View Events</h1></a>
 ==
     </div>
 </div>

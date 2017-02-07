@@ -84,7 +84,7 @@
 <!-- ==================================================================== -->
 <!-- Nav Bar Copy this before your content  -->
 <!-- ==================================================================== -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -98,26 +98,24 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="doctor.jsp">Home</a></li>
-                <li><a href="createEvents.jsp">Create Events</a></li>
-                <li class="active"><a href="#">Create News</a></li>
-                <li><a href="viewStaff.jsp">View Staff</a></li>
-                <li><a href="volunteerList.jsp">View Volunteers</a></li>
+                <li><a href="/Staff/doctor.jsp">Home</a></li>
+                <li><a href="/Staff/createEvents.jsp">Create Events</a></li>
+                <li class="active"><a href="/Staff/createNews.jsp">Create News</a></li>
+                <li><a href="/Staff/viewStaff.jsp">View Staff</a></li>
+                <li><a href="/Staff/volunteerList.jsp">View Volunteers</a></li>
+                <li><a href="/Staff/report.xhtml">Statistic</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="../services.jsp">Services</a></li>
-                        <li><a href="video.jsp">Online Consultation</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li class="dropdown-header">Consultation Records</li>
+                        <li><a href="/video/video.jsp">Online Consultation</a></li>
+                        <li><a href="/video/viewRecord.jsp">View Record</a></li>
+                        <li><a href="/video/createRecord.jsp">Create Record</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>Welcome,
+                <li><a href="Staff/viewStaff.jsp">Welcome,
                     <%if(null!=session.getAttribute("name"))
                     {
                         out.println(session.getAttribute("name"));
@@ -125,11 +123,16 @@
                         out.println("Guest");
                     }
                     %></a></li>
-                <li><a><Form action="/logout" method="post"><button>Sign out</button></Form></a></li>
+                <li><a href="/login/login.html">Log off</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+<br>
+<br>
+<br>
+<br>
+
 <!-- ==================================================================== -->
 <!-- nav bar ends here -->
 <!-- ==================================================================== -->
@@ -141,7 +144,7 @@
         </div>
         <div class="form-group">
             <label for="staffId">Staff Id</label>
-            <input name="staffId" type="text" class="form-control" id="staffId" placeholder=<%=session.getAttribute("pid")%>>
+            <input name="staffId" type="text" class="form-control" id="staffId" placeholder=<%=session.getAttribute("id")%>>
         </div>
         <div class="form-group">
             <label for="content">Content</label>

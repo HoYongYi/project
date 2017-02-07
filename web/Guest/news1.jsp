@@ -1,10 +1,16 @@
-<%--
+<%@ page import="MainPage.News" %>
+<%@ page import="MainPage.NewsDAO" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Hyy
   Date: 14/12/2016
   Time: 6:09 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    NewsDAO db =new NewsDAO();
+    List<News> newsList=db.getAllNews();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -59,15 +65,30 @@
                     }
                     %></a></li>
                 <li><a href="/login/login.html">Log off</a></li>
+            </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-    <div class="line">
-        &nbsp;
-    </div>
-<div id = "left">
-    <h1>Aspiring teacher became a doc because of bullies</h1>
-</div>
+<table class="table table-hover" style=color:#000000>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <%
+        for(News news : newsList) {
+    %>
+    <tr>
+        <td><%= news.getContent()%></td>
+    </tr>
+    <%
+        }
+    %>
+    </tbody>
+</table>
 <div class="cleaner">&nbsp;</div>
 <div class="line">
     &nbsp;</div>

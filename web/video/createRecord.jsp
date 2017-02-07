@@ -77,7 +77,7 @@
 <!-- ==================================================================== -->
 <!-- Nav Bar Copy this before your content  -->
 <!-- ==================================================================== -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -91,12 +91,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="createEvents.jsp">Create Events</a></li>
-                <li><a href="createNews.jsp.jsp">Create News</a></li>
-                <li><a href="viewStaff.jsp">View Staff</a></li>
-                <li><a href="volunteerList.jsp">View Volunteers</a></li>
-                <li><a href="report.xhtml">Statistic</a></li>
+                <li><a href="/Staff/doctor.jsp">Home</a></li>
+                <li><a href="/Staff/createEvents.jsp">Create Events</a></li>
+                <li><a href="/Staff/createNews.jsp">Create News</a></li>
+                <li class="active"><a href="/Staff/viewStaff.jsp">View Staff</a></li>
+                <li><a href="/Staff/volunteerList.jsp">View Volunteers</a></li>
+                <li><a href="/Staff/report.xhtml">Statistic</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -108,7 +108,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>Welcome,
+                <li><a href="Staff/viewStaff.jsp">Welcome,
                     <%if(null!=session.getAttribute("name"))
                     {
                         out.println(session.getAttribute("name"));
@@ -116,11 +116,16 @@
                         out.println("Guest");
                     }
                     %></a></li>
-                <li><a><Form action="/logout" method="post"><button>Sign out</button></Form></a></li>
+                <li><a href="/login/login.html">Log off</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+<br>
+<br>
+<br>
+<br>
+
 <!-- ==================================================================== -->
 <!-- nav bar ends here -->
 <!-- ==================================================================== -->
@@ -132,7 +137,7 @@
     </div>
     <div class="form-group">
         <label for="staffId">Staff Id</label>
-        <input name="staffId" type="text" class="form-control" id="staffId" placeholder=<%=session.getAttribute("pid")%>>
+        <input name="staffId" type="text" class="form-control" id="staffId" placeholder=<%=session.getAttribute("id")%>>
     </div>
     <div class="input-group date" id="datepicker" data-provide="datepicker">
         <input name="date" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>

@@ -42,7 +42,7 @@ public class ServletAppointmentDetails extends HttpServlet {
             request.setAttribute("time", time);
             request.setAttribute("date", date);
             request.setAttribute("description", description);
-            db.createAppointment(name,nric,time,date,description);
+            db.createAppointment(name,nric,date,time,description);
 
             String text="Hi "+name+ ", you have made an appointment for "+date+" at "+time;
 

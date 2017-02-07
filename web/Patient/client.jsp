@@ -20,12 +20,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="images/plus.gif" alt="Logo"/>
+            <img src="../images/plus.gif" alt="Logo"/>
             <a class="navbar-brand" href="#">Health Centre</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/Patient/client.jsp">Home</a></li>
                 <li><a href="/billPage.jsp">Check Your Bills</a></li>
                 <li><a href="/Guest/newsandevents.jsp">News and Events</a></li>
                 <li><a href="/Guest/contactus.jsp">Contact us</a></li>

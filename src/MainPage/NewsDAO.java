@@ -74,7 +74,30 @@ public class NewsDAO {
         return status;
     }
 
+    public List<News> getAllNews(){
+        String sql = "select * from news";
+        ArrayList<News> list = new ArrayList<News>();
+        try{
+            getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs != null && rs.next()){
 
+                News news = new News() ;
+                news.setId(rs.getString("id"));
+                news.setStaffId(rs.getString("staffId"));
+                news.setTitle(rs.getString("title"));
+                news.setContent(rs.getString("content"));
+                list.add(news);
+
+            }
+            pstmt.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return list;
+
+    }
     public PreparedStatement getPreparedStatement(String dbQuery) {
         PreparedStatement pstmt = null;
         System.out.println("DB prepare statement: " + dbQuery);

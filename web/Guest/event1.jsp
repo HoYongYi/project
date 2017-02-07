@@ -11,9 +11,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 --%>
 <%
-    EventDAO dao=new EventDAO();
-    List<Event> eventList=dao.getAllEvent();
+    EventDAO db =new EventDAO();
+    List<Event> eventList=db.getAllEvent();
 %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -72,6 +73,31 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+<table class="table table-hover" style=color:#000000>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Venue</th>
+        <th>Date</th>
+        <th>Content</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <%
+        for(Event event : eventList) {
+    %>
+    <tr>
+        <td><%= event.getTitle()%></td>
+        <td><%= event.getVenue()%></td>
+        <td><%= event.getDate()%></td>
+        <td><%= event.getContent()%></td>
+    </tr>
+    <%
+        }
+    %>
+    </tbody>
+</table>
     <div class="line">
         &nbsp;
     </div>
@@ -81,20 +107,7 @@
 <div class="cleaner">&nbsp;</div>
 <div class="line">
     &nbsp;</div>
-
-<%for(int i =0; i<eventList.size();i++) {
-    String id =eventList.get(i).getId();
-    String title =eventList.get(i).getTitle();
-    String venue =eventList.get(i).getVenue();
-    String staffId =eventList.get(i).getStaffId();
-    String date =eventList.get(i).getDate();
-    String content =eventList.get(i).getContent();%>
-<%out.println(title);%>
-<%out.println("Venue" + venue);%>
-<%out.println("Date :" + date);%>
-<%out.println(content);%>
 <br>
-<%}%>
 <div id="footer">
     &copy; 2008 <a href="index.html">Designs.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://gendesigns.blogspot.com">Gen</a>
 </div>

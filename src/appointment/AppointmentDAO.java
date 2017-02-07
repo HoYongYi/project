@@ -70,8 +70,8 @@ public class AppointmentDAO {
                 appointment.setApptId(rs.getString("apptId"));
                 appointment.setPatientName(rs.getString("patientName"));
                 appointment.setPatientNric(rs.getString("patientNric"));
-                appointment.setDate(rs.getString("date"));
                 appointment.setTime(rs.getString("time"));
+                appointment.setDate(rs.getString("date"));
                 appointment.setDescription(rs.getString("description"));
                 list.add(appointment);
 
@@ -135,7 +135,7 @@ public class AppointmentDAO {
         }
 
         //create an SQL statement
-        sqlQuery = "INSERT INTO appointment(apptId, patientName, patientNric, date, time, description)" + "VALUES(?, ?, ?, ?, ?, ?)";
+        sqlQuery = "INSERT INTO appointment(apptId, patientName, patientNric, date,time, description)" + "VALUES(?, ?, ?, ?, ?, ?)";
 
         pstmt = db.getPreparedStatement(sqlQuery);
         try {

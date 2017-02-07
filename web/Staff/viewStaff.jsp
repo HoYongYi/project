@@ -76,7 +76,7 @@
 <!-- ==================================================================== -->
 <!-- Nav Bar Copy this before your content  -->
 <!-- ==================================================================== -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -85,17 +85,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="images/plus.gif" alt="Logo"/>
+            <img src="../images/plus.gif" alt="Logo"/>
             <a class="navbar-brand" href="#">Health Centre</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="createEvents.jsp">Create Events</a></li>
-                <li><a href="createNews.jsp.jsp">Create News</a></li>
-                <li><a href="viewStaff.jsp">View Staff</a></li>
-                <li><a href="volunteerList.jsp">View Volunteers</a></li>
-                <li><a href="report.xhtml">Statistic</a></li>
+                <li><a href="/Staff/doctor.jsp">Home</a></li>
+                <li><a href="/Staff/createEvents.jsp">Create Events</a></li>
+                <li><a href="/Staff/createNews.jsp">Create News</a></li>
+                <li class="active"><a href="/Staff/viewStaff.jsp">View Staff</a></li>
+                <li><a href="/Staff/volunteerList.jsp">View Volunteers</a></li>
+                <li><a href="/Staff/report.xhtml">Statistic</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -107,7 +107,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a>Welcome,
+                <li><a href="Staff/viewStaff.jsp">Welcome,
                     <%if(null!=session.getAttribute("name"))
                     {
                         out.println(session.getAttribute("name"));
@@ -115,11 +115,16 @@
                         out.println("Guest");
                     }
                     %></a></li>
-                <li><a><Form action="/logout" method="post"><button>Sign out</button></Form></a></li>
+                <li><a href="/login/login.html">Log off</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+<br>
+<br>
+<br>
+<br>
+
 <!-- ==================================================================== -->
 <!-- nav bar ends here -->
 <!-- ==================================================================== -->
