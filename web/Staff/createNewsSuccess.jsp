@@ -1,33 +1,27 @@
-<%@ page import="MainPage.EventDAO" %>
-<%@ page import="MainPage.Event" %>
-<%@ page import="java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: Hyy
-  Date: 14/12/2016
-  Time: 6:09 PM
+  Date: 7/2/2017
+  Time: 9:29 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
---%>
-<%
-    EventDAO dao=new EventDAO();
-    List<Event> eventList=dao.getAllEvent();
-%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-    <meta name="Description" content="A free open source web design by Gen.  Free for anyone to use as long as credits are intact. " />
-    <meta name="Keywords" content="open source web design,http://gendesigns.blogspot.com" />
-    <meta name="Copyright" content="Gen" />
-    <meta name="Designed By" content="http://gendesigns.blogspot.com" />
-    <meta name="Language" content="English" />
+    <meta charset="UTF-8">
+    <title></title>
     <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <style type="text/css" title="layout" media="screen"> @import url("../style.css"); </style>
 </head>
 <body>
-<nav class="navbar navbar-default">
+
+<!-- ==================================================================== -->
+<!-- Required for template -->
+<!-- ==================================================================== -->
+<!-- ==================================================================== -->
+<!-- Nav Bar Copy this before your content  -->
+<!-- ==================================================================== -->
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -36,19 +30,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="../images/plus.gif" alt="Logo"/>
             <a class="navbar-brand" href="#">Health Centre</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="index.jsp">Home</a></li>
-                <li><a href="about.jsp">About</a></li>
-                <li><a href="newsandevents.jsp">News and Event</a></li>
-                <li><a href="contactus.jsp">Contact us</a></li>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="../about.jsp">About</a></li>
+                <li><a href="../event1.jsp">Event</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="../services.jsp">Services</a></li>
+                        <li><a href="/video/video.jsp">Online Consultation</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
@@ -72,37 +64,46 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-    <div class="line">
-        &nbsp;
-    </div>
-    <div id = "left">
+<!-- ==================================================================== -->
+<!-- nav bar ends here -->
+<!-- ==================================================================== -->
+<style type="text/css" title="layout" media="screen"> @import url("../appointmentstyle.css"); </style>
 
-</div>
-<div class="cleaner">&nbsp;</div>
-<div class="line">
-    &nbsp;</div>
-
-<%for(int i =0; i<eventList.size();i++) {
-    String id =eventList.get(i).getId();
-    String title =eventList.get(i).getTitle();
-    String venue =eventList.get(i).getVenue();
-    String staffId =eventList.get(i).getStaffId();
-    String date =eventList.get(i).getDate();
-    String content =eventList.get(i).getContent();%>
-<%out.println(title);%>
-<%out.println("Venue" + venue);%>
-<%out.println("Date :" + date);%>
-<%out.println(content);%>
 <br>
-<%}%>
-<div id="footer">
-    &copy; 2008 <a href="index.html">Designs.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://gendesigns.blogspot.com">Gen</a>
-</div>
-</div>
+
+<br>
+
+<br>
+
+<br>
+
+<form class="form-style-9",>
+    <ul>
+        <li>
+            <h2>you have successfully created an event</h2>
+        </li>
+        <a href="../Staff/doctor.jsp" class="h3">Ok</a>
+    </ul>
+</form>
+
+
+
+
+
+
+
+
+
+
+<!-- ==================================================================== -->
+<!-- PLACE BEOFRE CLOSING BODY-->
+<!-- ==================================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
 <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="../bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+<!-- ==================================================================== -->
 </body>
 </html>

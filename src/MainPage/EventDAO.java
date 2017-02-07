@@ -4,6 +4,8 @@ import MainPage.Event;
 import MainPage.EventDAO;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Hyy on 6/2/2017.
@@ -107,7 +109,32 @@ public class EventDAO {
         return status;
     }
 
+    public List<Event> getAllEvent(){
+        String sql = "select * from event";
+        ArrayList<Event> list = new ArrayList<Event>();
+        try{
+            getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs != null && rs.next()){
 
+                Event event = new Event() ;
+                event.setId(rs.getString("id"));
+                event.setTitle(rs.getString("title"));
+                event.setVenue(rs.getString("venue"));
+                event.setStaffId(rs.getString("staffId"));
+                event.setDate(rs.getString("date"));
+                event.setContent(rs.getString("content"));
+                list.add(event);
+
+            }
+            pstmt.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return list;
+
+    }
     private Event convertToEvent(ResultSet rs) throws SQLException {
         Event event;
         String id = rs.getString("id");
