@@ -30,9 +30,8 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="about.jsp">About</a></li>
-                    <li><a href="newsandevents.jsp">News and Events</a></li>
-                    <li><a href="contactus.jsp">Contact us</a></li>
+                    <li><a href="createEvents.jsp">Create Events</a></li>
+                    <li><a href="createNews.jsp">Create News</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -72,12 +71,13 @@
             <p><img src="../images/doctor.jpg" alt="Surgeons"/></p>
         </div>
         <div id="left">
-            <h1>Welcome to the Woodlands Integrated Health Campus</h1>
+            <br>
+            <br>
+            <h1>Welcome back</h1>
+            <br>
+            <br>
             <p>
-                The Woodlands Integrated Health Campus will be an integrated healthcare facility that will include an acute hospital,
-                a community hospital and a nursing home.
-                The hospital will serve the anticipated increase in demand for healthcare services in the northern region of Singapore,
-                as our population grows and ages.
+
             </p>
             <div class ="col">
                 <h1>Join us today!</h1>
@@ -88,8 +88,8 @@
             <h1>Stay connected</h1>
             <div class="col">
                 <div class="fcol">
-                    <a href = "https://www.facebook.com/" ><img src="../images/FacebookButton.jpg" alt="Facebook" /> </a>
-                    <a href = "https://www.twitter.com/"><img src="../images/twitter.jpg" alt="Twitter"/></a>
+                    <a href = "https://www.facebook.com/pages/Woodlands-Integrated-Health-Campus/1692881360931622" ><img src="../images/FacebookButton.jpg" alt="Facebook" /> </a>
+                    <a href = "https://twitter.com/mysgh?lang=en"><img src="../images/twitter.jpg" alt="Twitter"/></a>
                 </div>
 
             </div>

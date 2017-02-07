@@ -98,10 +98,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="../about.jsp">About</a></li>
-                <li><a href="../newsandevents.jsp">News and Events</a></li>
-                <li><a href="../contactus.jsp">Contact us</a></li>
+                <li><a href="doctor.jsp">Home</a></li>
+                <li><a href="createEvents.jsp">Create Events</a></li>
+                <li class="active"><a href="#">Create News</a></li>
+                <li><a href="viewStaff.jsp">View Staff</a></li>
+                <li><a href="volunteerList.jsp">View Volunteers</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                     <ul class="dropdown-menu">

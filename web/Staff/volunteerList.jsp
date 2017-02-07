@@ -8,10 +8,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    VolunteerDAO dao=new VolunteerDAO();
-    List<Volunteer> volunteerList=dao.getAllVolunteer();
-%>
+<%--<%--%>
+    <%--VolunteerDAO dao=new VolunteerDAO();--%>
+    <%--List<Volunteer> volunteerList=dao.getAllVolunteer();--%>
+<%--%>--%>
 <html>
 <head>
     <link href="../bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -68,21 +68,63 @@
 <br>
 <br>
 
+<table id="table" border ="2" width ="800" class="flat-table">
+    <tbody>
 
-<h3>id  name   nric   hpnum   reason  email  age  gender</h3>
+    <tr>
+        <th></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Nric</th>
+        <th>HPNum</th>
+        <th>Reason</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Gender</th>
+    </tr>
 
-<br>
-<%for(int i =0; i<volunteerList.size();i++) {
-    String id =volunteerList.get(i).getVolunteerID();
-    String name =volunteerList.get(i).getVolunteerName();
-    String nric =volunteerList.get(i).getVolunteerNRIC();
-    String hpnum =volunteerList.get(i).getVolunteerHPNum();
-    String reason =volunteerList.get(i).getVolunteerReason();
-    String email =volunteerList.get(i).getVolunteerEmail();
-    String age =volunteerList.get(i).getVolunteerAge();
-    String gender =volunteerList.get(i).getVolunteerGender(); %>
-<%out.println(id + " " + name + " " + nric + " " + hpnum + " " + reason + " " + email + " " + age + " " +  gender);%><br>
-<%}%>
+    <%
+        VolunteerDAO dao=new VolunteerDAO();
+        List<Volunteer>list=dao.getAllVolunteer();
+
+        for (Volunteer volunteer: list) {
+    %>
+
+    <tr>
+        <td></td>
+        <td><%= volunteer.getVolunteerID()   %>      </td>
+        <td><%= volunteer.getVolunteerName()  %>      </td>
+        <td><%= volunteer.getVolunteerNRIC() %>      </td>
+        <td><%= volunteer.getVolunteerHPNum()%>     </td>
+        <td><%= volunteer.getVolunteerReason()%>     </td>
+        <td><%= volunteer.getVolunteerEmail()%>     </td>
+        <td><%= volunteer.getVolunteerAge()%>     </td>
+        <td><%= volunteer.getVolunteerGender()%>     </td>
+        <td></td>
+
+
+    </tr>
+    <%
+        }
+    %>
+    </tbody>
+</table>
+
+<%--<h3>id  name   nric   hpnum   reason  email  age  gender</h3>--%>
+
+<%--<br>--%>
+
+<%--<%for(int i =0; i<volunteerList.size();i++) {--%>
+    <%--String id =volunteerList.get(i).getVolunteerID();--%>
+    <%--String name =volunteerList.get(i).getVolunteerName();--%>
+    <%--String nric =volunteerList.get(i).getVolunteerNRIC();--%>
+    <%--String hpnum =volunteerList.get(i).getVolunteerHPNum();--%>
+    <%--String reason =volunteerList.get(i).getVolunteerReason();--%>
+    <%--String email =volunteerList.get(i).getVolunteerEmail();--%>
+    <%--String age =volunteerList.get(i).getVolunteerAge();--%>
+    <%--String gender =volunteerList.get(i).getVolunteerGender(); %>--%>
+<%--<%out.println(id + " " + name + " " + nric + " " + hpnum + " " + reason + " " + email + " " + age + " " +  gender);%><br>--%>
+<%--<%}%>--%>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
