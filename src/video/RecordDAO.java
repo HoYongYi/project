@@ -4,6 +4,8 @@ import video.Record;
 import video.RecordDAO;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by wenya on 5/2/2017.
@@ -14,7 +16,7 @@ public class RecordDAO {
     public static String url = "jdbc:mysql://localhost/jedp";
     public static String dbdriver = "com.mysql.jdbc.Driver";
     public static String username = "root";
-    public static String password = "0712";
+    public static String password = "mysql";
 
     public RecordDAO() throws Exception{
 
@@ -180,6 +182,30 @@ public class RecordDAO {
         record = new Record (id,patientId,staffId,date,notes);
 
         return record;
+    }
+
+    public List<Record> getRecordByNric(String nric){
+        String sql = "select * from record where patientId = ?";
+        ArrayList<Record> list = new ArrayList<Record>();
+
+        try{
+            getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, nric);
+            ResultSet rs = pstmt.executeQuery();
+            while(rs != null && rs.next()){
+                Record Record = new Record() ;
+                Record.setStaffId(rs.getString("staffId"));
+                Record.setPatientId(rs.getString("patientId"));
+                Record.setDate(rs.getString("date"));
+                Record.setNotes(rs.getString("notes"));
+                list.add(Record);
+            }
+            pstmt.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return list;
     }
 
     public PreparedStatement getPreparedStatement(String dbQuery) {

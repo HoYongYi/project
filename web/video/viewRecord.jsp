@@ -75,9 +75,14 @@
 </head>
 <body>
 <%
-    RecordDAO db=new RecordDAO();
+    RecordDAO db= null;
+    try {
+        db = new RecordDAO();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
     String patientId = (String)request.getAttribute("patientId");
-    List<Record> list= db.getRecordByPatientId(patientId);
+    List<Record> list= db.getRecordByNric(patientId);
 %>
 <!-- ==================================================================== -->
 <!-- Required for template -->
