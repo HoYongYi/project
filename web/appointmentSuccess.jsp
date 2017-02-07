@@ -35,8 +35,8 @@
         date = (String)request.getAttribute("date");
         description = (String)request.getAttribute("description");
     }
-    String text="Hi "+name+ ", you have made an appointment for "+date+" at "+time;
-    SMS.method("+65" + session.getAttribute("phone"),text);
+//    String text="Hi "+name+ ", you have made an appointment for "+date+" at "+time;
+//    SMS.method("+65" + session.getAttribute("phone"),text);
 %>
 
 <body>
@@ -93,9 +93,13 @@
         <li>
             <h2>you have made an appointment on </h2><strong><h1> <%=date%></h1></strong> <h2> at</h2><strong><h1><%=time%></h1></strong>
         </li>
-        <li>
-            <h2>For </h2><strong><h1><%=description%></h1></strong>
-        </li>
+            <%if(description!="")
+            {%>
+                <li>
+                  <h2>For </h2><strong><h1><%=description%></h1></strong>
+                </li>
+        <% }%>
+
         <a href="Patient/client.jsp" class="h3">Okay</a>
     </ul>
 
