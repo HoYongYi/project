@@ -95,13 +95,17 @@
             <textarea name="description" class="field-style" placeholder="Description"></textarea>
         </li>
         <li>
-            <input type="submit" value="Make Appointment!" />
+            <input type="submit"onclick="myFunction()" value="Make Appointment!" />
 
             <input type="button" value="Back" onClick="history.go(-1);return true;">
         </li>
     </ul>
 </form>
-
+<script>
+    function myFunction() {
+        alert("You will be charged $2 for booking fee!");
+    }
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('&lt;script src="../../assets/js/vendor/jquery.min.js">&lt;\/script>')</script>
 <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
