@@ -30,8 +30,9 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="createEvents.jsp">Create Events</a></li>
-                    <li><a href="createNews.jsp">Create News</a></li>
+                    <li><a href="about.jsp">About</a></li>
+                    <li><a href="newsandevents.jsp">News and events</a></li>
+                    <li><a href="contactus.jsp">Contact us</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -71,13 +72,13 @@
             <p><img src="../images/doctor.jpg" alt="Surgeons"/></p>
         </div>
         <div id="left">
-            <br>
-            <br>
-            <h1>Welcome back</h1>
-            <br>
-            <br>
+            <h1>Welcome to Woodlands Integrated Health Campus</h1>
             <p>
-
+                The Woodlands Integrated Health Campus will be an integrated healthcare facility that will include an acute hospital,
+                a community hospital and a nursing home.
+                The hospital will serve the anticipated increase in demand for healthcare services in the northern region of Singapore,
+                as our population grows and ages.
+            </p>
             </p>
             <div class ="col">
                 <h1>Join us today!</h1>
@@ -85,17 +86,21 @@
                     <li><a href = "volunteer.jsp"><img src ="../images/volunteer.jpg" alt ="Volunteer"/></a></li>
                 </div>
             </div>
-            <h1>Stay connected</h1>
-            <div class="col">
-                <div class="fcol">
-                    <a href = "https://www.facebook.com/pages/Woodlands-Integrated-Health-Campus/1692881360931622" ><img src="../images/FacebookButton.jpg" alt="Facebook" /> </a>
-                    <a href = "https://twitter.com/mysgh?lang=en"><img src="../images/twitter.jpg" alt="Twitter"/></a>
+
+                <h1>Stay connected</h1>
+                <div class="col">
+                    <div class="fcol">
+                        <img src="../images/FacebookButton.jpg" alt="Facebook"/>
+                        <img src="../images/twitter.jpg" alt="Twitter"/>
+                    </div>
+
                 </div>
 
             </div>
         </div>
-    </div>
-    <div class="cleaner">&nbsp;</div>
+        <div class="cleaner">&nbsp;</div>
+        <div class="line">
+            &nbsp;</div>
     <div id="footer">
         &copy; 2008 <a href="index.html">Designs.com</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://gendesigns.blogspot.com">Gen</a>
     </div>
