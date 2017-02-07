@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd3513a-3015-4ef9-a9c9-bbcb1cae7eff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainPage/EventListServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/Staff/createNewsSuccess.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainPage/EventDAO.java" afterPath="$PROJECT_DIR$/src/MainPage/EventDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainPage/EventServlet.java" afterPath="$PROJECT_DIR$/src/MainPage/EventServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainPage/News.java" afterPath="$PROJECT_DIR$/src/MainPage/News.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainPage/NewsDAO.java" afterPath="$PROJECT_DIR$/src/MainPage/NewsDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainPage/NewsServlet.java" afterPath="$PROJECT_DIR$/src/MainPage/NewsServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Guest/event1.jsp" afterPath="$PROJECT_DIR$/web/Guest/event1.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Staff/createNews.jsp" afterPath="$PROJECT_DIR$/web/Staff/createNews.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Staff/doctor.jsp" afterPath="$PROJECT_DIR$/web/Staff/doctor.jsp" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -67,6 +58,20 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="jedp@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="event" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -74,23 +79,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NewsDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MainPage/NewsDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1713">
-              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="createEventSuccess.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/Staff/createEventSuccess.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+              <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -100,17 +93,7 @@
         <entry file="file://$PROJECT_DIR$/web/Staff/createNewsSuccess.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-659">
-              <caret line="57" column="26" lean-forward="true" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doctor.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Staff/doctor.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="22" column="54" lean-forward="false" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+              <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -120,18 +103,68 @@
         <entry file="file://$PROJECT_DIR$/web/Guest/about.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="54" />
+              <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event1.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="event1.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/Guest/event1.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="90" column="43" lean-forward="true" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
+            <state relative-caret-position="498">
+              <caret line="94" column="14" lean-forward="false" selection-start-line="94" selection-start-column="14" selection-end-line="94" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news1.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/Guest/news1.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1130">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainPage/EventDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-264">
+              <caret line="120" column="43" lean-forward="false" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3227#3234#0" expanded="true" />
+                <marker date="1486432126462" expanded="true" signature="801:833" ph="select * fro... event" />
+                <marker date="1486432126462" expanded="true" signature="3160:3179" ph="select * fro... event" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventListServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MainPage/EventListServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VolunteerDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/volunteer/VolunteerDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1430">
+              <caret line="68" column="63" lean-forward="false" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
+              <folding>
+                <marker date="1486386535945" expanded="true" signature="802:847" ph="select * fro... volunteer" />
+                <marker date="1486386535945" expanded="true" signature="2022:2045" ph="select * fro... volunteer" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,23 +172,8 @@
       <file leaf-file-name="volunteerList.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/Staff/volunteerList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1364">
-              <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jedp.event" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/13b24d74/d8957e1a-19a6-4663-a205-848d104587f2/jedp.event">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="84" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -169,16 +187,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createNews.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Staff/createNews.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="138" column="124" lean-forward="false" selection-start-line="138" selection-start-column="124" selection-end-line="138" selection-end-column="124" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -251,7 +259,6 @@
         <option value="$PROJECT_DIR$/web/Staff/createEvents.jsp" />
         <option value="$PROJECT_DIR$/web/Staff/createEventSuccess.jsp" />
         <option value="$PROJECT_DIR$/web/Staff/volunteerList.jsp" />
-        <option value="$PROJECT_DIR$/src/MainPage/EventDAO.java" />
         <option value="$PROJECT_DIR$/src/MainPage/EventListServlet.java" />
         <option value="$PROJECT_DIR$/src/MainPage/News.java" />
         <option value="$PROJECT_DIR$/src/MainPage/NewsDAO.java" />
@@ -260,6 +267,7 @@
         <option value="$PROJECT_DIR$/web/Staff/createNews.jsp" />
         <option value="$PROJECT_DIR$/web/Staff/createNewsSuccess.jsp" />
         <option value="$PROJECT_DIR$/web/Staff/doctor.jsp" />
+        <option value="$PROJECT_DIR$/src/MainPage/EventDAO.java" />
         <option value="$PROJECT_DIR$/web/Guest/event1.jsp" />
       </list>
     </option>
@@ -1372,7 +1380,7 @@
       <workItem from="1486391204569" duration="1106000" />
       <workItem from="1486392565907" duration="846000" />
       <workItem from="1486396506053" duration="3840000" />
-      <workItem from="1486429410362" duration="2536000" />
+      <workItem from="1486429410362" duration="3252000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/HoYongYi/project&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/appointment/AppointmentDAO.java&#10;#&#9;web/doctor.jsp&#10;">
       <created>1481725979323</created>
@@ -1472,11 +1480,18 @@
       <option name="project" value="LOCAL" />
       <updated>1486404562228</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Create event and news done">
+      <created>1486431975720</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1486431975720</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87997000" />
+    <option name="totallyTimeSpent" value="88713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1567,7 +1582,8 @@
     <MESSAGE value="1" />
     <MESSAGE value="6/2 4.25pm" />
     <MESSAGE value="Create event done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create event done." />
+    <MESSAGE value="Create event and news done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create event and news done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1594,7 +1610,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/e1b36aa/26eae9c8-9e2e-4465-93fb-14d6253e0627/jedp.volunteer" />
     <entry file="dbDummy://dbtable:/e1b36aa/26eae9c8-9e2e-4465-93fb-14d6253e0627/jedp.volunteer" />
     <entry file="dbDummy://dbtable:/e1b36aa/26eae9c8-9e2e-4465-93fb-14d6253e0627/jedp.volunteer" />
     <entry file="dbDummy://dbtable:/e1b36aa/26eae9c8-9e2e-4465-93fb-14d6253e0627/jedp.volunteer" />
@@ -1805,17 +1820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/volunteer/VolunteerDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="68" column="63" lean-forward="true" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
-          <folding>
-            <marker date="1486386535945" expanded="true" signature="802:847" ph="select * fro... volunteer" />
-            <marker date="1486386535945" expanded="true" signature="2022:2045" ph="select * fro... volunteer" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainPage/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -1829,29 +1833,6 @@
         <state relative-caret-position="635">
           <caret line="43" column="5" lean-forward="false" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPage/EventDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="173" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3227#3234#0" expanded="true" />
-            <marker date="1486429843046" expanded="true" signature="801:833" ph="select * fro... event" />
-            <marker date="1486429843046" expanded="true" signature="3160:3179" ph="select * fro... event" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPage/EventListServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1928,18 +1909,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Guest/about.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/Staff/createNewsSuccess.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-659">
-          <caret line="57" column="26" lean-forward="true" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1947,7 +1920,7 @@
     <entry file="file://$PROJECT_DIR$/web/Staff/createEventSuccess.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1959,6 +1932,33 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/volunteer/VolunteerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1430">
+          <caret line="68" column="63" lean-forward="false" selection-start-line="68" selection-start-column="63" selection-end-line="68" selection-end-column="63" />
+          <folding>
+            <marker date="1486386535945" expanded="true" signature="802:847" ph="select * fro... volunteer" />
+            <marker date="1486386535945" expanded="true" signature="2022:2045" ph="select * fro... volunteer" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Staff/volunteerList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="84" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Guest/about.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1975,18 +1975,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Staff/volunteerList.jsp">
+    <entry file="file://$PROJECT_DIR$/src/MainPage/EventDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1364">
-          <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="-264">
+          <caret line="120" column="43" lean-forward="false" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3227#3234#0" expanded="true" />
+            <marker date="1486432126462" expanded="true" signature="801:833" ph="select * fro... event" />
+            <marker date="1486432126462" expanded="true" signature="3160:3179" ph="select * fro... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainPage/EventListServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/Guest/event1.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="90" column="43" lean-forward="true" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
+        <state relative-caret-position="498">
+          <caret line="94" column="14" lean-forward="false" selection-start-line="94" selection-start-column="14" selection-end-line="94" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Guest/news1.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1130">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

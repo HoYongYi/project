@@ -83,14 +83,16 @@
     &nbsp;</div>
 
 <%for(int i =0; i<eventList.size();i++) {
+    String id =eventList.get(i).getId();
     String title =eventList.get(i).getTitle();
     String venue =eventList.get(i).getVenue();
+    String staffId =eventList.get(i).getStaffId();
     String date =eventList.get(i).getDate();
-    String content =eventList.get(i).getContent();
+    String content =eventList.get(i).getContent();%>
 <%out.println(title);%>
-<%--<%out.println("Venue: " + venue);%>--%>
-<%--<%out.println("Date: " + date);%>--%>
-<%--<%out.println(content);%>--%>
+<%out.println("Venue" + venue);%>
+<%out.println("Date :" + date);%>
+<%out.println(content);%>
 <br>
 <%}%>
 <div id="footer">
