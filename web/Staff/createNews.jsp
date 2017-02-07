@@ -133,34 +133,22 @@
 <!-- nav bar ends here -->
 <!-- ==================================================================== -->
 <div class = "container">
-    <form method="get" action="/record">
+    <form method="get" action="/news">
         <div class="form-group">
-            <label for="patientId">Patient Id</label>
-            <input name="patientId" type="text" class="form-control" id="patientId" aria-describedby="patientId" placeholder="Enter Patient Id">
+            <label for="title">News title</label>
+            <input name="title" type="text" class="form-control" id="title" aria-describedby="title" placeholder="Enter News title">
         </div>
         <div class="form-group">
             <label for="staffId">Staff Id</label>
             <input name="staffId" type="text" class="form-control" id="staffId" placeholder=<%=session.getAttribute("pid")%>>
         </div>
-        <div class="input-group date" id="datepicker" data-provide="datepicker">
-            <input name="date" type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-        </div>
         <div class="form-group">
-            <label for="notes">Comments</label>
-            <textarea name="comments" class="form-control" id="notes" rows="6"></textarea>
+            <label for="content">Content</label>
+            <textarea name="content" class="form-control" id="content" rows="6"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-<script>
-    $('#datepicker').datepicker({
-        format: 'dd/mm/yyyy',
-        maxViewMode: 2,
-        todayBtn: "linked",
-        clearBtn: true,
-        daysOfWeekHighlighted: "0,2,4,6"
-    });
-</script>
 <!-- ==================================================================== -->
 <!-- PLACE BEOFRE CLOSING BODY-->
 <!-- ==================================================================== -->

@@ -1,5 +1,8 @@
 package MainPage;
 
+import volunteer.Volunteer;
+import volunteer.VolunteerDAO;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -7,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 //import static org.omnifaces.util.Faces.getServletContext;
 
@@ -16,38 +20,17 @@ import java.io.IOException;
 @WebServlet(name = "EventServlet", urlPatterns = "/event")
 public class EventServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            String id = request.getParameter("search");
-
-            EventDAO db = new EventDAO();
-            Event event = db.getEventById(id);
-
-            String title = event.getTitle();
-            String venue = event.getVenue();
-            String staffId = event.getStaffId();
-            String date = event.getDate();
-            String content = event.getContent();
-
-            System.out.println(title);
-            System.out.println(venue);
-            System.out.println(staffId);
-            System.out.println(date);
-            System.out.println(content);
-
-
-            request.setAttribute("id", id);
-            request.setAttribute("title", title);
-            request.setAttribute("venue", venue);
-            request.setAttribute("staffId", staffId);
-            request.setAttribute("date", date);
-            request.setAttribute("content", content);
-
-            getServletContext().getRequestDispatcher("/Guest/event1.jsp").forward(request,response);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new ServletException(e);
-        }
+//        try {
+//            EventDAO db = new EventDAO();
+//            Event e = new Event();
+//            List<Event> eventList = db.getAllEvent();
+//            request.setAttribute("Event", eventList);
+//            getServletContext().getRequestDispatcher("event1.jsp").forward(request,response);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            throw new ServletException(e);
+//        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
